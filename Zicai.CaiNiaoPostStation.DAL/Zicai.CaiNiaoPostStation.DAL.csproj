@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\BaseDAL.cs" />
+    <Compile Include="Base\BQuery.cs" />
+    <Compile Include="Base\CreateSql.cs" />
+    <Compile Include="Base\DbConvert.cs" />
+    <Compile Include="Base\SqlModel.cs" />
+    <Compile Include="Helper\CommandInfo.cs" />
+    <Compile Include="Helper\SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
