@@ -41,13 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeInfo.cs" />
+    <Compile Include="EmpTypeInfo.cs" />
+    <Compile Include="ExpDistributeInfo.cs" />
+    <Compile Include="ExpressInfo.cs" />
+    <Compile Include="ExpressTypeInfo.cs" />
+    <Compile Include="ExpSelfPickInfo.cs" />
+    <Compile Include="MenuInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShelfInfo.cs" />
+    <Compile Include="StationInfo.cs" />
+    <Compile Include="UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{9789883a-9311-4ca9-9be5-a412fe47eb6b}</Project>
       <Name>Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UIModels\" />
+    <Folder Include="VModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
