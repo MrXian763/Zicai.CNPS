@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UControls\UPager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UControls\UPager.Designer.cs">
+      <DependentUpon>UPager.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BM\FrmStationList.resx">
       <DependentUpon>FrmStationList.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +91,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UControls\UPager.resx">
+      <DependentUpon>UPager.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,7 +125,6 @@
     <Folder Include="Employee\" />
     <Folder Include="Exp\" />
     <Folder Include="Stat\" />
-    <Folder Include="UControls\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zicai.CaiNiaoPostStation.BM;
 
 namespace Zicai.CaiNiaoPostStation
 {
@@ -16,7 +17,7 @@ namespace Zicai.CaiNiaoPostStation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmStationList());
         }
     }
 }
