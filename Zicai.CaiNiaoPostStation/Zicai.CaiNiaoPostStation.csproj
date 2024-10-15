@@ -52,10 +52,19 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,8 +112,16 @@
     <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\baoguopaisong.png" />
+    <Content Include="imgs\close.png" />
+    <Content Include="imgs\huojia.png" />
+    <Content Include="imgs\kuaidi.png" />
     <Content Include="imgs\loginPic.png" />
+    <Content Include="imgs\yuangongguanli-.png" />
+    <Content Include="imgs\zhandianguanli.png" />
+    <Content Include="imgs\zitigui.png" />
     <Content Include="imgs\门店.ico" />
+    <Content Include="imgs\门店.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
