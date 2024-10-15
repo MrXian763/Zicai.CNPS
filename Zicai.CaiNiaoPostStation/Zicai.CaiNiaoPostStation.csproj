@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BM\FrmStationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BM\FrmStationList.Designer.cs">
+      <DependentUpon>FrmStationList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BM\FrmStationList.resx">
+      <DependentUpon>FrmStationList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,7 +113,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BM\" />
     <Folder Include="Employee\" />
     <Folder Include="Exp\" />
     <Folder Include="Stat\" />
