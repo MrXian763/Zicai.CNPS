@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BM\FrmShelvesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BM\FrmShelvesList.Designer.cs">
+      <DependentUpon>FrmShelvesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="BM\FrmStationList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="UControls\UPager.Designer.cs">
       <DependentUpon>UPager.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BM\FrmShelvesList.resx">
+      <DependentUpon>FrmShelvesList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BM\FrmStationList.resx">
       <DependentUpon>FrmStationList.cs</DependentUpon>
     </EmbeddedResource>
