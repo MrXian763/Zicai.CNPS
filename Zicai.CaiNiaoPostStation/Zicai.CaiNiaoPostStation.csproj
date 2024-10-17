@@ -64,6 +64,12 @@
     <Compile Include="BM\FrmStationList.Designer.cs">
       <DependentUpon>FrmStationList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee\FrmEmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\FrmEmployeeList.Designer.cs">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee\FrmEmpTypeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BM\FrmStationList.resx">
       <DependentUpon>FrmStationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\FrmEmployeeList.resx">
+      <DependentUpon>FrmEmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmEmpTypeList.resx">
       <DependentUpon>FrmEmpTypeList.cs</DependentUpon>
