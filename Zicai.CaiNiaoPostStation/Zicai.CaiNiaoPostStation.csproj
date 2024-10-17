@@ -76,6 +76,12 @@
     <Compile Include="Employee\FrmEmpTypeList.Designer.cs">
       <DependentUpon>FrmEmpTypeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exp\FrmExpressDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exp\FrmExpressDistribution.Designer.cs">
+      <DependentUpon>FrmExpressDistribution.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exp\FrmExpressInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmEmpTypeList.resx">
       <DependentUpon>FrmEmpTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exp\FrmExpressDistribution.resx">
+      <DependentUpon>FrmExpressDistribution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exp\FrmExpressInfo.resx">
       <DependentUpon>FrmExpressInfo.cs</DependentUpon>
