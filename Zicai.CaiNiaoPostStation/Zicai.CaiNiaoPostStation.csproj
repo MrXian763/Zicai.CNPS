@@ -76,6 +76,12 @@
     <Compile Include="Employee\FrmEmpTypeList.Designer.cs">
       <DependentUpon>FrmEmpTypeList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exp\FrmExpressList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exp\FrmExpressList.Designer.cs">
+      <DependentUpon>FrmExpressList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Employee\FrmEmpTypeList.resx">
       <DependentUpon>FrmEmpTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exp\FrmExpressList.resx">
+      <DependentUpon>FrmExpressList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -176,7 +185,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Exp\" />
     <Folder Include="Stat\" />
     <Folder Include="Utility\" />
   </ItemGroup>
