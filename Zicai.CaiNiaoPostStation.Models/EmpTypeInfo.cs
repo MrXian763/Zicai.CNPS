@@ -26,5 +26,6 @@ namespace Zhaoxi.CainiaoPostStation.Models
         /// 描述
         /// </summary>
         public string Remark { get; set; }
+        public int IsDeleted { get; set; }
     }
 }
