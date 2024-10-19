@@ -100,6 +100,12 @@
     <Compile Include="Exp\FrmExpressList.Designer.cs">
       <DependentUpon>FrmExpressList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exp\FrmExpSelfPickList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exp\FrmExpSelfPickList.Designer.cs">
+      <DependentUpon>FrmExpSelfPickList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exp\FrmExpTypeChoose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exp\FrmExpressList.resx">
       <DependentUpon>FrmExpressList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exp\FrmExpSelfPickList.resx">
+      <DependentUpon>FrmExpSelfPickList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exp\FrmExpTypeChoose.resx">
       <DependentUpon>FrmExpTypeChoose.cs</DependentUpon>
