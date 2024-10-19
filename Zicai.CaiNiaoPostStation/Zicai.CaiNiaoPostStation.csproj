@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -138,6 +139,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stat\FrmExpCompletionStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stat\FrmExpCompletionStatistics.Designer.cs">
+      <DependentUpon>FrmExpCompletionStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="UControls\UArrow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +212,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Stat\FrmExpCompletionStatistics.resx">
+      <DependentUpon>FrmExpCompletionStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UControls\UArrow.resx">
       <DependentUpon>UArrow.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,7 +249,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Stat\" />
     <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
