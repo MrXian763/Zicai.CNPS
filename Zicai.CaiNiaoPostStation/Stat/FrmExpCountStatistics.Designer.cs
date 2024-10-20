@@ -160,6 +160,9 @@
             // 
             // chartExpStat
             // 
+            this.chartExpStat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chartExpStat.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chartExpStat.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             this.chartExpStat.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Sunken;
