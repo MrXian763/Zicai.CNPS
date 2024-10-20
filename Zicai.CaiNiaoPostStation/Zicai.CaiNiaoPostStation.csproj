@@ -169,6 +169,7 @@
     <Compile Include="UControls\UPager.Designer.cs">
       <DependentUpon>UPager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\FormUtility.cs" />
     <EmbeddedResource Include="BM\FrmExpTypeList.resx">
       <DependentUpon>FrmExpTypeList.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,9 +267,7 @@
       <Name>Zicai.CaiNiaoPostStation.Models</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utility\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="imgs\baoguopaisong.png" />
     <Content Include="imgs\close.png" />

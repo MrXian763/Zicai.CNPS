@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.lbErrMsg = new System.Windows.Forms.Label();
+            this.lblErrMsg = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -52,13 +52,29 @@
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUserName);
-            this.panel1.Controls.Add(this.lbErrMsg);
+            this.panel1.Controls.Add(this.lblErrMsg);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(178, 211);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(437, 308);
             this.panel1.TabIndex = 0;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(207)))));
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(207)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(108, 187);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(215, 36);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "登  录";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -69,6 +85,7 @@
             this.txtPassword.Size = new System.Drawing.Size(162, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "123456";
+            this.txtPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseDown);
             // 
             // txtUserName
             // 
@@ -78,17 +95,18 @@
             this.txtUserName.Size = new System.Drawing.Size(162, 26);
             this.txtUserName.TabIndex = 1;
             this.txtUserName.Text = "admin";
+            this.txtUserName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtUserName_MouseDown);
             // 
-            // lbErrMsg
+            // lblErrMsg
             // 
-            this.lbErrMsg.AutoSize = true;
-            this.lbErrMsg.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lbErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.lbErrMsg.Location = new System.Drawing.Point(123, 246);
-            this.lbErrMsg.Name = "lbErrMsg";
-            this.lbErrMsg.Size = new System.Drawing.Size(80, 17);
-            this.lbErrMsg.TabIndex = 2;
-            this.lbErrMsg.Text = "请输入账号！";
+            this.lblErrMsg.AutoSize = true;
+            this.lblErrMsg.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblErrMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblErrMsg.Location = new System.Drawing.Point(123, 246);
+            this.lblErrMsg.Name = "lblErrMsg";
+            this.lblErrMsg.Size = new System.Drawing.Size(80, 17);
+            this.lblErrMsg.TabIndex = 2;
+            this.lblErrMsg.Text = "请输入账号！";
             // 
             // label2
             // 
@@ -122,21 +140,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(207)))));
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(136)))), ((int)(((byte)(207)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(108, 187);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(215, 36);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "登  录";
-            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -173,6 +176,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "菜鸟驿站管理系统登录";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -187,7 +191,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label lbErrMsg;
+        private System.Windows.Forms.Label lblErrMsg;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogin;
