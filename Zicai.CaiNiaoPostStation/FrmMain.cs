@@ -60,8 +60,8 @@ namespace Zicai.CaiNiaoPostStation
             // 加载菜单栏
             cainiaoMenus.Items.Clear(); // 清空菜单项
             List<MenuInfo> allMenuList = menuBLL.GetMenuList(); // 获取所有菜单数据
-            // TODO 加载菜单项到菜单栏
-
+            // 加载菜单项到菜单栏
+            CreateMenuItems(allMenuList, null, 0);
             // 默认显示系统导航子页
             tabPages.AddTabFormPage(new FrmNavigation());
             lblAction.Text = "系统导航页";
@@ -79,6 +79,107 @@ namespace Zicai.CaiNiaoPostStation
                     lblLoginTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 }));
             }
+        }
+        
+        /// <summary>
+        /// 动态添加菜单项
+        /// </summary>
+        /// <param name="allMenuList">所有菜单集合</param>
+        /// <param name="parentMenu">父级菜单</param>
+        /// <param name="parentMenuId">父级菜单编号</param>
+        private void CreateMenuItems(List<MenuInfo> allMenuList, ToolStripMenuItem parentMenu, int parentMenuId)
+        {
+            // 子菜单列表
+            var subItems = allMenuList.Where(m => m.ParentId == parentMenuId);
+            foreach (MenuInfo menuInfo in subItems)
+            {
+                // 创建菜单项
+                ToolStripMenuItem mItem = new ToolStripMenuItem();
+                mItem.Name = menuInfo.MenuId.ToString();
+                mItem.Text = menuInfo.MenuName;
+                if (parentMenuId == 0)
+                {
+                    // 一级菜单
+                    mItem.Font = new Font("微软雅黑", 12F, FontStyle.Bold, GraphicsUnit.Point);
+                    mItem.ForeColor = Color.Navy;
+                }
+                else
+                {
+                    // 二级菜单
+                    mItem.Font = new Font("微软雅黑", 9F, FontStyle.Bold, GraphicsUnit.Point);
+                    mItem.ForeColor = Color.Blue;
+                }
+                // 快捷键
+                if (!string.IsNullOrEmpty(menuInfo.MKey))
+                {
+                    string[] keyArr = menuInfo.MKey.Split('+');
+                    // 长度 2、3 Ctrl+A Ctrl+Alt+A 的快捷键
+                    if (keyArr.Length == 2)
+                    {
+                        Keys key = (Keys)Enum.Parse(typeof(Keys), keyArr[1]);
+                        switch (keyArr[0])
+                        {
+                            case "Alt":
+                                mItem.Text += $"(&{keyArr[1]})";
+                                mItem.ShortcutKeys = (Keys.Alt | key);
+                                break;
+                            case "Ctrl":
+                                mItem.Text += $"(&{keyArr[1]})";
+                                mItem.ShortcutKeys = (Keys.Control | key);
+                                break;
+                            case "Shift":
+                                mItem.Text += $"(&{keyArr[1]})";
+                                mItem.ShortcutKeys = (Keys.Shift | key);
+                                break;
+                        }
+                    }
+                    else if (keyArr.Length == 3)
+                    {
+                        Keys key = (Keys)Enum.Parse(typeof(Keys), keyArr[2]);
+                        string twoKeys = keyArr[0] + "+" + keyArr[1];
+                        switch (twoKeys)
+                        {
+                            case "Ctrl+Shift":
+                                mItem.ShortcutKeys = (Keys.Control | Keys.Shift | key);
+                                break;
+                            case "Ctrl+Alt":
+                                mItem.ShortcutKeys = (Keys.Control | Keys.Alt | key);
+                                break;
+                            case "Shift+Alt":
+                                mItem.ShortcutKeys = (Keys.Shift | Keys.Alt | key);
+                                break;
+                        }
+                    }
+                }
+                // 页面地址
+                if (!string.IsNullOrEmpty(menuInfo.FrmURL))
+                {
+                    mItem.Tag = menuInfo.FrmURL; // 传递页面地址
+                }
+                // 单击事件订阅（无子菜单的项）
+                if (allMenuList.Where(m => m.ParentId == menuInfo.MenuId).Count() == 0)
+                {
+                    mItem.Click += MItem_Click;
+                }
+                // 菜单项添加在哪一级
+                if (parentMenu != null)
+                    parentMenu.DropDownItems.Add(mItem);
+                else
+                    cainiaoMenus.Items.Add(mItem);
+                // 递归调用
+                CreateMenuItems(allMenuList, mItem, menuInfo.MenuId); // 创建当前菜单项的子菜单
+            }
+        }
+
+        /// <summary>
+        /// 菜单响应事件处理程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void MItem_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
