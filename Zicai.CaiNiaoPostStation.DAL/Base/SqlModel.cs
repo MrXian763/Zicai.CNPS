@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.CainiaoPostStation.DAL.Base
+namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     /// <summary>
     /// 生成的Sql语句实体（Insert/Update语句生成的内容）

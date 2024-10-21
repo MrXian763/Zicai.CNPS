@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.CainiaoPostStation.DAL.Base
+namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     public class DbConvert
     {
@@ -87,6 +87,13 @@ namespace Zhaoxi.CainiaoPostStation.DAL.Base
 
         }
 
+        /// <summary>
+        /// 将SqlDataReader转换为List
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dr"></param>
+        /// <param name="cols"></param>
+        /// <returns></returns>
         public static List<T> DataReaderToList<T>(SqlDataReader dr, string cols)
         {
             List<T> list = new List<T>();

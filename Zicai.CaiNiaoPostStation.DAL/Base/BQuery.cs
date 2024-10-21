@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Helper;
 using Zhaoxi.CainiaoPostStation.Models.UIModels;
 
-namespace Zhaoxi.CainiaoPostStation.DAL.Base
+namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     public class BQuery<T> where T:class
     {
@@ -110,7 +110,7 @@ namespace Zhaoxi.CainiaoPostStation.DAL.Base
         public List<T> GetModelList(string strWhere, string cols, string orderBy, params SqlParameter[] paras)
         {
             string sql = CreateSql.CreateSelectSql<T>(cols, strWhere, orderBy);
-            SqlDataReader dr = SqlHelper.ExecuteReader(sql, 1, paras);
+            SqlDataReader dr = SqlHelper.ExecuteReader(sql, 1, paras); // 执行查询语句
             //转换  List<T>
             List<T> list = DbConvert.DataReaderToList<T>(dr, cols);
             return list;
@@ -119,9 +119,9 @@ namespace Zhaoxi.CainiaoPostStation.DAL.Base
         /// <summary>
         /// 查询所有数据（有效/已删除）
         /// </summary>
-        /// <param name="cols"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="IsDeleted"></param>
+        /// <param name="cols">要查询的列</param>
+        /// <param name="orderBy">排序字段</param>
+        /// <param name="IsDeleted">是否删除 1-已删除 0-未删除</param>
         /// <returns></returns>
         public List<T> GetAllModelList(string cols, string orderBy, int IsDeleted)
         {

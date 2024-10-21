@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Helper;
 
-namespace Zhaoxi.CainiaoPostStation.DAL.Base
+namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     public  class BaseDAL<T>:BQuery<T> where T:class
     {

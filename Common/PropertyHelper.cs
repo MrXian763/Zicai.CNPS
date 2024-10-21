@@ -9,11 +9,12 @@ namespace Common
 {
     public class PropertyHelper
     {
+
         /// <summary>
-        /// 
+        /// 获取属性数组
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="cols">列名字符串，以逗号隔开</param>
+        /// <param name="cols"></param>
         /// <returns></returns>
         public static PropertyInfo[] GetProperties<T>(string cols)
         {
@@ -22,7 +23,7 @@ namespace Common
             if (!string.IsNullOrEmpty(cols))
             {
                 List<string> listCols = cols.GetStrList(',', true);//转换成List<string>，并转换成小写
-                properties = properties.Where(p => listCols.Contains(p.GetColName().ToLower())).ToArray();
+                properties = properties.Where(p => listCols.Contains(p.GetColName().ToLower())).ToArray(); // 筛选
             }
             return properties;
         }

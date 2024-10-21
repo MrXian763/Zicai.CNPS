@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.CainiaoPostStation.Models
+namespace ZiCai.CainiaoPostStation.Models
 {
     /// <summary>
     /// 快递派送信息类

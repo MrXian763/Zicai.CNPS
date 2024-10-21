@@ -12,7 +12,7 @@ namespace Zicai.CaiNiaoPostStation.Models
     /// </summary>
     [Table("ShelfInfos")]
     [PrimaryKey("ShelfId", autoIncrement = true)]
-    internal class ShelfInfo
+    public class ShelfInfo
     {
         /// <summary>
         /// 货架自编号

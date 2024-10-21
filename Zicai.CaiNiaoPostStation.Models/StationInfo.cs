@@ -12,7 +12,7 @@ namespace Zicai.CaiNiaoPostStation.Models
     /// </summary>
     [Table("StationInfos")]
     [PrimaryKey("StationId", autoIncrement = true)]
-    internal class StationInfo
+    public class StationInfo
     {
         /// <summary>
         /// 站点编号

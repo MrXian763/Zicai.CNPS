@@ -12,7 +12,7 @@ namespace Zicai.CaiNiaoPostStation.Models
     /// </summary>
     [Table("MenuInfos")]
     [PrimaryKey("MenuId", autoIncrement = true)]
-    internal class MenuInfo
+    public class MenuInfo
     {
         /// <summary>
         /// 菜单编号

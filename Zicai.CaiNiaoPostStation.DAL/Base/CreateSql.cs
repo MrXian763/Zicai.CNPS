@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.CainiaoPostStation.DAL.Base
+namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     public  class CreateSql
     {
@@ -125,13 +125,13 @@ namespace Zhaoxi.CainiaoPostStation.DAL.Base
         {
             string sql = "";
             Type type = typeof(T);
-            string tableName = type.GetTName();
+            string tableName = type.GetTName(); // 表名
             if (string.IsNullOrEmpty(cols))
             {
-                var properties = PropertyHelper.GetProperties<T>("");
-                cols = string.Join(",", properties.Select(p => p.GetColName()));
+                var properties = PropertyHelper.GetProperties<T>(""); // 获取所有列
+                cols = string.Join(",", properties.Select(p => p.GetColName())); // 获取所有列名
             }
-            sql = $"select {cols} from {tableName} where 1=1";
+            sql = $"select {cols} from {tableName} where 1=1"; // 构造sql
             if (!string.IsNullOrEmpty(strWhere))
                 sql += " and " + strWhere;
             if (!string.IsNullOrEmpty(orderby))

@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblLoginInfo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cainiaoMenus = new System.Windows.Forms.MenuStrip();
             this.基础信息维护ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.站点信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tbtnSelfPick = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tbtnDistribute = new System.Windows.Forms.ToolStripButton();
-            this.tbtnExpress = new System.Windows.Forms.ToolStripButton();
-            this.tbtnEmployee = new System.Windows.Forms.ToolStripButton();
-            this.tbtnShelves = new System.Windows.Forms.ToolStripButton();
             this.tbtnStation = new System.Windows.Forms.ToolStripButton();
+            this.tbtnShelves = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtnEmployee = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtnExpress = new System.Windows.Forms.ToolStripButton();
+            this.tbtnDistribute = new System.Windows.Forms.ToolStripButton();
+            this.tbtnSelfPick = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblLoginTime = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,9 +57,9 @@
             this.tabPages = new System.Windows.Forms.TabControl();
             this.picClose = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cainiaoMenus.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
@@ -77,17 +77,6 @@
             this.panel1.Size = new System.Drawing.Size(1348, 72);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(81, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "菜鸟驿站管理系统";
-            // 
             // lblLoginInfo
             // 
             this.lblLoginInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -99,6 +88,27 @@
             this.lblLoginInfo.Size = new System.Drawing.Size(131, 17);
             this.lblLoginInfo.TabIndex = 2;
             this.lblLoginInfo.Text = "admin，欢迎使用系统";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(81, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(249, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "菜鸟驿站管理系统";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.门店;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // cainiaoMenus
             // 
@@ -158,63 +168,17 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tbtnSelfPick
+            // tbtnStation
             // 
-            this.tbtnSelfPick.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tbtnSelfPick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tbtnSelfPick.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.zitigui;
-            this.tbtnSelfPick.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnSelfPick.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnSelfPick.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.tbtnSelfPick.Name = "tbtnSelfPick";
-            this.tbtnSelfPick.Size = new System.Drawing.Size(85, 31);
-            this.tbtnSelfPick.Text = "快递自提";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.门店;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // tbtnDistribute
-            // 
-            this.tbtnDistribute.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tbtnDistribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tbtnDistribute.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.baoguopaisong;
-            this.tbtnDistribute.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnDistribute.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnDistribute.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.tbtnDistribute.Name = "tbtnDistribute";
-            this.tbtnDistribute.Size = new System.Drawing.Size(85, 31);
-            this.tbtnDistribute.Text = "派送管理";
-            // 
-            // tbtnExpress
-            // 
-            this.tbtnExpress.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tbtnExpress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.tbtnExpress.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.kuaidi;
-            this.tbtnExpress.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnExpress.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnExpress.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.tbtnExpress.Name = "tbtnExpress";
-            this.tbtnExpress.Size = new System.Drawing.Size(85, 31);
-            this.tbtnExpress.Text = "快递信息";
-            // 
-            // tbtnEmployee
-            // 
-            this.tbtnEmployee.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tbtnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tbtnEmployee.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.yuangongguanli_;
-            this.tbtnEmployee.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnEmployee.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.tbtnEmployee.Name = "tbtnEmployee";
-            this.tbtnEmployee.Size = new System.Drawing.Size(85, 31);
-            this.tbtnEmployee.Text = "员工信息";
+            this.tbtnStation.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tbtnStation.ForeColor = System.Drawing.Color.Gray;
+            this.tbtnStation.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.zhandianguanli;
+            this.tbtnStation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnStation.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnStation.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tbtnStation.Name = "tbtnStation";
+            this.tbtnStation.Size = new System.Drawing.Size(85, 31);
+            this.tbtnStation.Text = "站点信息";
             // 
             // tbtnShelves
             // 
@@ -228,27 +192,63 @@
             this.tbtnShelves.Size = new System.Drawing.Size(85, 31);
             this.tbtnShelves.Text = "货架信息";
             // 
-            // tbtnStation
-            // 
-            this.tbtnStation.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
-            this.tbtnStation.ForeColor = System.Drawing.Color.Gray;
-            this.tbtnStation.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.zhandianguanli;
-            this.tbtnStation.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tbtnStation.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnStation.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
-            this.tbtnStation.Name = "tbtnStation";
-            this.tbtnStation.Size = new System.Drawing.Size(85, 31);
-            this.tbtnStation.Text = "站点信息";
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
             // 
+            // tbtnEmployee
+            // 
+            this.tbtnEmployee.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tbtnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tbtnEmployee.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.yuangongguanli_;
+            this.tbtnEmployee.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnEmployee.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnEmployee.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tbtnEmployee.Name = "tbtnEmployee";
+            this.tbtnEmployee.Size = new System.Drawing.Size(85, 31);
+            this.tbtnEmployee.Text = "员工信息";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 34);
+            // 
+            // tbtnExpress
+            // 
+            this.tbtnExpress.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tbtnExpress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tbtnExpress.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.kuaidi;
+            this.tbtnExpress.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnExpress.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnExpress.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tbtnExpress.Name = "tbtnExpress";
+            this.tbtnExpress.Size = new System.Drawing.Size(85, 31);
+            this.tbtnExpress.Text = "快递信息";
+            // 
+            // tbtnDistribute
+            // 
+            this.tbtnDistribute.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tbtnDistribute.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tbtnDistribute.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.baoguopaisong;
+            this.tbtnDistribute.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnDistribute.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnDistribute.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tbtnDistribute.Name = "tbtnDistribute";
+            this.tbtnDistribute.Size = new System.Drawing.Size(85, 31);
+            this.tbtnDistribute.Text = "派送管理";
+            // 
+            // tbtnSelfPick
+            // 
+            this.tbtnSelfPick.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold);
+            this.tbtnSelfPick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbtnSelfPick.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.zitigui;
+            this.tbtnSelfPick.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tbtnSelfPick.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnSelfPick.Margin = new System.Windows.Forms.Padding(5, 1, 0, 2);
+            this.tbtnSelfPick.Name = "tbtnSelfPick";
+            this.tbtnSelfPick.Size = new System.Drawing.Size(85, 31);
+            this.tbtnSelfPick.Text = "快递自提";
             // 
             // statusStrip1
             // 
@@ -335,6 +335,7 @@
             this.tabPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPages.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPages.Location = new System.Drawing.Point(1, 146);
             this.tabPages.Name = "tabPages";
             this.tabPages.SelectedIndex = 0;
@@ -345,7 +346,7 @@
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.close;
-            this.picClose.Location = new System.Drawing.Point(1316, 154);
+            this.picClose.Location = new System.Drawing.Point(1316, 143);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(25, 25);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -367,13 +368,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.Text = "菜鸟驿站管理系统";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cainiaoMenus.ResumeLayout(false);
             this.cainiaoMenus.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

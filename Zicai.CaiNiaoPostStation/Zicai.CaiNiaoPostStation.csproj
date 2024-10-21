@@ -170,6 +170,7 @@
       <DependentUpon>UPager.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\FormUtility.cs" />
+    <Compile Include="Utility\MessageHelper.cs" />
     <EmbeddedResource Include="BM\FrmExpTypeList.resx">
       <DependentUpon>FrmExpTypeList.cs</DependentUpon>
     </EmbeddedResource>
