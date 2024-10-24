@@ -64,6 +64,7 @@ namespace Zicai.CaiNiaoPostStation
             CreateMenuItems(allMenuList, null, 0);
             // 默认显示系统导航子页
             tabPages.AddTabFormPage(new FrmNavigation());
+            picClose.Visible = true; // 默认显示关闭按钮
             lblAction.Text = "系统导航页";
         }
 
@@ -179,7 +180,139 @@ namespace Zicai.CaiNiaoPostStation
         /// <exception cref="NotImplementedException"></exception>
         private void MItem_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+            if (menuItem != null)
+            {
+                string url = menuItem.Tag.ToString(); // 获取页面名称
+                string frmName = url.Split('.')[1]; // 获取Form名称
+                Form form = FormUtility.GetOpenForm(frmName); // 在已打开的页面中获取当前要打开的窗体
+                if (form == null)
+                {
+                    // 创建Form对象
+                    string spaceName = this.GetType().Namespace; // 获取当前命名空间
+                    string fullName = spaceName + "." + url; // 命名空间+类名
+                    Type type = Type.GetType(fullName); // 反射获取类对象
+                    form = Activator.CreateInstance(type) as Form; // 反射创建窗体实例
+                }
+                // Form对象添加到TabControl中
+                tabPages.AddTabFormPage(form);
+                CheckPage(); // 更新关闭标签按钮状态
+            }
+            else
+            {
+                // 退出系统
+                if (menuItem.Text.Contains("退出"))
+                    Application.Exit(); // 退出应用程序
+            }
+        }
+
+        /// <summary>
+        /// 退出系统处理程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageHelper.Confirm("退出系统", "确定退出系统？") == DialogResult.OK)
+            {
+                timerDT.Stop(); // 停止计时器
+                Application.ExitThread();
+            }
+            else
+                e.Cancel = true; // 取消关闭
+        }
+
+        /// <summary>
+        /// 子页自适应
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabPages_SizeChanged(object sender, EventArgs e)
+        {
+            if (tabPages.TabPages.Count > 0)
+            {
+                Size size = tabPages.SelectedTab.Size; // 获取当前页的大小
+                foreach (TabPage tabPage in tabPages.TabPages)
+                {
+                    Control c = tabPage.Controls[0];
+                    if (c is Form)
+                    {
+                        Form form = (Form)c;
+                        form.WindowState = FormWindowState.Normal;
+                        form.SuspendLayout(); // 挂起布局
+                        form.Size = size;
+                        form.ResumeLayout(true); // 恢复布局
+                        form.WindowState = FormWindowState.Maximized;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 关闭按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            TabPage tabPage = tabPages.SelectedTab; // 获取当前选中的选项卡
+            Form form = tabPage.Controls[0] as Form; // 将选项卡中的第一个控件转换为窗体
+            if (form != null)
+                form.Close(); //  关闭该窗体
+            tabPages.TabPages.Remove(tabPage); // 从选项卡控件中移除已关闭的选项卡
+            CheckPage(); // 更新关闭标签按钮状态
+        }
+
+        /// <summary>
+        /// 检查是否所有标签页被关闭
+        /// </summary>
+        private void CheckPage()
+        {
+            if (tabPages.TabPages.Count == 0)
+                picClose.Visible = false; // 如果所有标签页都被关闭，则隐藏关闭按钮
+            else
+                picClose.Visible = true;
+        }
+
+        /// <summary>
+        /// 选项卡切换事件处理程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabPages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabPages.SelectedTab != null)
+                lblAction.Text = tabPages.SelectedTab.Text; // 显示当前选中的标签页名称
+        }
+
+        /// <summary>
+        /// 鼠标移入关闭按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void picClose_MouseHover(object sender, EventArgs e)
+        {
+            picClose.BorderStyle = BorderStyle.FixedSingle; // 显示边框
+        }
+
+        /// <summary>
+        /// 鼠标移出关闭按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void picClose_MouseLeave(object sender, EventArgs e)
+        {
+            picClose.BorderStyle = BorderStyle.None; // 隐藏边框
+        }
+
+        /// <summary>
+        /// 窗体关闭事件处理程序
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0); // 退出应用程序
         }
     }
 }

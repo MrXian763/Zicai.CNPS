@@ -73,5 +73,21 @@ namespace Zicai.CaiNiaoPostStation.Utility
             }
             return f;
         }
+
+        /// <summary>
+        /// 关闭指定的Form
+        /// </summary>
+        /// <param name="formName">Form名称</param>
+        public static void CloseOpenForm(string formName)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name == formName)
+                {
+                    frm.Close();
+                    break;
+                }
+            }
+        }
     }
 }
