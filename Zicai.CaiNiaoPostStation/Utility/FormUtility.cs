@@ -9,6 +9,18 @@ namespace Zicai.CaiNiaoPostStation.Utility
 {
     public static class FormUtility
     {
+
+        /// <summary>
+        /// 打开对应类型的Form页面
+        /// </summary>
+        /// <typeparam name="T">要创建的Form类型</typeparam>
+        /// <param name="tab"></param>
+        public static void ShowTabFormPage<T>(this TabControl tab) where T : Form
+        {
+            Form frm = Activator.CreateInstance<T>(); // 反射创建Form实例
+            tab.AddTabFormPage(frm); // 添加到TabControl中
+        }
+
         /// <summary>
         /// 显示异常信息
         /// </summary>

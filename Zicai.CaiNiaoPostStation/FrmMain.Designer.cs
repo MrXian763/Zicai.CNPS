@@ -179,6 +179,7 @@
             this.tbtnStation.Name = "tbtnStation";
             this.tbtnStation.Size = new System.Drawing.Size(85, 31);
             this.tbtnStation.Text = "站点信息";
+            this.tbtnStation.Click += new System.EventHandler(this.tbtnStation_Click);
             // 
             // tbtnShelves
             // 
@@ -191,6 +192,7 @@
             this.tbtnShelves.Name = "tbtnShelves";
             this.tbtnShelves.Size = new System.Drawing.Size(85, 31);
             this.tbtnShelves.Text = "货架信息";
+            this.tbtnShelves.Click += new System.EventHandler(this.tbtnShelves_Click);
             // 
             // toolStripSeparator1
             // 
@@ -208,6 +210,7 @@
             this.tbtnEmployee.Name = "tbtnEmployee";
             this.tbtnEmployee.Size = new System.Drawing.Size(85, 31);
             this.tbtnEmployee.Text = "员工信息";
+            this.tbtnEmployee.Click += new System.EventHandler(this.tbtnEmployee_Click);
             // 
             // toolStripSeparator2
             // 
@@ -225,6 +228,7 @@
             this.tbtnExpress.Name = "tbtnExpress";
             this.tbtnExpress.Size = new System.Drawing.Size(85, 31);
             this.tbtnExpress.Text = "快递信息";
+            this.tbtnExpress.Click += new System.EventHandler(this.tbtnExpress_Click);
             // 
             // tbtnDistribute
             // 
@@ -237,6 +241,7 @@
             this.tbtnDistribute.Name = "tbtnDistribute";
             this.tbtnDistribute.Size = new System.Drawing.Size(85, 31);
             this.tbtnDistribute.Text = "派送管理";
+            this.tbtnDistribute.Click += new System.EventHandler(this.tbtnDistribute_Click);
             // 
             // tbtnSelfPick
             // 
@@ -249,6 +254,7 @@
             this.tbtnSelfPick.Name = "tbtnSelfPick";
             this.tbtnSelfPick.Size = new System.Drawing.Size(85, 31);
             this.tbtnSelfPick.Text = "快递自提";
+            this.tbtnSelfPick.Click += new System.EventHandler(this.tbtnSelfPick_Click);
             // 
             // statusStrip1
             // 

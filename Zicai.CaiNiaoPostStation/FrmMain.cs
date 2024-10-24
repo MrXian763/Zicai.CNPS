@@ -314,5 +314,65 @@ namespace Zicai.CaiNiaoPostStation
         {
             Environment.Exit(0); // 退出应用程序
         }
+
+        /// <summary>
+        /// 站点信息页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnStation_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<BM.FrmStationList>();
+        }
+
+        /// <summary>
+        /// 货架信息页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnShelves_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<BM.FrmShelvesList>();
+        }
+
+        /// <summary>
+        /// 员工信息页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnEmployee_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<Employee.FrmEmployeeList>();
+        }
+
+        /// <summary>
+        /// 快递信息页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnExpress_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<Exp.FrmExpressList>();
+        }
+
+        /// <summary>
+        /// 派送管理页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnDistribute_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<Exp.FrmExpressDistribution>();
+        }
+
+        /// <summary>
+        /// 快递自提管理页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tbtnSelfPick_Click(object sender, EventArgs e)
+        {
+            tabPages.ShowTabFormPage<Exp.FrmExpSelfPickList>();
+        }
     }
 }
