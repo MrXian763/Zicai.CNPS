@@ -51,36 +51,38 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
             return SqlHelper.ExecuteTrans(comList);
         }
 
-        //改
         /// <summary>
         /// 根据条件修改信息
         /// </summary>
-        /// <param name="model"></param>
-        /// <param name="cols"></param>
-        /// <param name="strWhere"></param>
+        /// <param name="model">要修改的模型</param>
+        /// <param name="cols">要修改的列</param>
+        /// <param name="strWhere">条件</param>
         /// <param name="paras">附加的参数</param>
-        /// <returns></returns>
+        /// <returns>修改结果</returns>
         public bool Update(T model, string cols, string strWhere, params SqlParameter[] paras)
         {
             if (model == null)
                 return false;
-            SqlModel update = CreateSql.CreateUpdateSql<T>(model, cols, strWhere);
+            SqlModel update = CreateSql.CreateUpdateSql<T>(model, cols, strWhere); // 生成更新 SQL
+            // 提取 SQL 和参数
             string sql = update.Sql;
             SqlParameter[] paras0 = update.Paras;
+            // 构建参数列表
             List<SqlParameter> listParas = paras0.ToList();
             if (paras != null && paras.Length > 0)
             {
                 listParas.AddRange(paras);
             }
+            // 执行更新命令
             return SqlHelper.ExecuteNonQuery(sql, 1, listParas.ToArray()) > 0;
         }
 
         /// <summary>
         /// 修改单个信息
         /// </summary>
-        /// <param name="t"></param>
-        /// <param name="cols"></param>
-        /// <returns></returns>
+        /// <param name="t">数据模型</param>
+        /// <param name="cols">要修改的列</param>
+        /// <returns>修改结果</returns>
         public bool Update(T t, string cols)
         {
             return Update(t, cols, "");
