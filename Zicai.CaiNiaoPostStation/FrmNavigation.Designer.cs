@@ -56,6 +56,7 @@
             this.btnStation.TabIndex = 0;
             this.btnStation.Text = "站点管理";
             this.btnStation.UseVisualStyleBackColor = false;
+            this.btnStation.Click += new System.EventHandler(this.btnStation_Click);
             // 
             // btnEmployee
             // 
@@ -70,6 +71,7 @@
             this.btnEmployee.TabIndex = 1;
             this.btnEmployee.Text = "员工信息管理";
             this.btnEmployee.UseVisualStyleBackColor = false;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnSelves
             // 
@@ -84,6 +86,7 @@
             this.btnSelves.TabIndex = 2;
             this.btnSelves.Text = "货架管理";
             this.btnSelves.UseVisualStyleBackColor = false;
+            this.btnSelves.Click += new System.EventHandler(this.btnSelves_Click);
             // 
             // btnExpDistribution
             // 
@@ -98,6 +101,7 @@
             this.btnExpDistribution.TabIndex = 3;
             this.btnExpDistribution.Text = "快递派送";
             this.btnExpDistribution.UseVisualStyleBackColor = false;
+            this.btnExpDistribution.Click += new System.EventHandler(this.btnExpDistribution_Click);
             // 
             // btnExpSelfPick
             // 
@@ -112,6 +116,7 @@
             this.btnExpSelfPick.TabIndex = 4;
             this.btnExpSelfPick.Text = "快递自提";
             this.btnExpSelfPick.UseVisualStyleBackColor = false;
+            this.btnExpSelfPick.Click += new System.EventHandler(this.btnExpSelfPick_Click);
             // 
             // btnExpStatistics
             // 
@@ -126,6 +131,7 @@
             this.btnExpStatistics.TabIndex = 5;
             this.btnExpStatistics.Text = "快递统计";
             this.btnExpStatistics.UseVisualStyleBackColor = false;
+            this.btnExpStatistics.Click += new System.EventHandler(this.btnExpStatistics_Click);
             // 
             // btnExpress
             // 
@@ -140,6 +146,7 @@
             this.btnExpress.TabIndex = 6;
             this.btnExpress.Text = "快递信息管理";
             this.btnExpress.UseVisualStyleBackColor = false;
+            this.btnExpress.Click += new System.EventHandler(this.btnExpress_Click);
             // 
             // uArrow6
             // 

@@ -50,6 +50,7 @@
             this.colIsPickUp = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colSignTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPickUp = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelfExpressList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -281,12 +282,24 @@
             this.colPickUp.TrackVisitedState = false;
             this.colPickUp.UseColumnTextForLinkValue = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label12.Location = new System.Drawing.Point(8, 65);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 22);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "快递自提列表：";
+            // 
             // FrmExpSelfPickList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
             this.ClientSize = new System.Drawing.Size(1351, 754);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.uPager1);
             this.Controls.Add(this.dgvSelfExpressList);
             this.Controls.Add(this.txtRecPhone);
@@ -327,5 +340,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colIsPickUp;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSignTime;
         private System.Windows.Forms.DataGridViewLinkColumn colPickUp;
+        private System.Windows.Forms.Label label12;
     }
 }

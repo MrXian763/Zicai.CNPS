@@ -33,13 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblHasCompleteCount = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblUnCompleteCount = new System.Windows.Forms.Label();
             this.chartExpStat = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblUnCompleteCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblHasCompleteCount = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gbExpList = new System.Windows.Forms.GroupBox();
             this.dgvExpList = new System.Windows.Forms.DataGridView();
             this.colExpNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,52 +70,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "完成度统计";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(47, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "已完成";
-            // 
-            // lblHasCompleteCount
-            // 
-            this.lblHasCompleteCount.AutoSize = true;
-            this.lblHasCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblHasCompleteCount.ForeColor = System.Drawing.Color.Green;
-            this.lblHasCompleteCount.Location = new System.Drawing.Point(122, 50);
-            this.lblHasCompleteCount.Name = "lblHasCompleteCount";
-            this.lblHasCompleteCount.Size = new System.Drawing.Size(60, 26);
-            this.lblHasCompleteCount.TabIndex = 1;
-            this.lblHasCompleteCount.Text = "2000";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(232, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 26);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "未完成";
-            // 
-            // lblUnCompleteCount
-            // 
-            this.lblUnCompleteCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUnCompleteCount.AutoSize = true;
-            this.lblUnCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUnCompleteCount.ForeColor = System.Drawing.Color.DeepPink;
-            this.lblUnCompleteCount.Location = new System.Drawing.Point(307, 50);
-            this.lblUnCompleteCount.Name = "lblUnCompleteCount";
-            this.lblUnCompleteCount.Size = new System.Drawing.Size(48, 26);
-            this.lblUnCompleteCount.TabIndex = 3;
-            this.lblUnCompleteCount.Text = "600";
             // 
             // chartExpStat
             // 
@@ -154,8 +107,57 @@
             this.chartExpStat.TabIndex = 4;
             this.chartExpStat.Text = "chart1";
             // 
+            // lblUnCompleteCount
+            // 
+            this.lblUnCompleteCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUnCompleteCount.AutoSize = true;
+            this.lblUnCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblUnCompleteCount.ForeColor = System.Drawing.Color.DeepPink;
+            this.lblUnCompleteCount.Location = new System.Drawing.Point(307, 50);
+            this.lblUnCompleteCount.Name = "lblUnCompleteCount";
+            this.lblUnCompleteCount.Size = new System.Drawing.Size(48, 26);
+            this.lblUnCompleteCount.TabIndex = 3;
+            this.lblUnCompleteCount.Text = "600";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(232, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 26);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "未完成";
+            // 
+            // lblHasCompleteCount
+            // 
+            this.lblHasCompleteCount.AutoSize = true;
+            this.lblHasCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblHasCompleteCount.ForeColor = System.Drawing.Color.Green;
+            this.lblHasCompleteCount.Location = new System.Drawing.Point(122, 50);
+            this.lblHasCompleteCount.Name = "lblHasCompleteCount";
+            this.lblHasCompleteCount.Size = new System.Drawing.Size(60, 26);
+            this.lblHasCompleteCount.TabIndex = 1;
+            this.lblHasCompleteCount.Text = "2000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(47, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "已完成";
+            // 
             // gbExpList
             // 
+            this.gbExpList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbExpList.Controls.Add(this.dgvExpList);
             this.gbExpList.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.gbExpList.ForeColor = System.Drawing.Color.Navy;
@@ -198,19 +200,11 @@
             this.dgvExpList.Location = new System.Drawing.Point(6, 32);
             this.dgvExpList.MultiSelect = false;
             this.dgvExpList.Name = "dgvExpList";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvExpList.RowHeadersWidth = 28;
             this.dgvExpList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvExpList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvExpList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvExpList.RowTemplate.Height = 23;
             this.dgvExpList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExpList.Size = new System.Drawing.Size(878, 630);

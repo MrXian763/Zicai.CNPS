@@ -22,6 +22,17 @@ namespace Zicai.CaiNiaoPostStation.Utility
         }
 
         /// <summary>
+        /// 从导航页打开对应页面
+        /// </summary>
+        /// <typeparam name="T">当前导航页</typeparam>
+        /// <param name="tab"></param>
+        public static void ShowNavForm<T>(this Form currentForm) where T : Form
+        {
+            TabControl tab = currentForm.Parent.Parent as TabControl;
+            tab.ShowTabFormPage<T>();
+        }
+
+        /// <summary>
         /// 显示异常信息
         /// </summary>
         /// <param name="lblErr">要显示的标签</param>
