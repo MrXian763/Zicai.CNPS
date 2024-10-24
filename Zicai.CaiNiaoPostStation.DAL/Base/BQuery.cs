@@ -66,7 +66,7 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// <returns></returns>
         public bool ExistsByName(string sName, string vName)
         {
-            string strWhere = $"{sName}=@vName and IsDeleted=0";
+            string strWhere = $"{sName} = @vName and IsDeleted = 0";
             SqlParameter para = new SqlParameter("@vName", vName);
             return Exists(strWhere, para);
         }
@@ -103,10 +103,11 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// <summary>
         /// 条件查询数据列表
         /// </summary>
-        /// <param name="strWhere"></param>
-        /// <param name="strCols"></param>
-        /// <param name="paras"></param>
-        /// <returns></returns>
+        /// <param name="strWhere">查询条件</param>
+        /// <param name="strCols">要查询的列</param>
+        /// <param name="orderBy">排序字段</param>
+        /// <param name="paras">查询参数</param>
+        /// <returns>数据列表</returns>
         public List<T> GetModelList(string strWhere, string cols, string orderBy, params SqlParameter[] paras)
         {
             string sql = CreateSql.CreateSelectSql<T>(cols, strWhere, orderBy);
@@ -190,13 +191,13 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// 分页查询
         /// </summary>
         /// <typeparam name="S"></typeparam>
-        /// <param name="strWhere"></param>
-        /// <param name="cols"></param>
-        /// <param name="rowName"></param>
-        /// <param name="orderbyCol"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="paras"></param>
+        /// <param name="strWhere"查询条件></param>
+        /// <param name="cols">查询的列</param>
+        /// <param name="rowName">行序</param>
+        /// <param name="orderbyCol">排序方式</param>
+        /// <param name="startIndex">开始页码</param>
+        /// <param name="pageSize">每页数据大小</param>
+        /// <param name="paras">查询条件值</param>
         /// <returns></returns>
         public PageModel<S> GetRowsModelList<S>(string strWhere, string cols, string rowName, string orderbyCol, int startIndex, int pageSize, params SqlParameter[] paras)
         {
@@ -204,10 +205,10 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
             string sql = CreateSql.CreateRowSelectSql<T>(cols, strWhere, rowName, orderbyCol);
             //生成查询分页的sql(两部分，1.获取总记录数  2 获取当页列表)
             string sqlNew = $"select count(1) from ({sql}) as temp;select * from  ({sql}) as temp where   {rowName} between {startIndex} and {startIndex + pageSize - 1} ";
-            DataSet ds = GetDs(sqlNew, 1, paras);
+            DataSet ds = GetDs(sqlNew, 1, paras); // 执行 SQL 查询并获取结果集
             int totalCount = ds.Tables[0].Rows[0][0].GetInt();
-            DataTable dtList = ds.Tables[1];
-            List<S> list = DbConvert.DataTableToList<S>(dtList, cols + "," + rowName);
+            DataTable dtList = ds.Tables[1]; // 获取总记录数
+            List<S> list = DbConvert.DataTableToList<S>(dtList, cols + "," + rowName); // 获取当前页的数据表
             return new PageModel<S>() { TotalCount = totalCount, PageList = list };
         }
     }

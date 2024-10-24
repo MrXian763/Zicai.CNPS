@@ -89,7 +89,7 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
             Type type = typeof(T);
             string tableName = type.GetTName();
 
-            sql = $"delete from {tableName} where 1=1";
+            sql = $"delete from {tableName} where 1 = 1";
             if (!string.IsNullOrEmpty(strWhere))
                 sql += " and " + strWhere;
             return sql;
@@ -99,15 +99,15 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// 生成逻辑删除或恢复语句
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="strWhere"></param>
+        /// <param name="strWhere">删除条件</param>
         /// <param name="isDeleted"></param>
         /// <returns></returns>
-        public static string CreateLogicDeleteSql<T>(string strWhere, int isDeleted,string delName="IsDeleted")
+        public static string CreateLogicDeleteSql<T>(string strWhere, int isDeleted, string delName = "IsDeleted")
         {
             string sql = "";
             Type type = typeof(T);
-            string tableName = type.GetTName();
-            sql = $"update  {tableName} set {delName}={isDeleted} where 1=1";
+            string tableName = type.GetTName(); // 反射通过数据模型名称获取表名
+            sql = $"update  {tableName} set {delName} = {isDeleted} where 1 = 1";
             if (!string.IsNullOrEmpty(strWhere))
                 sql += " and " + strWhere;
             return sql;
@@ -116,10 +116,10 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// <summary>
         /// 生成查询语句（单表   简单查询）
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="cols"></param>
-        /// <param name="strWhere"></param>
-        /// <param name="orderby"></param>
+        /// <typeparam name="T">数据模型</typeparam>
+        /// <param name="cols">查询的列</param>
+        /// <param name="strWhere">查询条件</param>
+        /// <param name="orderby">排序字段</param>
         /// <returns></returns>
         public static string CreateSelectSql<T>(string cols, string strWhere, string orderby)
         {
@@ -167,9 +167,9 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// <summary>
         /// 指定不包含列名 ，返回需要的列名
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="notHasCols"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">对应实体类</typeparam>
+        /// <param name="notHasCols">要排除的列名</param>
+        /// <returns>所有属性列查询语句</returns>
         public static string GetColNames<T>(string notHasCols)
         {
             string cols = "";

@@ -12,10 +12,17 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
 {
     public class DbConvert
     {
+        /// <summary>
+        ///  DataRow 转换为指定类型 T 的模型对象
+        /// </summary>
+        /// <typeparam name="T">数据模型</typeparam>
+        /// <param name="dr">要转换的数据行</param>
+        /// <param name="cols">列数据</param>
+        /// <returns>要转换为的类型</returns>
         public static T DataRowToModel<T>(DataRow dr, string cols)
         {
-            T model = Activator.CreateInstance<T>();
-            PropertyInfo[] properties = PropertyHelper.GetProperties<T>(cols);
+            T model = Activator.CreateInstance<T>(); // 反射创建模型实例
+            PropertyInfo[] properties = PropertyHelper.GetProperties<T>(cols); // 获取属性信息
             if (dr != null)
             {
                 foreach (PropertyInfo p in properties)
@@ -24,15 +31,12 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
                     if (dr[colName] is DBNull)
                         p.SetValue(model, null);
                     else
-                    {
-                        SetPropertyValue(p, model, dr[colName]);
-                    }
+                        SetPropertyValue(p, model, dr[colName]); // 设置属性值
                 }
-                return model;
+                return model; // 返回填充好的模型实例
             }
             else
-                return default(T);
-
+                return default(T); // 如果 DataRow 为空，返回类型 T 的默认值
         }
 
         /// <summary>
@@ -45,7 +49,7 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         public static List<T> DataTableToList<T>(DataTable dt, string cols)
         {
             List<T> list = new List<T>();
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0) // 检查数据表是否有数据
             {
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -121,8 +125,15 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
             return list;
         }
 
+        /// <summary>
+        /// 将值赋给指定对象的属性
+        /// </summary>
+        /// <param name="p">要设置值的属性信息</param>
+        /// <param name="model">目标对象实例</param>
+        /// <param name="val">要赋值的对象，可以是任何类型</param>
         private static void SetPropertyValue(PropertyInfo p, object model, object val)
         {
+            // 泛型以及可空类型检查
             if (p.PropertyType.IsGenericType && p.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
             {
                 p.SetValue(model, Convert.ChangeType(val, Nullable.GetUnderlyingType(p.PropertyType)));

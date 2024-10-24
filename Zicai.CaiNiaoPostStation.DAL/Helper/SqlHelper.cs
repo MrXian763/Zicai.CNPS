@@ -56,16 +56,10 @@ namespace Helper
                 result = cmd.ExecuteScalar();//执行T-SQL并返回第一行第一列的值
                 cmd.Parameters.Clear();
                 if (result == null || result == DBNull.Value)
-                {
                     return null;
-                }
                 else
-                {
                     return result;
-                }
             }
-
-
         }
 
         /// <summary>
@@ -77,8 +71,8 @@ namespace Helper
         /// <returns></returns>
         public static SqlDataReader ExecuteReader(string sql, int cmdType, params SqlParameter[] parameters)
         {
-            SqlConnection conn = new SqlConnection(connStr);
-            SqlCommand cmd = BuilderCommand(conn, sql, cmdType, null, parameters);
+            SqlConnection conn = new SqlConnection(connStr); // 创建数据库链接
+            SqlCommand cmd = BuilderCommand(conn, sql, cmdType, null, parameters); // 构建SQL命令对象
             SqlDataReader reader;
             try
             {
@@ -90,7 +84,6 @@ namespace Helper
                 conn.Close();
                 throw new Exception("创建reader对象发生异常", ex);
             }
-
         }
 
         /// <summary>
@@ -239,23 +232,24 @@ namespace Helper
         /// <param name="comType">命令字符串的类型</param>
         /// <param name="trans">事务</param>
         /// <param name="paras">参数数组</param>
-        /// <returns></returns>
+        /// <returns>命令对象</returns>
         private static SqlCommand BuilderCommand(SqlConnection conn, string sql, int cmdType, SqlTransaction trans, params SqlParameter[] paras)
         {
             if (conn == null) throw new ArgumentNullException("连接对象不能为空！");
             SqlCommand command = new SqlCommand(sql, conn);
             if (cmdType == 2)
-                command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure; // 设置命令类型为存储过程
             if (conn.State == ConnectionState.Closed)
-                conn.Open();
+                conn.Open(); // 打开连接
             if (trans != null)
-                command.Transaction = trans;
+                command.Transaction = trans; // 设置事务
             if (paras != null && paras.Length > 0)
             {
+                // 添加参数
                 command.Parameters.Clear();
                 command.Parameters.AddRange(paras);
             }
-            return command;
+            return command; // 返回命令对象
         }
 
         /// <summary>
