@@ -22,9 +22,9 @@ namespace Zicai.CaiNiaoPostStation.UControls
         // 定义委托
         public delegate void PageHandler(object sender, EventArgs e);
         // 声明翻页事件
-        public event PageHandler PageChange;
+        public event PageHandler PageChanged;
 
-        private int record;
+        private int record = 0;
         /// <summary>
         /// 总记录数
         /// </summary>
@@ -69,6 +69,7 @@ namespace Zicai.CaiNiaoPostStation.UControls
         }
 
         private int pageNum;
+
         /// <summary>
         /// 总页数
         /// </summary>
@@ -77,15 +78,13 @@ namespace Zicai.CaiNiaoPostStation.UControls
             get 
             {
                 if (record == 0)
-                {
                     pageNum = 0;
-                }
                 else
                 {
                     if (Record % PageSize > 0)
-                        Record = Record / PageSize + 1;
+                        pageNum = Record / PageSize + 1;
                     else
-                        Record = Record / PageSize;
+                        pageNum = Record / PageSize;
                 }
                 return pageNum;
             }
@@ -101,9 +100,9 @@ namespace Zicai.CaiNiaoPostStation.UControls
         /// </summary>
         private void OnPageChanged()
         {
-            if (PageChange != null)
+            if (PageChanged != null)
             {
-                PageChange(this, new EventArgs());
+                PageChanged(this, new EventArgs());
                 InitPageInfo();
             }
         }

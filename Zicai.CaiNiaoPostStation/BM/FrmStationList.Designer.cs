@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbStationInfo = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -54,12 +54,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvStationList = new System.Windows.Forms.DataGridView();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRecover = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.chkShowDel = new System.Windows.Forms.CheckBox();
-            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colStationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStationNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +67,12 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnQuery = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRecover = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.chkShowDel = new System.Windows.Forms.CheckBox();
+            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.gbStationInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +139,7 @@
             this.btnOk.TabIndex = 17;
             this.btnOk.Text = "添加";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // chkIsRunning
             // 
@@ -174,6 +175,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(297, 29);
             this.txtPhone.TabIndex = 12;
+            this.txtPhone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtManager
             // 
@@ -181,6 +183,7 @@
             this.txtManager.Name = "txtManager";
             this.txtManager.Size = new System.Drawing.Size(153, 29);
             this.txtManager.TabIndex = 11;
+            this.txtManager.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtAddress
             // 
@@ -188,6 +191,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(429, 29);
             this.txtAddress.TabIndex = 10;
+            this.txtAddress.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtStationName
             // 
@@ -195,6 +199,8 @@
             this.txtStationName.Name = "txtStationName";
             this.txtStationName.Size = new System.Drawing.Size(297, 29);
             this.txtStationName.TabIndex = 9;
+            this.txtStationName.TextChanged += new System.EventHandler(this.txtStationName_TextChanged);
+            this.txtStationName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtStationNo
             // 
@@ -202,6 +208,7 @@
             this.txtStationNo.Name = "txtStationNo";
             this.txtStationNo.Size = new System.Drawing.Size(153, 29);
             this.txtStationNo.TabIndex = 1;
+            this.txtStationNo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // lblErrMsg
             // 
@@ -342,14 +349,14 @@
             this.dgvStationList.BackgroundColor = System.Drawing.Color.White;
             this.dgvStationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStationList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStationList.ColumnHeadersHeight = 33;
             this.dgvStationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -373,103 +380,14 @@
             this.dgvStationList.Name = "dgvStationList";
             this.dgvStationList.RowHeadersWidth = 28;
             this.dgvStationList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStationList.RowTemplate.Height = 23;
             this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStationList.Size = new System.Drawing.Size(1317, 487);
             this.dgvStationList.TabIndex = 22;
-            // 
-            // btnQuery
-            // 
-            this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnQuery.FlatAppearance.BorderSize = 0;
-            this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(721, 174);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(85, 31);
-            this.btnQuery.TabIndex = 23;
-            this.btnQuery.Text = "查询";
-            this.btnQuery.UseVisualStyleBackColor = false;
-            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(831, 174);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(85, 31);
-            this.btnDelete.TabIndex = 24;
-            this.btnDelete.Text = "删除";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnRecover
-            // 
-            this.btnRecover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecover.BackColor = System.Drawing.Color.Blue;
-            this.btnRecover.FlatAppearance.BorderSize = 0;
-            this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecover.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnRecover.ForeColor = System.Drawing.Color.White;
-            this.btnRecover.Location = new System.Drawing.Point(947, 174);
-            this.btnRecover.Name = "btnRecover";
-            this.btnRecover.Size = new System.Drawing.Size(85, 31);
-            this.btnRecover.TabIndex = 25;
-            this.btnRecover.Text = "恢复";
-            this.btnRecover.UseVisualStyleBackColor = false;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(1063, 174);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(85, 31);
-            this.btnRemove.TabIndex = 26;
-            this.btnRemove.Text = "移除";
-            this.btnRemove.UseVisualStyleBackColor = false;
-            // 
-            // chkShowDel
-            // 
-            this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkShowDel.AutoSize = true;
-            this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.chkShowDel.Location = new System.Drawing.Point(1259, 176);
-            this.chkShowDel.Name = "chkShowDel";
-            this.chkShowDel.Size = new System.Drawing.Size(70, 23);
-            this.chkShowDel.TabIndex = 27;
-            this.chkShowDel.Text = "已删除";
-            this.chkShowDel.UseVisualStyleBackColor = true;
-            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
-            // 
-            // uPager1
-            // 
-            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(16, 702);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1317, 47);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 28;
-            this.uPager1.PageChange += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChange);
+            this.dgvStationList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStationList_CellContentClick);
             // 
             // colChk
             // 
@@ -575,6 +493,96 @@
             this.colRemove.Text = "移除";
             this.colRemove.TrackVisitedState = false;
             this.colRemove.UseColumnTextForLinkValue = true;
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnQuery.FlatAppearance.BorderSize = 0;
+            this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnQuery.ForeColor = System.Drawing.Color.White;
+            this.btnQuery.Location = new System.Drawing.Point(721, 174);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(85, 31);
+            this.btnQuery.TabIndex = 23;
+            this.btnQuery.Text = "查询";
+            this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(831, 174);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(85, 31);
+            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Text = "删除";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnRecover
+            // 
+            this.btnRecover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRecover.BackColor = System.Drawing.Color.Blue;
+            this.btnRecover.FlatAppearance.BorderSize = 0;
+            this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecover.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRecover.ForeColor = System.Drawing.Color.White;
+            this.btnRecover.Location = new System.Drawing.Point(947, 174);
+            this.btnRecover.Name = "btnRecover";
+            this.btnRecover.Size = new System.Drawing.Size(85, 31);
+            this.btnRecover.TabIndex = 25;
+            this.btnRecover.Text = "恢复";
+            this.btnRecover.UseVisualStyleBackColor = false;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.Location = new System.Drawing.Point(1063, 174);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(85, 31);
+            this.btnRemove.TabIndex = 26;
+            this.btnRemove.Text = "移除";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            // 
+            // chkShowDel
+            // 
+            this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkShowDel.AutoSize = true;
+            this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.chkShowDel.Location = new System.Drawing.Point(1259, 176);
+            this.chkShowDel.Name = "chkShowDel";
+            this.chkShowDel.Size = new System.Drawing.Size(70, 23);
+            this.chkShowDel.TabIndex = 27;
+            this.chkShowDel.Text = "已删除";
+            this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
+            // 
+            // uPager1
+            // 
+            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(16, 702);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1317, 47);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 28;
+            this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChange);
             // 
             // FrmStationList
             // 

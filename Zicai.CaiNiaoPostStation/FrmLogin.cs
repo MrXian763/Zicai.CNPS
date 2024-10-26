@@ -43,13 +43,13 @@ namespace Zicai.CaiNiaoPostStation
             // 非空检查
             if (string.IsNullOrEmpty(userName))
             {
-                lblErrMsg.SerErrorMsg("请输入账号！");
+                lblErrMsg.SetErrorMsg("请输入账号！");
                 txtUserName.Focus(); // 指针聚焦到输入框
                 return;
             }
             if (string.IsNullOrEmpty(password))
             {
-                lblErrMsg.SerErrorMsg("请输入密码！");
+                lblErrMsg.SetErrorMsg("请输入密码！");
                 txtPassword.Focus(); // 指针聚焦到输入框
                 return;
             }
@@ -72,7 +72,7 @@ namespace Zicai.CaiNiaoPostStation
             else
             {
                 // 登录失败
-                lblErrMsg.SerErrorMsg(loginRes);
+                lblErrMsg.SetErrorMsg(loginRes);
                 return;
             }
         }

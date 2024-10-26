@@ -281,7 +281,7 @@
             this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(12, 3, 0, 2);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 36);
-            this.toolStripStatusLabel1.Text = "登录时间：";
+            this.toolStripStatusLabel1.Text = "当前时间：";
             // 
             // lblLoginTime
             // 

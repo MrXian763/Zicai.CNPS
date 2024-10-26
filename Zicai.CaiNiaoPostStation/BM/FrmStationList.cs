@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Zhaoxi.CainiaoPostStation.Models.UIModels;
 using Zicai.CaiNiaoPostStation.BLL;
 using Zicai.CaiNiaoPostStation.Models;
+using Zicai.CaiNiaoPostStation.Utility;
+using ZiCai.CaiNiaoPostStation.Utility;
+using ZXIMEW.Common;
 
 namespace Zicai.CaiNiaoPostStation.BM
 {
@@ -22,7 +25,7 @@ namespace Zicai.CaiNiaoPostStation.BM
 
         StationBLL stationBLL = new StationBLL();
 
-        int actType = 1; // 信息提交状态
+        int actType = 1; // 信息提交状态 1-新增；2-修改
         int editStationId = 0; // 当前正在修改的站点ID
         bool isFirst = true; // 是否第一次加载
         int totalCount = 0; // 总站点数
@@ -150,6 +153,218 @@ namespace Zicai.CaiNiaoPostStation.BM
         private void btnReset_Click(object sender, EventArgs e)
         {
             InitStationInfo(); // 初始化站点信息栏
+        }
+
+        List<StationInfo> selectedStations = new List<StationInfo>(); // 选择行的数据列表
+
+        /// <summary>
+        /// 表格行内容单元格点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvStationList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = dgvStationList.Rows[e.RowIndex].Cells[e.ColumnIndex]; // 获取当前单元格
+            StationInfo stationInfo = dgvStationList.SelectedRows[e.RowIndex].DataBoundItem as StationInfo;
+
+            // 选择行
+            if (cell is DataGridViewCheckBoxCell) // 多选框
+            {
+                if (cell.FormattedValue.ToString() == "True")
+                    selectedStations.Add(stationInfo); // 添加到已选择列表
+                else
+                    selectedStations.Remove(stationInfo); // 从已选择列表移除
+            }
+            else if (cell is DataGridViewLinkCell) // 操作按钮
+            {
+                string cellValue = cell.FormattedValue.ToString();
+                switch (cellValue)
+                {
+                    case "修改":
+                        InitEditStationInfo(stationInfo);
+                        break;
+                    case "删除":
+                        DeleteStation(stationInfo, 1);
+                        break;
+                    case "恢复":
+                        DeleteStation(stationInfo, 0);
+                        break;
+                    case "移除":
+                        DeleteStation(stationInfo, 2);
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 编辑站点信息加载到信息栏
+        /// </summary>
+        /// <param name="stationInfo">要编辑的站点</param>
+        private void InitEditStationInfo(StationInfo stationInfo)
+        {
+            if (stationInfo != null)
+            {
+                txtStationNo.Text = stationInfo.StationNo;
+                txtStationName.Text = stationInfo.StationName;
+                txtAddress.Text = stationInfo.Address;
+                txtManager.Text = stationInfo.Manager;
+                txtPhone.Text = stationInfo.Phone;
+                txtPYNo.Text = stationInfo.StationPYNo;
+                txtRemark.Text = stationInfo.Remark;
+                chkIsRunning.Checked = stationInfo.IsRunning;
+                editStationId = stationInfo.StationId;
+                oldName = stationInfo.StationName;
+                oldNo = stationInfo.StationNo;
+                actType = 2; // 信息提交状态设置为修改
+                btnOk.Text = "修改"; // 按钮文字设置为修改
+            }
+        }
+
+        /// <summary>
+        /// 删除、恢复、移除单个站点
+        /// </summary>
+        /// <param name="station">要操作的站点</param>
+        /// <param name="isDeleted">1-删除；0-恢复；2-移除</param>
+        private void DeleteStation(StationInfo station, int isDeleted)
+        {
+
+        }
+
+        /// <summary>
+        /// 确认提交信息按钮触发
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            //接收信息
+            string stationNo = txtStationNo.Text.Trim();
+            string stationName = txtStationName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            string manager = txtManager.Text.Trim();
+            string phone = txtPhone.Text.Trim();
+            string pyno = txtPYNo.Text.Trim();
+            bool isRunning = chkIsRunning.Checked;
+            string remark = txtRemark.Text.Trim();
+            //信息检查
+            if (string.IsNullOrEmpty(stationNo))
+            {
+                lblErrMsg.SetErrorMsg("请输入站点编码！");
+                txtStationNo.Focus(); // 指针聚焦到输入框
+                return;
+            }
+            else if ((actType == 1 || (actType == 2 && oldNo != stationNo)) && stationBLL.ExistStationNo(stationNo))
+            {
+                // （新增操作 || （操作类型为修改 && 新的站点编号与旧的不一样） && 已存在站点编号）
+                lblErrMsg.SetErrorMsg("该站点编码已存在！");
+                txtStationNo.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(stationName))
+            {
+                lblErrMsg.SetErrorMsg("请输入站点名称！");
+                txtStationName.Focus();
+                return;
+            }
+            else if ((actType == 1 || (actType == 2 && oldName != stationName)) && stationBLL.ExistStationName(stationName))
+            {
+                // （新增操作 || （操作类型为修改 && 新的站点名称与旧的不一样） && 已存在站点名称）
+                lblErrMsg.SetErrorMsg("该站点名称已存在！");
+                txtStationName.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(address))
+            {
+                lblErrMsg.SetErrorMsg("请输入站点地址！");
+                txtAddress.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(manager))
+            {
+                lblErrMsg.SetErrorMsg("请输入站点管理者！");
+                txtManager.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(phone))
+            {
+                lblErrMsg.SetErrorMsg("请输入站点联系电话！");
+                txtPhone.Focus();
+                return;
+            }
+            //封装信息
+            StationInfo station = new StationInfo()
+            {
+                StationId = editStationId,
+                StationNo = stationNo,
+                StationName = stationName,
+                Address = address,
+                Manager = manager,
+                Phone = phone,
+                StationPYNo = pyno,
+                IsRunning = isRunning,
+                Remark = remark
+            };
+            //提交处理
+            if (actType == 1) // 新增
+            {
+                int reId = stationBLL.AddStation(station);
+                if (reId > 0) // 新增成功
+                {
+                    MessageHelper.Info("添加站点", $"站点：{stationName} 添加成功！");
+                    station.StationId = reId;
+                    // 添加站点信息到站点列表中
+                    dgvStationList.UpdateDgv(1, station, 0);
+                    editStationId = reId;// 设置当前编辑的站点ID为新增的ID
+                    btnOk.Text = "修改"; //  按钮文字设置为修改
+                    actType = 2; // 信息提交状态设置为修改
+                    oldName = stationName; // 更新站点名称
+                    oldNo = stationNo; // 更新站点编号
+                }
+                else // 新增失败
+                {
+                    lblErrMsg.SetErrorMsg("站点信息添加失败！");
+                    return;
+                }
+            }
+            else // 修改
+            {
+                bool blEdit = stationBLL.UpdateStation(station);
+                if (blEdit) // 修改成功
+                {
+                    MessageHelper.Info("修改站点", $"站点：{stationName} 修改成功！");
+                    oldName = stationName; // 更新站点名称
+                    oldNo = stationNo; // 更新站点编号
+                    //更新站点信息到站点列表中
+                    dgvStationList.UpdateDgv(2, station, editStationId);
+                }
+                else
+                {
+                    lblErrMsg.SetErrorMsg("站点信息修改失败！");
+                    return;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 站点名称文本框内容改变触发生成拼音码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtStationName_TextChanged(object sender, EventArgs e)
+        {
+            string stationName = txtStationName.Text.Trim();
+            txtPYNo.Text = PingYinHelper.GetFirstSpell(stationName);
+        }
+
+        /// <summary>
+        /// 鼠标点击文本框触发
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblErrMsg.Visible = false; // 隐藏错误消息
+            lblErrMsg.Text = ""; // 清空消息
         }
     }
 }

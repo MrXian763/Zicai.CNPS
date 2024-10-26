@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,7 @@ namespace Zicai.CaiNiaoPostStation.Utility
         /// </summary>
         /// <param name="lblErr">要显示的标签</param>
         /// <param name="msg">异常信息</param>
-        public static void SerErrorMsg(this Label lblErr, string msg)
+        public static void SetErrorMsg(this Label lblErr, string msg)
         {
             if (!lblErr.Visible)
                 lblErr.Visible = true;
@@ -110,6 +111,41 @@ namespace Zicai.CaiNiaoPostStation.Utility
                     frm.Close();
                     break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// 更新DataGridView数据
+        /// </summary>
+        /// <typeparam name="T">要更新的数据模型</typeparam>
+        /// <param name="dgv">要更新的表格</param>
+        /// <param name="actType">更新类型：1-添加；2-修改</param>
+        /// <param name="info">新数据</param>
+        /// <param name="id">当前行数据主键</param>
+        public static void UpdateDgv<T>(this DataGridView dgv, int actType, T info, int id)
+        {
+            List<T> list = dgv.DataSource as List<T>;
+            if (list == null)
+                list = new List<T>();
+            dgv.DataSource = null;
+            if (actType == 1) // 添加
+                list.Add(info);
+            else if (actType == 2) // 修改
+            {
+                int index = -1; // 要更新的行索引
+                Type type = typeof(T);
+                string keyName = type.GetPrimaryName(); // 主键名
+                foreach (T t in list)
+                {
+                    int uid = (int) type.GetProperty(keyName).GetValue(t);
+                    if (uid == id)
+                    {
+                        index = list.IndexOf(t); // 找到要更新的行索引位置
+                        break;
+                    }
+                }
+                list[index] = info;
+                dgv.DataSource = list;
             }
         }
     }

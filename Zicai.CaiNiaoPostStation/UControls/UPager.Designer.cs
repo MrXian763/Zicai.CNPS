@@ -126,7 +126,6 @@
             this.btnGoPage.TabIndex = 5;
             this.btnGoPage.Text = "转到";
             this.btnGoPage.UseVisualStyleBackColor = false;
-            this.btnGoPage.Click += new System.EventHandler(this.btnGoPage_Click);
             // 
             // txtPage
             // 
