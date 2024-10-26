@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.gbStationInfo = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.chkIsRunning = new System.Windows.Forms.CheckBox();
@@ -54,6 +54,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvStationList = new System.Windows.Forms.DataGridView();
+            this.btnQuery = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRecover = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.chkShowDel = new System.Windows.Forms.CheckBox();
+            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colStationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStationNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,47 +73,41 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.btnQuery = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRecover = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.chkShowDel = new System.Windows.Forms.CheckBox();
-            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
-            this.groupBox1.SuspendLayout();
+            this.gbStationInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbStationInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbStationInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnReset);
-            this.groupBox1.Controls.Add(this.btnOk);
-            this.groupBox1.Controls.Add(this.chkIsRunning);
-            this.groupBox1.Controls.Add(this.txtRemark);
-            this.groupBox1.Controls.Add(this.txtPYNo);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.txtManager);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.txtStationName);
-            this.groupBox1.Controls.Add(this.txtStationNo);
-            this.groupBox1.Controls.Add(this.lblErrMsg);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(3, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1345, 165);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "站点信息";
+            this.gbStationInfo.Controls.Add(this.btnReset);
+            this.gbStationInfo.Controls.Add(this.btnOk);
+            this.gbStationInfo.Controls.Add(this.chkIsRunning);
+            this.gbStationInfo.Controls.Add(this.txtRemark);
+            this.gbStationInfo.Controls.Add(this.txtPYNo);
+            this.gbStationInfo.Controls.Add(this.txtPhone);
+            this.gbStationInfo.Controls.Add(this.txtManager);
+            this.gbStationInfo.Controls.Add(this.txtAddress);
+            this.gbStationInfo.Controls.Add(this.txtStationName);
+            this.gbStationInfo.Controls.Add(this.txtStationNo);
+            this.gbStationInfo.Controls.Add(this.lblErrMsg);
+            this.gbStationInfo.Controls.Add(this.label8);
+            this.gbStationInfo.Controls.Add(this.label7);
+            this.gbStationInfo.Controls.Add(this.label6);
+            this.gbStationInfo.Controls.Add(this.label5);
+            this.gbStationInfo.Controls.Add(this.label4);
+            this.gbStationInfo.Controls.Add(this.label3);
+            this.gbStationInfo.Controls.Add(this.label2);
+            this.gbStationInfo.Controls.Add(this.label1);
+            this.gbStationInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbStationInfo.ForeColor = System.Drawing.Color.Blue;
+            this.gbStationInfo.Location = new System.Drawing.Point(3, 1);
+            this.gbStationInfo.Name = "gbStationInfo";
+            this.gbStationInfo.Size = new System.Drawing.Size(1345, 165);
+            this.gbStationInfo.TabIndex = 0;
+            this.gbStationInfo.TabStop = false;
+            this.gbStationInfo.Text = "站点信息";
             // 
             // btnReset
             // 
@@ -123,6 +123,7 @@
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOk
             // 
@@ -341,14 +342,14 @@
             this.dgvStationList.BackgroundColor = System.Drawing.Color.White;
             this.dgvStationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStationList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStationList.ColumnHeadersHeight = 33;
             this.dgvStationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -372,110 +373,13 @@
             this.dgvStationList.Name = "dgvStationList";
             this.dgvStationList.RowHeadersWidth = 28;
             this.dgvStationList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStationList.RowTemplate.Height = 23;
             this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStationList.Size = new System.Drawing.Size(1317, 487);
             this.dgvStationList.TabIndex = 22;
-            // 
-            // colChk
-            // 
-            this.colChk.FillWeight = 50F;
-            this.colChk.HeaderText = "选择";
-            this.colChk.Name = "colChk";
-            // 
-            // colStationId
-            // 
-            this.colStationId.HeaderText = "站点编号";
-            this.colStationId.Name = "colStationId";
-            this.colStationId.ReadOnly = true;
-            // 
-            // colStationNo
-            // 
-            this.colStationNo.HeaderText = "站点编码";
-            this.colStationNo.Name = "colStationNo";
-            this.colStationNo.ReadOnly = true;
-            // 
-            // colStationName
-            // 
-            this.colStationName.FillWeight = 200F;
-            this.colStationName.HeaderText = "站点名称";
-            this.colStationName.Name = "colStationName";
-            this.colStationName.ReadOnly = true;
-            // 
-            // colStationPYNo
-            // 
-            this.colStationPYNo.HeaderText = "拼音码";
-            this.colStationPYNo.Name = "colStationPYNo";
-            this.colStationPYNo.ReadOnly = true;
-            // 
-            // colAddress
-            // 
-            this.colAddress.FillWeight = 200F;
-            this.colAddress.HeaderText = "地址";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            // 
-            // colManager
-            // 
-            this.colManager.HeaderText = "管理者";
-            this.colManager.Name = "colManager";
-            this.colManager.ReadOnly = true;
-            // 
-            // colPhone
-            // 
-            this.colPhone.HeaderText = "联系电话";
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            // 
-            // colRunning
-            // 
-            this.colRunning.FillWeight = 50F;
-            this.colRunning.HeaderText = "运营";
-            this.colRunning.Name = "colRunning";
-            this.colRunning.ReadOnly = true;
-            // 
-            // colEdit
-            // 
-            this.colEdit.FillWeight = 60F;
-            this.colEdit.HeaderText = "修改";
-            this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Text = "修改";
-            this.colEdit.TrackVisitedState = false;
-            this.colEdit.UseColumnTextForLinkValue = true;
-            // 
-            // colDel
-            // 
-            this.colDel.FillWeight = 60F;
-            this.colDel.HeaderText = "删除";
-            this.colDel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colDel.Name = "colDel";
-            this.colDel.Text = "删除";
-            this.colDel.TrackVisitedState = false;
-            this.colDel.UseColumnTextForLinkValue = true;
-            // 
-            // colRecover
-            // 
-            this.colRecover.FillWeight = 60F;
-            this.colRecover.HeaderText = "恢复";
-            this.colRecover.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colRecover.Name = "colRecover";
-            this.colRecover.Text = "恢复";
-            this.colRecover.TrackVisitedState = false;
-            this.colRecover.UseColumnTextForLinkValue = true;
-            // 
-            // colRemove
-            // 
-            this.colRemove.FillWeight = 60F;
-            this.colRemove.HeaderText = "移除";
-            this.colRemove.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colRemove.Name = "colRemove";
-            this.colRemove.Text = "移除";
-            this.colRemove.TrackVisitedState = false;
-            this.colRemove.UseColumnTextForLinkValue = true;
             // 
             // btnQuery
             // 
@@ -491,6 +395,7 @@
             this.btnQuery.TabIndex = 23;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // btnDelete
             // 
@@ -549,6 +454,7 @@
             this.chkShowDel.TabIndex = 27;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // uPager1
             // 
@@ -563,6 +469,112 @@
             this.uPager1.Size = new System.Drawing.Size(1317, 47);
             this.uPager1.StartIndex = 1;
             this.uPager1.TabIndex = 28;
+            this.uPager1.PageChange += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChange);
+            // 
+            // colChk
+            // 
+            this.colChk.FillWeight = 50F;
+            this.colChk.HeaderText = "选择";
+            this.colChk.Name = "colChk";
+            // 
+            // colStationId
+            // 
+            this.colStationId.DataPropertyName = "StationId";
+            this.colStationId.HeaderText = "站点编号";
+            this.colStationId.Name = "colStationId";
+            this.colStationId.ReadOnly = true;
+            // 
+            // colStationNo
+            // 
+            this.colStationNo.DataPropertyName = "StationNo";
+            this.colStationNo.HeaderText = "站点编码";
+            this.colStationNo.Name = "colStationNo";
+            this.colStationNo.ReadOnly = true;
+            // 
+            // colStationName
+            // 
+            this.colStationName.DataPropertyName = "StationName";
+            this.colStationName.FillWeight = 200F;
+            this.colStationName.HeaderText = "站点名称";
+            this.colStationName.Name = "colStationName";
+            this.colStationName.ReadOnly = true;
+            // 
+            // colStationPYNo
+            // 
+            this.colStationPYNo.DataPropertyName = "StationPYNo";
+            this.colStationPYNo.HeaderText = "拼音码";
+            this.colStationPYNo.Name = "colStationPYNo";
+            this.colStationPYNo.ReadOnly = true;
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "Address";
+            this.colAddress.FillWeight = 200F;
+            this.colAddress.HeaderText = "地址";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            // 
+            // colManager
+            // 
+            this.colManager.DataPropertyName = "Manager";
+            this.colManager.HeaderText = "管理者";
+            this.colManager.Name = "colManager";
+            this.colManager.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.HeaderText = "联系电话";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            // 
+            // colRunning
+            // 
+            this.colRunning.DataPropertyName = "IsRunning";
+            this.colRunning.FillWeight = 50F;
+            this.colRunning.HeaderText = "运营";
+            this.colRunning.Name = "colRunning";
+            this.colRunning.ReadOnly = true;
+            // 
+            // colEdit
+            // 
+            this.colEdit.FillWeight = 60F;
+            this.colEdit.HeaderText = "修改";
+            this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colEdit.Name = "colEdit";
+            this.colEdit.Text = "修改";
+            this.colEdit.TrackVisitedState = false;
+            this.colEdit.UseColumnTextForLinkValue = true;
+            // 
+            // colDel
+            // 
+            this.colDel.FillWeight = 60F;
+            this.colDel.HeaderText = "删除";
+            this.colDel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colDel.Name = "colDel";
+            this.colDel.Text = "删除";
+            this.colDel.TrackVisitedState = false;
+            this.colDel.UseColumnTextForLinkValue = true;
+            // 
+            // colRecover
+            // 
+            this.colRecover.FillWeight = 60F;
+            this.colRecover.HeaderText = "恢复";
+            this.colRecover.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colRecover.Name = "colRecover";
+            this.colRecover.Text = "恢复";
+            this.colRecover.TrackVisitedState = false;
+            this.colRecover.UseColumnTextForLinkValue = true;
+            // 
+            // colRemove
+            // 
+            this.colRemove.FillWeight = 60F;
+            this.colRemove.HeaderText = "移除";
+            this.colRemove.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colRemove.Name = "colRemove";
+            this.colRemove.Text = "移除";
+            this.colRemove.TrackVisitedState = false;
+            this.colRemove.UseColumnTextForLinkValue = true;
             // 
             // FrmStationList
             // 
@@ -580,12 +592,13 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtKeyWords);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbStationInfo);
             this.Name = "FrmStationList";
             this.ShowIcon = false;
             this.Text = "站点管理";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmStationList_Load);
+            this.gbStationInfo.ResumeLayout(false);
+            this.gbStationInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStationList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -594,7 +607,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbStationInfo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -623,6 +636,7 @@
         private System.Windows.Forms.Button btnRecover;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.CheckBox chkShowDel;
+        private UControls.UPager uPager1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStationId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStationNo;
@@ -636,6 +650,5 @@
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
         private System.Windows.Forms.DataGridViewLinkColumn colRecover;
         private System.Windows.Forms.DataGridViewLinkColumn colRemove;
-        private UControls.UPager uPager1;
     }
 }
