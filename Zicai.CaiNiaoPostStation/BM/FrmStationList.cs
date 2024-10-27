@@ -29,6 +29,7 @@ namespace Zicai.CaiNiaoPostStation.BM
         int editStationId = 0; // 当前正在修改的站点ID
         bool isFirst = true; // 是否第一次加载
         int totalCount = 0; // 总站点数
+        Random random = new Random(); // 随机数
         string oldNo = "", oldName = ""; // 修改前的站点编号、名称
 
         /// <summary>
@@ -93,9 +94,8 @@ namespace Zicai.CaiNiaoPostStation.BM
             // 默认生成初始编码
             string defaultNo = "S";
             totalCount++;
-            defaultNo += totalCount.ToString("0000");
+            defaultNo += random.Next(0, 100000000).ToString("D8"); // 0到99999999之间的随机数，不足8位前补0
             txtStationNo.Text = defaultNo;
-
             actType = 1; // 新增
             btnOk.Text = "添加";
         }
@@ -165,7 +165,7 @@ namespace Zicai.CaiNiaoPostStation.BM
         private void dgvStationList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewCell cell = dgvStationList.Rows[e.RowIndex].Cells[e.ColumnIndex]; // 获取当前单元格
-            StationInfo stationInfo = dgvStationList.SelectedRows[e.RowIndex].DataBoundItem as StationInfo;
+            StationInfo stationInfo = dgvStationList.Rows[e.RowIndex].DataBoundItem as StationInfo;
 
             // 选择行
             if (cell is DataGridViewCheckBoxCell) // 多选框
@@ -185,6 +185,8 @@ namespace Zicai.CaiNiaoPostStation.BM
                         break;
                     case "删除":
                         DeleteStation(stationInfo, 1);
+                        if (txtStationNo.Text == stationInfo.StationNo)
+                            InitStationInfo(); // 初始化站点信息栏
                         break;
                     case "恢复":
                         DeleteStation(stationInfo, 0);

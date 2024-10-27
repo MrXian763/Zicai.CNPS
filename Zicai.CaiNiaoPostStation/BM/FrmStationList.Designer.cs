@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbStationInfo = new System.Windows.Forms.GroupBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -104,7 +104,7 @@
             this.gbStationInfo.ForeColor = System.Drawing.Color.Blue;
             this.gbStationInfo.Location = new System.Drawing.Point(3, 1);
             this.gbStationInfo.Name = "gbStationInfo";
-            this.gbStationInfo.Size = new System.Drawing.Size(1345, 165);
+            this.gbStationInfo.Size = new System.Drawing.Size(1465, 165);
             this.gbStationInfo.TabIndex = 0;
             this.gbStationInfo.TabStop = false;
             this.gbStationInfo.Text = "站点信息";
@@ -117,7 +117,7 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(1241, 93);
+            this.btnReset.Location = new System.Drawing.Point(1361, 93);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(85, 39);
             this.btnReset.TabIndex = 18;
@@ -133,7 +133,7 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(1241, 30);
+            this.btnOk.Location = new System.Drawing.Point(1361, 30);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 39);
             this.btnOk.TabIndex = 17;
@@ -349,14 +349,14 @@
             this.dgvStationList.BackgroundColor = System.Drawing.Color.White;
             this.dgvStationList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStationList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStationList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStationList.ColumnHeadersHeight = 33;
             this.dgvStationList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStationList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -380,12 +380,12 @@
             this.dgvStationList.Name = "dgvStationList";
             this.dgvStationList.RowHeadersWidth = 28;
             this.dgvStationList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStationList.RowTemplate.Height = 23;
             this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStationList.Size = new System.Drawing.Size(1317, 487);
+            this.dgvStationList.Size = new System.Drawing.Size(1437, 571);
             this.dgvStationList.TabIndex = 22;
             this.dgvStationList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStationList_CellContentClick);
             // 
@@ -502,7 +502,7 @@
             this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(721, 174);
+            this.btnQuery.Location = new System.Drawing.Point(841, 174);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(85, 31);
             this.btnQuery.TabIndex = 23;
@@ -518,7 +518,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(831, 174);
+            this.btnDelete.Location = new System.Drawing.Point(951, 174);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(85, 31);
             this.btnDelete.TabIndex = 24;
@@ -533,7 +533,7 @@
             this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecover.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRecover.ForeColor = System.Drawing.Color.White;
-            this.btnRecover.Location = new System.Drawing.Point(947, 174);
+            this.btnRecover.Location = new System.Drawing.Point(1067, 174);
             this.btnRecover.Name = "btnRecover";
             this.btnRecover.Size = new System.Drawing.Size(85, 31);
             this.btnRecover.TabIndex = 25;
@@ -548,7 +548,7 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(1063, 174);
+            this.btnRemove.Location = new System.Drawing.Point(1183, 174);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(85, 31);
             this.btnRemove.TabIndex = 26;
@@ -561,7 +561,7 @@
             this.chkShowDel.AutoSize = true;
             this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.chkShowDel.Location = new System.Drawing.Point(1259, 176);
+            this.chkShowDel.Location = new System.Drawing.Point(1379, 176);
             this.chkShowDel.Name = "chkShowDel";
             this.chkShowDel.Size = new System.Drawing.Size(70, 23);
             this.chkShowDel.TabIndex = 27;
@@ -575,11 +575,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uPager1.BackColor = System.Drawing.Color.White;
             this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(16, 702);
+            this.uPager1.Location = new System.Drawing.Point(16, 786);
             this.uPager1.Name = "uPager1";
             this.uPager1.PageSize = 10;
             this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1317, 47);
+            this.uPager1.Size = new System.Drawing.Size(1437, 47);
             this.uPager1.StartIndex = 1;
             this.uPager1.TabIndex = 28;
             this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChange);
@@ -589,7 +589,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1351, 754);
+            this.ClientSize = new System.Drawing.Size(1471, 838);
             this.Controls.Add(this.uPager1);
             this.Controls.Add(this.chkShowDel);
             this.Controls.Add(this.btnRemove);

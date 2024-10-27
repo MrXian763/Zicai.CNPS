@@ -145,8 +145,9 @@ namespace Zicai.CaiNiaoPostStation.Utility
                     }
                 }
                 list[index] = info;
-                dgv.DataSource = list;
+                
             }
+            dgv.DataSource = list;
         }
 
         /// <summary>
