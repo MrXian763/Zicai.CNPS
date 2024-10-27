@@ -227,7 +227,64 @@ namespace Zicai.CaiNiaoPostStation.BM
         /// <param name="isDeleted">1-删除；0-恢复；2-移除</param>
         private void DeleteStation(StationInfo station, int isDeleted)
         {
-
+            // 询问用户是否确认删除
+            string[] titleMsg = FormUtility.GetActTitleAndMsg("站点", isDeleted);
+            string msgTitle = titleMsg[0];
+            string msg = titleMsg[1];
+            if (MessageHelper.Confirm(msgTitle, msg) == DialogResult.OK)
+            {
+                // 确认删除
+                List<int> ids = new List<int> { station.StationId };
+                List<StationInfo> delList = new List<StationInfo> { station };
+                switch (isDeleted)
+                {
+                    case 1:
+                        string restr = stationBLL.DeleteStations(delList); // 执行删除
+                        string[] reArr = restr.Split(';'); // 结果字符串分割
+                        if (reArr[0] == "1")
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName}删除成功！");
+                            dgvStationList.UpdateDgv(delList); // 更新dgv数据源
+                        }
+                        else if (reArr[0] == "0")
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName}删除失败！");
+                            return;
+                        }
+                        else
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName}运营中，不能删除！");
+                            return;
+                        }
+                        break;
+                    case 0:
+                        bool blRecover = stationBLL.RecoverStations(ids);
+                        if (blRecover)
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName} 恢复成功！");
+                            dgvStationList.UpdateDgv(delList);//更新dgv
+                        }
+                        else
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName} 恢复失败！");
+                            return;
+                        }
+                        break;
+                    case 2:
+                        bool blRemove = stationBLL.RemoveStations(ids);
+                        if (blRemove)
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName} 移除成功！");
+                            dgvStationList.UpdateDgv(delList);//更新dgv
+                        }
+                        else
+                        {
+                            MessageHelper.Info(msgTitle, $"站点：{station.StationName} 移除失败！");
+                            return;
+                        }
+                        break;
+                }
+            }
         }
 
         /// <summary>

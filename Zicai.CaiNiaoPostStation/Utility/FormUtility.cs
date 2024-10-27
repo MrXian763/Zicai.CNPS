@@ -148,5 +148,51 @@ namespace Zicai.CaiNiaoPostStation.Utility
                 dgv.DataSource = list;
             }
         }
+
+        /// <summary>
+        /// 更新DataGridView 删除、恢复、移除
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dgv"></param>
+        /// <param name="delList"></param>
+        public static void UpdateDgv<T>(this DataGridView dgv, List<T> delList)
+        {
+            List<T> list = dgv.DataSource as List<T>;
+            dgv.DataSource = null;
+            delList.ForEach(t => list.Remove(t));
+            dgv.DataSource = list;
+        }
+
+        /// <summary>
+        /// 生成删除、恢复、移除操作的询问框的标题和提示消息
+        /// </summary>
+        /// <param name="infoName">操作的对象</param>
+        /// <param name="isDeleted">操作类型</param>
+        /// <returns>提示信息数组：[0]操作名称；[1]提示消息</returns>
+        public static string[] GetActTitleAndMsg(string infoName, int isDeleted)
+        {
+            string typeName = GetDelTypeName(isDeleted);
+            string title = $"{typeName}{infoName}";
+            string msg = $"你确定要对该{infoName}信息进行{typeName}吗？";
+            return new string[] { title, msg };
+        }
+
+        /// <summary>
+        /// 获取操作的名称
+        /// </summary>
+        /// <param name="isDeleted"></param>
+        /// <returns></returns>
+        public static string GetDelTypeName(int isDeleted)
+        {
+            string typeName = "";
+            switch (isDeleted)
+            {
+                case 1: typeName = "删除"; break;
+                case 0: typeName = "恢复"; break;
+                case 2: typeName = "移除"; break;
+                default: break;
+            }
+            return typeName;
+        }
     }
 }
