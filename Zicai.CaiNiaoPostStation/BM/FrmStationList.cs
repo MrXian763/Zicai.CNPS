@@ -39,6 +39,7 @@ namespace Zicai.CaiNiaoPostStation.BM
         /// <param name="e"></param>
         private void FrmStationList_Load(object sender, EventArgs e)
         {
+            this.dgvStationList.CurrentCellDirtyStateChanged += new System.EventHandler(FormUtility.DgvList_CurrentCellDirtyStateChanged);
             // 加载站点列表
             FindStationList();
             // 初始化站点信息栏
@@ -424,6 +425,130 @@ namespace Zicai.CaiNiaoPostStation.BM
         {
             lblErrMsg.Visible = false; // 隐藏错误消息
             lblErrMsg.Text = ""; // 清空消息
+        }
+
+        /// <summary>
+        /// 批量恢复按钮处理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRecover_Click(object sender, EventArgs e)
+        {
+            BatchProcessingStations(0);
+        }
+
+        /// <summary>
+        /// 批移除按钮处理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            BatchProcessingStations(2);
+        }
+
+        /// <summary>
+        /// 批量删除按钮处理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            BatchProcessingStations(1);
+        }
+
+        /// <summary>
+        /// 批量处理站点
+        /// </summary>
+        /// <param name="isDeleted">0-恢复；1-删除；2-移除</param>
+        private void BatchProcessingStations(int isDeleted)
+        {
+            string actName = FormUtility.GetDelTypeName(isDeleted);
+            string msgTitle = $"{actName}站点";
+            if (selectedStations.Count > 0)
+            {
+                if (MessageHelper.Confirm(msgTitle, $"你确定要{actName}选择的站点信息吗？") == DialogResult.OK)
+                {
+                    // 删除当前正在编辑的站点
+                    if (isDeleted == 1)
+                    {
+                        bool clearStationInfo = false;
+                        foreach (StationInfo station in selectedStations)
+                        {
+                            if (station.StationId == editStationId) // 当前编辑的站点不能删除
+                            {
+                                clearStationInfo = true;
+                                break;
+                            }
+                        }
+                        if (clearStationInfo)
+                        {
+                            InitStationInfo(); // 初始化站点信息栏
+                        }
+                    }
+                    bool bl = false;//执行结果
+                    List<int> delIds = selectedStations.Select(s => s.StationId).ToList();//站点编号集合
+                    switch (isDeleted)
+                    {
+                        case 1:
+                            string reStr = stationBLL.DeleteStations(selectedStations);//删除方法
+                            string[] reArr = reStr.Split(';');
+                            if (reArr[0] == "1")
+                            {
+                                if (reArr.Length == 1)
+                                {
+                                    //删除成功，没有不能删除的站点
+                                    MessageHelper.Info(msgTitle, "选择的站点删除成功！");
+                                    dgvStationList.UpdateDgv(selectedStations);
+                                }
+                                else
+                                {
+                                    MessageHelper.Info(msgTitle, $"选择的站点中，{reArr[1]}正在运营中，不能删除！其余的站点删除成功！");
+                                    //刷新  筛选出能删除站点
+                                    var delList = selectedStations.Where(s => s.IsRunning == false).ToList();
+                                    dgvStationList.UpdateDgv(delList);
+                                }
+                                selectedStations.Clear();//清空
+                            }
+                            else if (reArr[0] == "0")
+                            {
+                                MessageHelper.Error(msgTitle, "选择的站点删除失败！");
+                                return;
+                            }
+                            else
+                            {
+                                MessageHelper.Error(msgTitle, "选择的站点都在运营中，不能删除！");
+                                return;
+                            }
+                            break;
+                        case 0:
+                            bl = stationBLL.RecoverStations(delIds);
+                            break;
+                        case 2:
+                            bl = stationBLL.RemoveStations(delIds);
+                            break;
+                    }
+                    if (isDeleted != 1)
+                    {
+                        if (bl)
+                        {
+                            MessageHelper.Info(msgTitle, $"选择的站点{actName}成功！");
+                            dgvStationList.UpdateDgv(selectedStations);
+                            selectedStations.Clear();
+                        }
+                        else
+                        {
+                            MessageHelper.Error(msgTitle, $"选择的站点{actName}失败！");
+                            return;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageHelper.Error(msgTitle, $"请选择要{actName}的站点信息");
+                return;
+            }
         }
     }
 }

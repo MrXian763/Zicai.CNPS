@@ -524,6 +524,7 @@
             this.btnDelete.TabIndex = 24;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRecover
             // 
@@ -539,6 +540,7 @@
             this.btnRecover.TabIndex = 25;
             this.btnRecover.Text = "恢复";
             this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // btnRemove
             // 
@@ -554,6 +556,7 @@
             this.btnRemove.TabIndex = 26;
             this.btnRemove.Text = "移除";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // chkShowDel
             // 

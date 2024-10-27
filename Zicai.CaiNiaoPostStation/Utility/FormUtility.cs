@@ -195,5 +195,19 @@ namespace Zicai.CaiNiaoPostStation.Utility
             }
             return typeName;
         }
+
+        /// <summary>
+        /// 单元格数据发生改变时触发
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public static void DgvList_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv != null)
+            {
+                dgv.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
     }
 }
