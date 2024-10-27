@@ -104,7 +104,7 @@
             this.gbStationInfo.ForeColor = System.Drawing.Color.Blue;
             this.gbStationInfo.Location = new System.Drawing.Point(3, 1);
             this.gbStationInfo.Name = "gbStationInfo";
-            this.gbStationInfo.Size = new System.Drawing.Size(1465, 165);
+            this.gbStationInfo.Size = new System.Drawing.Size(1497, 165);
             this.gbStationInfo.TabIndex = 0;
             this.gbStationInfo.TabStop = false;
             this.gbStationInfo.Text = "站点信息";
@@ -117,7 +117,7 @@
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(1361, 93);
+            this.btnReset.Location = new System.Drawing.Point(1393, 93);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(85, 39);
             this.btnReset.TabIndex = 18;
@@ -133,7 +133,7 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(1361, 30);
+            this.btnOk.Location = new System.Drawing.Point(1393, 30);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 39);
             this.btnOk.TabIndex = 17;
@@ -385,7 +385,7 @@
             this.dgvStationList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStationList.RowTemplate.Height = 23;
             this.dgvStationList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStationList.Size = new System.Drawing.Size(1437, 571);
+            this.dgvStationList.Size = new System.Drawing.Size(1469, 549);
             this.dgvStationList.TabIndex = 22;
             this.dgvStationList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStationList_CellContentClick);
             // 
@@ -502,7 +502,7 @@
             this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(841, 174);
+            this.btnQuery.Location = new System.Drawing.Point(873, 174);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(85, 31);
             this.btnQuery.TabIndex = 23;
@@ -518,7 +518,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(951, 174);
+            this.btnDelete.Location = new System.Drawing.Point(983, 174);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(85, 31);
             this.btnDelete.TabIndex = 24;
@@ -534,7 +534,7 @@
             this.btnRecover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecover.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRecover.ForeColor = System.Drawing.Color.White;
-            this.btnRecover.Location = new System.Drawing.Point(1067, 174);
+            this.btnRecover.Location = new System.Drawing.Point(1099, 174);
             this.btnRecover.Name = "btnRecover";
             this.btnRecover.Size = new System.Drawing.Size(85, 31);
             this.btnRecover.TabIndex = 25;
@@ -550,7 +550,7 @@
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(1183, 174);
+            this.btnRemove.Location = new System.Drawing.Point(1215, 174);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(85, 31);
             this.btnRemove.TabIndex = 26;
@@ -564,7 +564,7 @@
             this.chkShowDel.AutoSize = true;
             this.chkShowDel.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.chkShowDel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.chkShowDel.Location = new System.Drawing.Point(1379, 176);
+            this.chkShowDel.Location = new System.Drawing.Point(1411, 176);
             this.chkShowDel.Name = "chkShowDel";
             this.chkShowDel.Size = new System.Drawing.Size(70, 23);
             this.chkShowDel.TabIndex = 27;
@@ -578,11 +578,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uPager1.BackColor = System.Drawing.Color.White;
             this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(16, 786);
+            this.uPager1.Location = new System.Drawing.Point(16, 764);
             this.uPager1.Name = "uPager1";
             this.uPager1.PageSize = 10;
             this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1437, 47);
+            this.uPager1.Size = new System.Drawing.Size(1469, 47);
             this.uPager1.StartIndex = 1;
             this.uPager1.TabIndex = 28;
             this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChange);
@@ -592,7 +592,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1471, 838);
+            this.ClientSize = new System.Drawing.Size(1503, 816);
             this.Controls.Add(this.uPager1);
             this.Controls.Add(this.chkShowDel);
             this.Controls.Add(this.btnRemove);

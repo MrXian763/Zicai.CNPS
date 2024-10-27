@@ -74,7 +74,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1348, 72);
+            this.panel1.Size = new System.Drawing.Size(1500, 72);
             this.panel1.TabIndex = 0;
             // 
             // lblLoginInfo
@@ -83,7 +83,7 @@
             this.lblLoginInfo.AutoSize = true;
             this.lblLoginInfo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoginInfo.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.lblLoginInfo.Location = new System.Drawing.Point(1192, 36);
+            this.lblLoginInfo.Location = new System.Drawing.Point(1344, 36);
             this.lblLoginInfo.Name = "lblLoginInfo";
             this.lblLoginInfo.Size = new System.Drawing.Size(131, 17);
             this.lblLoginInfo.TabIndex = 2;
@@ -121,7 +121,7 @@
             this.基础信息维护ToolStripMenuItem});
             this.cainiaoMenus.Location = new System.Drawing.Point(1, 75);
             this.cainiaoMenus.Name = "cainiaoMenus";
-            this.cainiaoMenus.Size = new System.Drawing.Size(1348, 40);
+            this.cainiaoMenus.Size = new System.Drawing.Size(1500, 40);
             this.cainiaoMenus.TabIndex = 2;
             this.cainiaoMenus.Text = "menuStrip1";
             // 
@@ -164,7 +164,7 @@
             this.tbtnSelfPick});
             this.toolStrip1.Location = new System.Drawing.Point(1, 115);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1348, 34);
+            this.toolStrip1.Size = new System.Drawing.Size(1500, 34);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -268,9 +268,9 @@
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel7,
             this.lblCopyright});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 713);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 788);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1351, 41);
+            this.statusStrip1.Size = new System.Drawing.Size(1503, 41);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -317,7 +317,7 @@
             // 
             this.toolStripStatusLabel6.AutoSize = false;
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(872, 36);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(1024, 36);
             this.toolStripStatusLabel6.Spring = true;
             // 
             // toolStripStatusLabel7
@@ -345,7 +345,7 @@
             this.tabPages.Location = new System.Drawing.Point(1, 146);
             this.tabPages.Name = "tabPages";
             this.tabPages.SelectedIndex = 0;
-            this.tabPages.Size = new System.Drawing.Size(1348, 571);
+            this.tabPages.Size = new System.Drawing.Size(1500, 646);
             this.tabPages.TabIndex = 5;
             this.tabPages.SelectedIndexChanged += new System.EventHandler(this.tabPages_SelectedIndexChanged);
             this.tabPages.SizeChanged += new System.EventHandler(this.tabPages_SizeChanged);
@@ -354,7 +354,7 @@
             // 
             this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picClose.Image = global::Zicai.CaiNiaoPostStation.Properties.Resources.close;
-            this.picClose.Location = new System.Drawing.Point(1316, 143);
+            this.picClose.Location = new System.Drawing.Point(1468, 143);
             this.picClose.Name = "picClose";
             this.picClose.Size = new System.Drawing.Size(25, 25);
             this.picClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -369,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1351, 754);
+            this.ClientSize = new System.Drawing.Size(1503, 829);
             this.Controls.Add(this.picClose);
             this.Controls.Add(this.tabPages);
             this.Controls.Add(this.statusStrip1);
