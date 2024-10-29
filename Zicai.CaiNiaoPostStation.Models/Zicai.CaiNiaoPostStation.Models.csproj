@@ -53,6 +53,7 @@
     <Compile Include="StationInfo.cs" />
     <Compile Include="UIModels\PageModel.cs" />
     <Compile Include="UserInfo.cs" />
+    <Compile Include="VModels\ViewExpressTypeInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
@@ -60,8 +61,6 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="VModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

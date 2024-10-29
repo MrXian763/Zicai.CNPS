@@ -64,7 +64,7 @@ namespace Zicai.CaiNiaoPostStation.DAL
         /// 删除、恢复、移除快递类别信息
         /// </summary>
         /// <param name="typeIds">要删除的快递类别ID</param>
-        /// <param name="delType">0-逻辑删除</param>
+        /// <param name="delType">0-逻辑删除；1-永久删除</param>
         /// <param name="isDeleted"></param>
         /// <returns>操作结果</returns>
         public bool UpdateExpTypeDelState(List<int> typeIds, int delType, int isDeleted)
