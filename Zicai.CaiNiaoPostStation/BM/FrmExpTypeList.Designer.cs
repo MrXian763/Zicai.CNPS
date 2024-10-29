@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOrderNum = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.cboParents = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
@@ -42,10 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.numOrderNum = new System.Windows.Forms.NumericUpDown();
             this.chkShowDel = new System.Windows.Forms.CheckBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnRecover = new System.Windows.Forms.Button();
@@ -55,17 +55,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtKeyWords = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colExpTypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPYNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExpTypePYNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colParentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOrderNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.colAddChild = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrderNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpTypeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.numOrderNum);
+            this.groupBox1.Controls.Add(this.txtOrderNum);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cboParents);
@@ -95,6 +95,35 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "类别信息";
+            // 
+            // txtOrderNum
+            // 
+            this.txtOrderNum.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOrderNum.Location = new System.Drawing.Point(603, 29);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(120, 26);
+            this.txtOrderNum.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(539, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 22);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "排序号";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(543, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 22);
+            this.label6.TabIndex = 20;
             // 
             // cboParents
             // 
@@ -119,6 +148,7 @@
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOk
             // 
@@ -134,6 +164,7 @@
             this.btnOk.TabIndex = 17;
             this.btnOk.Text = "添加";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // txtRemark
             // 
@@ -156,6 +187,8 @@
             this.txtExpTypeName.Name = "txtExpTypeName";
             this.txtExpTypeName.Size = new System.Drawing.Size(153, 29);
             this.txtExpTypeName.TabIndex = 1;
+            this.txtExpTypeName.TextChanged += new System.EventHandler(this.txtExpTypeName_TextChanged);
+            this.txtExpTypeName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtExpTypeName_MouseDown);
             // 
             // lblErrMsg
             // 
@@ -212,35 +245,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "类别名称";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(543, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 22);
-            this.label6.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(539, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 22);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "排序号";
-            // 
-            // numOrderNum
-            // 
-            this.numOrderNum.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numOrderNum.Location = new System.Drawing.Point(603, 29);
-            this.numOrderNum.Name = "numOrderNum";
-            this.numOrderNum.Size = new System.Drawing.Size(120, 26);
-            this.numOrderNum.TabIndex = 3;
-            // 
             // chkShowDel
             // 
             this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -253,6 +257,7 @@
             this.chkShowDel.TabIndex = 47;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // btnRemove
             // 
@@ -268,6 +273,7 @@
             this.btnRemove.TabIndex = 46;
             this.btnRemove.Text = "移除";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnRecover
             // 
@@ -283,6 +289,7 @@
             this.btnRecover.TabIndex = 45;
             this.btnRecover.Text = "恢复";
             this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // btnDelete
             // 
@@ -298,6 +305,7 @@
             this.btnDelete.TabIndex = 44;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnQuery
             // 
@@ -313,6 +321,7 @@
             this.btnQuery.TabIndex = 43;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // dgvExpTypeList
             // 
@@ -325,25 +334,25 @@
             this.dgvExpTypeList.BackgroundColor = System.Drawing.Color.White;
             this.dgvExpTypeList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpTypeList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpTypeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpTypeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpTypeList.ColumnHeadersHeight = 33;
             this.dgvExpTypeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExpTypeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
             this.colExpTypeId,
             this.colExpTypeName,
-            this.colPYNo,
+            this.colExpTypePYNo,
             this.colParentName,
             this.colOrderNum,
             this.colRemark,
-            this.colEdit});
+            this.colAddChild});
             this.dgvExpTypeList.EnableHeadersVisualStyles = false;
             this.dgvExpTypeList.GridColor = System.Drawing.Color.LightSteelBlue;
             this.dgvExpTypeList.Location = new System.Drawing.Point(12, 175);
@@ -351,13 +360,14 @@
             this.dgvExpTypeList.Name = "dgvExpTypeList";
             this.dgvExpTypeList.RowHeadersWidth = 28;
             this.dgvExpTypeList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvExpTypeList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvExpTypeList.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvExpTypeList.RowTemplate.Height = 23;
             this.dgvExpTypeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExpTypeList.Size = new System.Drawing.Size(1327, 577);
             this.dgvExpTypeList.TabIndex = 42;
+            this.dgvExpTypeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpTypeList_CellContentClick);
             // 
             // label11
             // 
@@ -388,63 +398,6 @@
             this.label10.TabIndex = 39;
             this.label10.Text = "查询关键词";
             // 
-            // colChk
-            // 
-            this.colChk.FillWeight = 50F;
-            this.colChk.HeaderText = "选择";
-            this.colChk.Name = "colChk";
-            // 
-            // colExpTypeId
-            // 
-            this.colExpTypeId.HeaderText = "类别编号";
-            this.colExpTypeId.Name = "colExpTypeId";
-            this.colExpTypeId.ReadOnly = true;
-            // 
-            // colExpTypeName
-            // 
-            this.colExpTypeName.FillWeight = 180F;
-            this.colExpTypeName.HeaderText = "类别名称";
-            this.colExpTypeName.Name = "colExpTypeName";
-            this.colExpTypeName.ReadOnly = true;
-            // 
-            // colPYNo
-            // 
-            this.colPYNo.HeaderText = "拼音码";
-            this.colPYNo.Name = "colPYNo";
-            this.colPYNo.ReadOnly = true;
-            // 
-            // colParentName
-            // 
-            this.colParentName.HeaderText = "父类别";
-            this.colParentName.Name = "colParentName";
-            this.colParentName.ReadOnly = true;
-            this.colParentName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // colOrderNum
-            // 
-            this.colOrderNum.FillWeight = 70F;
-            this.colOrderNum.HeaderText = "排序号";
-            this.colOrderNum.Name = "colOrderNum";
-            this.colOrderNum.ReadOnly = true;
-            // 
-            // colRemark
-            // 
-            this.colRemark.FillWeight = 250F;
-            this.colRemark.HeaderText = "类别描述";
-            this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
-            // 
-            // colEdit
-            // 
-            this.colEdit.FillWeight = 90F;
-            this.colEdit.HeaderText = "添加子分类";
-            this.colEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.colEdit.LinkColor = System.Drawing.Color.Blue;
-            this.colEdit.Name = "colEdit";
-            this.colEdit.Text = "添加子分类";
-            this.colEdit.TrackVisitedState = false;
-            this.colEdit.UseColumnTextForLinkValue = true;
-            // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -459,6 +412,70 @@
             this.btnEdit.TabIndex = 48;
             this.btnEdit.Text = "修改";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // colChk
+            // 
+            this.colChk.FillWeight = 50F;
+            this.colChk.HeaderText = "选择";
+            this.colChk.Name = "colChk";
+            // 
+            // colExpTypeId
+            // 
+            this.colExpTypeId.DataPropertyName = "ExpTypeId";
+            this.colExpTypeId.HeaderText = "类别编号";
+            this.colExpTypeId.Name = "colExpTypeId";
+            this.colExpTypeId.ReadOnly = true;
+            // 
+            // colExpTypeName
+            // 
+            this.colExpTypeName.DataPropertyName = "ExpTypeName";
+            this.colExpTypeName.FillWeight = 180F;
+            this.colExpTypeName.HeaderText = "类别名称";
+            this.colExpTypeName.Name = "colExpTypeName";
+            this.colExpTypeName.ReadOnly = true;
+            // 
+            // colExpTypePYNo
+            // 
+            this.colExpTypePYNo.DataPropertyName = "ExpTypePYNo";
+            this.colExpTypePYNo.HeaderText = "拼音码";
+            this.colExpTypePYNo.Name = "colExpTypePYNo";
+            this.colExpTypePYNo.ReadOnly = true;
+            // 
+            // colParentName
+            // 
+            this.colParentName.DataPropertyName = "ParentName";
+            this.colParentName.HeaderText = "父类别";
+            this.colParentName.Name = "colParentName";
+            this.colParentName.ReadOnly = true;
+            this.colParentName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // colOrderNum
+            // 
+            this.colOrderNum.DataPropertyName = "OrderNum";
+            this.colOrderNum.FillWeight = 70F;
+            this.colOrderNum.HeaderText = "排序号";
+            this.colOrderNum.Name = "colOrderNum";
+            this.colOrderNum.ReadOnly = true;
+            // 
+            // colRemark
+            // 
+            this.colRemark.DataPropertyName = "Remark";
+            this.colRemark.FillWeight = 250F;
+            this.colRemark.HeaderText = "类别描述";
+            this.colRemark.Name = "colRemark";
+            this.colRemark.ReadOnly = true;
+            // 
+            // colAddChild
+            // 
+            this.colAddChild.FillWeight = 90F;
+            this.colAddChild.HeaderText = "添加子分类";
+            this.colAddChild.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.colAddChild.LinkColor = System.Drawing.Color.Blue;
+            this.colAddChild.Name = "colAddChild";
+            this.colAddChild.Text = "添加子分类";
+            this.colAddChild.TrackVisitedState = false;
+            this.colAddChild.UseColumnTextForLinkValue = true;
             // 
             // FrmExpTypeList
             // 
@@ -480,9 +497,10 @@
             this.Name = "FrmExpTypeList";
             this.ShowIcon = false;
             this.Text = "快递类别维护";
+            this.Load += new System.EventHandler(this.FrmExpTypeList_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numOrderNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOrderNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpTypeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -503,7 +521,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numOrderNum;
+        private System.Windows.Forms.NumericUpDown txtOrderNum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -516,14 +534,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtKeyWords;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpTypeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpTypeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPYNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpTypePYNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colParentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrderNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRemark;
-        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
-        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.DataGridViewLinkColumn colAddChild;
     }
 }

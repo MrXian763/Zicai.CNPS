@@ -29,7 +29,7 @@ namespace ZiCai.CainiaoPostStation.Models
         /// <summary>
         /// 拼音码
         /// </summary>
-        public string ExpPYNo { get; set; }
+        public string ExpTypePYNo { get; set; }
         /// <summary>
         /// 同级排序号
         /// </summary>

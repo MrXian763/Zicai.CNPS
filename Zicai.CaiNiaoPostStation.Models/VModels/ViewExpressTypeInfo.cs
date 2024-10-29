@@ -23,7 +23,7 @@ namespace Zicai.CaiNiaoPostStation.Models.VModels
             ExpTypeName = expType.ExpTypeName;
             ParentId=expType.ParentId;
             ParentName=parentName;
-            ExpPYNo=expType.ExpPYNo;
+            ExpTypePYNo=expType.ExpTypePYNo;
             OrderNum=expType.OrderNum;
             Remark=expType.Remark;
         }
