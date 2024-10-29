@@ -39,7 +39,7 @@ namespace Zicai.CaiNiaoPostStation.DAL
         /// <returns>站点列表</returns>
         public List<StationInfo> GetCboStationList()
         {
-            return GetModelList("IsRunning = 1 and IsDeleted = 0", "StationId, StationName", "");
+            return GetModelList("IsRunning = 1 and IsDeleted = 0", "StationId,StationName", "");
         }
 
         /// <summary>

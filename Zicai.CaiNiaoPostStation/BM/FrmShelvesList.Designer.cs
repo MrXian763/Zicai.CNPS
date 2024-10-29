@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.gbShelfInfo = new System.Windows.Forms.GroupBox();
+            this.cboStations = new System.Windows.Forms.ComboBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.txtRemark = new System.Windows.Forms.TextBox();
@@ -43,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboStations = new System.Windows.Forms.ComboBox();
-            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.chkShowDel = new System.Windows.Forms.CheckBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnRecover = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtKeyWords = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colShelfId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colShelfNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,35 +64,45 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.groupBox1.SuspendLayout();
+            this.gbShelfInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShelvesList)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbShelfInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbShelfInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cboStations);
-            this.groupBox1.Controls.Add(this.btnReset);
-            this.groupBox1.Controls.Add(this.btnOk);
-            this.groupBox1.Controls.Add(this.txtRemark);
-            this.groupBox1.Controls.Add(this.txtShelfName);
-            this.groupBox1.Controls.Add(this.txtAddress);
-            this.groupBox1.Controls.Add(this.txtShelfNo);
-            this.groupBox1.Controls.Add(this.lblErrMsg);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1345, 120);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "货架信息";
+            this.gbShelfInfo.Controls.Add(this.cboStations);
+            this.gbShelfInfo.Controls.Add(this.btnReset);
+            this.gbShelfInfo.Controls.Add(this.btnOk);
+            this.gbShelfInfo.Controls.Add(this.txtRemark);
+            this.gbShelfInfo.Controls.Add(this.txtShelfName);
+            this.gbShelfInfo.Controls.Add(this.txtAddress);
+            this.gbShelfInfo.Controls.Add(this.txtShelfNo);
+            this.gbShelfInfo.Controls.Add(this.lblErrMsg);
+            this.gbShelfInfo.Controls.Add(this.label5);
+            this.gbShelfInfo.Controls.Add(this.label4);
+            this.gbShelfInfo.Controls.Add(this.label3);
+            this.gbShelfInfo.Controls.Add(this.label2);
+            this.gbShelfInfo.Controls.Add(this.label1);
+            this.gbShelfInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbShelfInfo.ForeColor = System.Drawing.Color.Blue;
+            this.gbShelfInfo.Location = new System.Drawing.Point(3, 3);
+            this.gbShelfInfo.Name = "gbShelfInfo";
+            this.gbShelfInfo.Size = new System.Drawing.Size(1345, 120);
+            this.gbShelfInfo.TabIndex = 1;
+            this.gbShelfInfo.TabStop = false;
+            this.gbShelfInfo.Text = "货架信息";
+            // 
+            // cboStations
+            // 
+            this.cboStations.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboStations.FormattingEnabled = true;
+            this.cboStations.Location = new System.Drawing.Point(353, 29);
+            this.cboStations.Name = "cboStations";
+            this.cboStations.Size = new System.Drawing.Size(296, 27);
+            this.cboStations.TabIndex = 19;
+            this.cboStations.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // btnReset
             // 
@@ -108,6 +118,7 @@
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOk
             // 
@@ -123,6 +134,7 @@
             this.btnOk.TabIndex = 17;
             this.btnOk.Text = "添加";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // txtRemark
             // 
@@ -137,6 +149,7 @@
             this.txtShelfName.Name = "txtShelfName";
             this.txtShelfName.Size = new System.Drawing.Size(153, 29);
             this.txtShelfName.TabIndex = 11;
+            this.txtShelfName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtAddress
             // 
@@ -144,6 +157,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(264, 29);
             this.txtAddress.TabIndex = 10;
+            this.txtAddress.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtShelfNo
             // 
@@ -151,6 +165,7 @@
             this.txtShelfNo.Name = "txtShelfNo";
             this.txtShelfNo.Size = new System.Drawing.Size(153, 29);
             this.txtShelfNo.TabIndex = 1;
+            this.txtShelfNo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // lblErrMsg
             // 
@@ -218,29 +233,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "货架编码";
             // 
-            // cboStations
-            // 
-            this.cboStations.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboStations.FormattingEnabled = true;
-            this.cboStations.Location = new System.Drawing.Point(353, 29);
-            this.cboStations.Name = "cboStations";
-            this.cboStations.Size = new System.Drawing.Size(296, 27);
-            this.cboStations.TabIndex = 19;
-            // 
-            // uPager1
-            // 
-            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(12, 696);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1327, 47);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 38;
-            // 
             // chkShowDel
             // 
             this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -253,6 +245,7 @@
             this.chkShowDel.TabIndex = 37;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // btnRemove
             // 
@@ -268,6 +261,7 @@
             this.btnRemove.TabIndex = 36;
             this.btnRemove.Text = "移除";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnRecover
             // 
@@ -283,6 +277,7 @@
             this.btnRecover.TabIndex = 35;
             this.btnRecover.Text = "恢复";
             this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // btnDelete
             // 
@@ -298,6 +293,7 @@
             this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnQuery
             // 
@@ -313,6 +309,7 @@
             this.btnQuery.TabIndex = 33;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // dgvShelvesList
             // 
@@ -325,14 +322,14 @@
             this.dgvShelvesList.BackgroundColor = System.Drawing.Color.White;
             this.dgvShelvesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvShelvesList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShelvesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShelvesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShelvesList.ColumnHeadersHeight = 33;
             this.dgvShelvesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvShelvesList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -353,13 +350,14 @@
             this.dgvShelvesList.Name = "dgvShelvesList";
             this.dgvShelvesList.RowHeadersWidth = 28;
             this.dgvShelvesList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvShelvesList.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvShelvesList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShelvesList.RowTemplate.Height = 23;
             this.dgvShelvesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvShelvesList.Size = new System.Drawing.Size(1327, 528);
             this.dgvShelvesList.TabIndex = 32;
+            this.dgvShelvesList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShelvesList_CellContentClick);
             // 
             // label11
             // 
@@ -390,6 +388,21 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "查询关键词";
             // 
+            // uPager1
+            // 
+            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(12, 696);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1327, 47);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 38;
+            this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChanged);
+            // 
             // colChk
             // 
             this.colChk.FillWeight = 50F;
@@ -398,18 +411,21 @@
             // 
             // colShelfId
             // 
+            this.colShelfId.DataPropertyName = "ShelfId";
             this.colShelfId.HeaderText = "货架编号";
             this.colShelfId.Name = "colShelfId";
             this.colShelfId.ReadOnly = true;
             // 
             // colShelfNo
             // 
+            this.colShelfNo.DataPropertyName = "ShelfNo";
             this.colShelfNo.HeaderText = "货架编码";
             this.colShelfNo.Name = "colShelfNo";
             this.colShelfNo.ReadOnly = true;
             // 
             // colShelfName
             // 
+            this.colShelfName.DataPropertyName = "ShelfName";
             this.colShelfName.FillWeight = 200F;
             this.colShelfName.HeaderText = "货架名称";
             this.colShelfName.Name = "colShelfName";
@@ -417,6 +433,7 @@
             // 
             // colStation
             // 
+            this.colStation.DataPropertyName = "StationId";
             this.colStation.FillWeight = 150F;
             this.colStation.HeaderText = "站点";
             this.colStation.Name = "colStation";
@@ -426,6 +443,7 @@
             // 
             // colAddress
             // 
+            this.colAddress.DataPropertyName = "Address";
             this.colAddress.FillWeight = 150F;
             this.colAddress.HeaderText = "货架位置";
             this.colAddress.Name = "colAddress";
@@ -487,12 +505,13 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtKeyWords);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbShelfInfo);
             this.Name = "FrmShelvesList";
             this.ShowIcon = false;
             this.Text = "货架管理";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmShelvesList_Load);
+            this.gbShelfInfo.ResumeLayout(false);
+            this.gbShelfInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShelvesList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -501,7 +520,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbShelfInfo;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.TextBox txtRemark;
