@@ -47,6 +47,7 @@
     <Compile Include="Base\CreateSql.cs" />
     <Compile Include="Base\DbConvert.cs" />
     <Compile Include="Base\SqlModel.cs" />
+    <Compile Include="EmpTypeDAL.cs" />
     <Compile Include="ExpressDAL.cs" />
     <Compile Include="ExpressTypeDAL.cs" />
     <Compile Include="Helper\CommandInfo.cs" />
