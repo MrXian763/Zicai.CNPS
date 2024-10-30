@@ -89,7 +89,7 @@ namespace ZiCai.CainiaoPostStation.DAL.Base
         /// <summary>
         /// 执行查询，返回一个int值
         /// </summary>
-        /// <param name="sql"></param>
+        /// <param name="sql">查询语句</param>
         /// <returns></returns>
         public int SelectAndReIntValue(string sql)
         {
