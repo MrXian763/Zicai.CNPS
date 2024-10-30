@@ -41,6 +41,7 @@
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRecover = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colRemove = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.lblErrorMsg = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpTypeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.chkShowDel.TabIndex = 57;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.Click += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // btnSave
             // 
@@ -71,10 +73,10 @@
             this.btnSave.TabIndex = 53;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvEmpTypeList
             // 
-            this.dgvEmpTypeList.AllowUserToAddRows = false;
             this.dgvEmpTypeList.AllowUserToDeleteRows = false;
             this.dgvEmpTypeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -115,6 +117,8 @@
             this.dgvEmpTypeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpTypeList.Size = new System.Drawing.Size(1327, 686);
             this.dgvEmpTypeList.TabIndex = 52;
+            this.dgvEmpTypeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpTypeList_CellContentClick);
+            this.dgvEmpTypeList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpTypeList_CellEndEdit);
             // 
             // label11
             // 
@@ -135,23 +139,24 @@
             // 
             // colEmpTypeId
             // 
+            this.colEmpTypeId.DataPropertyName = "EmpTypeId";
             this.colEmpTypeId.HeaderText = "类别编号";
             this.colEmpTypeId.Name = "colEmpTypeId";
             this.colEmpTypeId.ReadOnly = true;
             // 
             // colEmpTypeName
             // 
+            this.colEmpTypeName.DataPropertyName = "EmpTypeName";
             this.colEmpTypeName.FillWeight = 180F;
             this.colEmpTypeName.HeaderText = "类别名称";
             this.colEmpTypeName.Name = "colEmpTypeName";
-            this.colEmpTypeName.ReadOnly = true;
             // 
             // colRemark
             // 
+            this.colRemark.DataPropertyName = "Remark";
             this.colRemark.FillWeight = 250F;
             this.colRemark.HeaderText = "类别描述";
             this.colRemark.Name = "colRemark";
-            this.colRemark.ReadOnly = true;
             // 
             // colDel
             // 
@@ -186,12 +191,25 @@
             this.colRemove.TrackVisitedState = false;
             this.colRemove.UseColumnTextForLinkValue = true;
             // 
+            // lblErrorMsg
+            // 
+            this.lblErrorMsg.AutoSize = true;
+            this.lblErrorMsg.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblErrorMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorMsg.Location = new System.Drawing.Point(972, 26);
+            this.lblErrorMsg.Name = "lblErrorMsg";
+            this.lblErrorMsg.Size = new System.Drawing.Size(122, 21);
+            this.lblErrorMsg.TabIndex = 59;
+            this.lblErrorMsg.Text = "请输入员工类别";
+            this.lblErrorMsg.Visible = false;
+            // 
             // FrmEmpTypeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1351, 754);
+            this.Controls.Add(this.lblErrorMsg);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.chkShowDel);
             this.Controls.Add(this.btnSave);
@@ -199,6 +217,8 @@
             this.Name = "FrmEmpTypeList";
             this.ShowIcon = false;
             this.Text = "员工类别维护";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEmpTypeList_FormClosing);
+            this.Load += new System.EventHandler(this.FrmEmpTypeList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpTypeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,5 +238,6 @@
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
         private System.Windows.Forms.DataGridViewLinkColumn colRecover;
         private System.Windows.Forms.DataGridViewLinkColumn colRemove;
+        private System.Windows.Forms.Label lblErrorMsg;
     }
 }
