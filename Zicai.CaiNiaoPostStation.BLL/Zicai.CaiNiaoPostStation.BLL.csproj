@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="EmpTypeBLL.cs" />
+    <Compile Include="ExpressBLL.cs" />
     <Compile Include="ExpressTypeBLL.cs" />
     <Compile Include="MenuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
