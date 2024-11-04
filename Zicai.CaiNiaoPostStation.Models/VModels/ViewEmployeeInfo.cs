@@ -13,7 +13,7 @@ namespace ZiCai.CaiNiaoPostStation.Models.VModels
     /// </summary>
     [Table("View_EmployeeInfos")]
     [PrimaryKey("EmpId")]
-    public class ViewEmployeeInfo:EmployeeInfo
+    public class ViewEmployeeInfo : EmployeeInfo
     {
         public string StationName { get; set; }
         public string EmpTypeName { get; set; }

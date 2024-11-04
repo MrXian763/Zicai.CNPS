@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zicai.CaiNiaoPostStation.BLL;
+using Zicai.CaiNiaoPostStation.Models;
 
 namespace Zicai.CaiNiaoPostStation.Utility
 {
@@ -48,35 +50,36 @@ namespace Zicai.CaiNiaoPostStation.Utility
         /// <summary>
         /// 添加窗体到选项卡中
         /// </summary>
-        /// <param name="tab"></param>
-        /// <param name="form"></param>
-        /// <param name="index"></param>
+        /// <param name="tab">要添加页面的TabControl对象</param>
+        /// <param name="form">要添加的Form对象</param>
+        /// <param name="index">可选参数，指定要插入的索引位置，默认为-1，表示添加到末尾</param>
         public static void AddTabFormPage(this TabControl tab, Form form, int index = -1)
         {
             TabPage page = null;
             Form frm = GetOpenForm(form.Name); // 查找指定Form是否已经打开
             if (frm == null)
             {
-                frm = form;
-                frm.FormBorderStyle = FormBorderStyle.None;
-                frm.TopLevel = false;
-                frm.WindowState = FormWindowState.Maximized;
+                frm = form; // 将传入的form对象赋值给frm
+                frm.FormBorderStyle = FormBorderStyle.None; // 设置frm的边框样式
+                frm.TopLevel = false; // 将frm的TopLevel属性设置为非顶层窗口
+                frm.WindowState = FormWindowState.Maximized; // 将frm的窗口状态设置为最大化
                 page = new TabPage();
-                frm.Parent = page;
-                frm.Dock = DockStyle.Fill;
+                frm.Parent = page; // 将frm的父容器设置为新创建的TabPage，这样frm就会显示在TabPage中
+                frm.Dock = DockStyle.Fill; // 设置frm的停靠样式为填充，使其填充整个TabPage
                 page.Name = frm.Name;
                 page.Text = frm.Text;
+                // 如果index参数不是 - 1，则将TabPage插入到指定的索引位置
                 if (index != -1)
                     tab.TabPages.Insert(index, page);
                 else
                     tab.TabPages.Add(page);
-                frm.Show();
+                frm.Show(); // 显示frm
             }
             else
             {
-                page = tab.TabPages[frm.Name];
+                page = tab.TabPages[frm.Name]; // 如果frm已经打开，直接从TabControl中获取与frm名称相同的TabPage
             }
-            tab.SelectedTab = page;
+            tab.SelectedTab = page; // 设置TabControl的选中标签页为新添加或已存在的TabPage
         }
 
         /// <summary>
@@ -145,7 +148,6 @@ namespace Zicai.CaiNiaoPostStation.Utility
                     }
                 }
                 list[index] = info;
-                
             }
             dgv.DataSource = list;
         }
@@ -191,6 +193,7 @@ namespace Zicai.CaiNiaoPostStation.Utility
                 case 1: typeName = "删除"; break;
                 case 0: typeName = "恢复"; break;
                 case 2: typeName = "移除"; break;
+                case 3: typeName = "离职"; break;
                 default: break;
             }
             return typeName;
@@ -208,6 +211,47 @@ namespace Zicai.CaiNiaoPostStation.Utility
             {
                 dgv.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+        }
+
+        /// <summary>
+        /// 加载站点下拉框数据
+        /// </summary>
+        /// <param name="cboStations">站点下拉框</param>
+        public static void LoadCboStations(ComboBox cboStations, StationBLL statBLL)
+        {
+            List<StationInfo> stationList01 = statBLL.GetCboStationList();
+            stationList01.Insert(0, new StationInfo()
+            {
+                StationId = 0,
+                StationName = "请选择站点"
+            });
+            cboStations.DisplayMember = "StationName";
+            cboStations.ValueMember = "StationId";
+            cboStations.DataSource = stationList01;
+        }
+
+        /// <summary>
+        /// 从导航页打开对应页面的方法
+        /// </summary>
+        /// <typeparam name="T">窗体类型</typeparam>
+        /// <param name="curForm">当前页面</param>
+        public static void ShowNavForm<T>(this Form curForm, object obj = null) where T : Form
+        {
+            TabControl tab = curForm.Parent.Parent as TabControl; // 获取当前页面控件
+            tab.ShowTabFormPage<T>(obj);
+        }
+
+        /// <summary>
+        /// 打开对应类型的Form页面
+        /// </summary>
+        /// <typeparam name="T">窗体类型</typeparam>
+        /// <param name="tab">页面控件</param>
+        public static void ShowTabFormPage<T>(this TabControl tab, object obj = null) where T : Form
+        {
+            Form frm = Activator.CreateInstance<T>(); // 反射创建窗体实例
+            if (obj != null)
+                frm.Tag = obj;
+            tab.AddTabFormPage(frm); // 将新建的窗体添加到Tab页面
         }
     }
 }

@@ -30,7 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbEmpInfo = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtRemark = new System.Windows.Forms.TextBox();
+            this.cboStations = new System.Windows.Forms.ComboBox();
+            this.linkTypes = new System.Windows.Forms.LinkLabel();
+            this.cboEmpTypes = new System.Windows.Forms.ComboBox();
+            this.rbtnFemale = new System.Windows.Forms.RadioButton();
+            this.tbtnMale = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.chkIsOn = new System.Windows.Forms.CheckBox();
@@ -48,14 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbtnMale = new System.Windows.Forms.RadioButton();
-            this.rbtnFemale = new System.Windows.Forms.RadioButton();
-            this.cboEmpTypes = new System.Windows.Forms.ComboBox();
-            this.linkTypes = new System.Windows.Forms.LinkLabel();
-            this.cboStations = new System.Windows.Forms.ComboBox();
-            this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.chkShowDel = new System.Windows.Forms.CheckBox();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnRecover = new System.Windows.Forms.Button();
@@ -68,7 +68,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cboStationSearch = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colEmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,48 +82,132 @@
             this.colIsOn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colLeave = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.groupBox1.SuspendLayout();
+            this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
+            this.gbEmpInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbEmpInfo
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbEmpInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtRemark);
-            this.groupBox1.Controls.Add(this.cboStations);
-            this.groupBox1.Controls.Add(this.linkTypes);
-            this.groupBox1.Controls.Add(this.cboEmpTypes);
-            this.groupBox1.Controls.Add(this.rbtnFemale);
-            this.groupBox1.Controls.Add(this.tbtnMale);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.btnReset);
-            this.groupBox1.Controls.Add(this.btnOk);
-            this.groupBox1.Controls.Add(this.chkIsOn);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.txtPYNo);
-            this.groupBox1.Controls.Add(this.txtAge);
-            this.groupBox1.Controls.Add(this.txtEmpName);
-            this.groupBox1.Controls.Add(this.txtEmpNo);
-            this.groupBox1.Controls.Add(this.lblErrMsg);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1387, 158);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "员工信息";
+            this.gbEmpInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.gbEmpInfo.Controls.Add(this.label10);
+            this.gbEmpInfo.Controls.Add(this.txtRemark);
+            this.gbEmpInfo.Controls.Add(this.cboStations);
+            this.gbEmpInfo.Controls.Add(this.linkTypes);
+            this.gbEmpInfo.Controls.Add(this.cboEmpTypes);
+            this.gbEmpInfo.Controls.Add(this.rbtnFemale);
+            this.gbEmpInfo.Controls.Add(this.tbtnMale);
+            this.gbEmpInfo.Controls.Add(this.label9);
+            this.gbEmpInfo.Controls.Add(this.btnReset);
+            this.gbEmpInfo.Controls.Add(this.btnOk);
+            this.gbEmpInfo.Controls.Add(this.chkIsOn);
+            this.gbEmpInfo.Controls.Add(this.txtPhone);
+            this.gbEmpInfo.Controls.Add(this.txtPYNo);
+            this.gbEmpInfo.Controls.Add(this.txtAge);
+            this.gbEmpInfo.Controls.Add(this.txtEmpName);
+            this.gbEmpInfo.Controls.Add(this.txtEmpNo);
+            this.gbEmpInfo.Controls.Add(this.lblErrMsg);
+            this.gbEmpInfo.Controls.Add(this.label8);
+            this.gbEmpInfo.Controls.Add(this.label7);
+            this.gbEmpInfo.Controls.Add(this.label6);
+            this.gbEmpInfo.Controls.Add(this.label5);
+            this.gbEmpInfo.Controls.Add(this.label4);
+            this.gbEmpInfo.Controls.Add(this.label3);
+            this.gbEmpInfo.Controls.Add(this.label2);
+            this.gbEmpInfo.Controls.Add(this.label1);
+            this.gbEmpInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbEmpInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.gbEmpInfo.Location = new System.Drawing.Point(3, 3);
+            this.gbEmpInfo.Name = "gbEmpInfo";
+            this.gbEmpInfo.Size = new System.Drawing.Size(1387, 158);
+            this.gbEmpInfo.TabIndex = 1;
+            this.gbEmpInfo.TabStop = false;
+            this.gbEmpInfo.Text = "员工信息";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(918, 113);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 22);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "在职";
+            // 
+            // txtRemark
+            // 
+            this.txtRemark.Location = new System.Drawing.Point(101, 110);
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Size = new System.Drawing.Size(767, 29);
+            this.txtRemark.TabIndex = 25;
+            // 
+            // cboStations
+            // 
+            this.cboStations.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboStations.FormattingEnabled = true;
+            this.cboStations.Location = new System.Drawing.Point(966, 67);
+            this.cboStations.Name = "cboStations";
+            this.cboStations.Size = new System.Drawing.Size(162, 27);
+            this.cboStations.TabIndex = 24;
+            // 
+            // linkTypes
+            // 
+            this.linkTypes.AutoSize = true;
+            this.linkTypes.Font = new System.Drawing.Font("微软雅黑", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.linkTypes.Location = new System.Drawing.Point(833, 71);
+            this.linkTypes.Name = "linkTypes";
+            this.linkTypes.Size = new System.Drawing.Size(42, 22);
+            this.linkTypes.TabIndex = 23;
+            this.linkTypes.TabStop = true;
+            this.linkTypes.Text = "类别";
+            this.linkTypes.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkTypes_LinkClicked);
+            // 
+            // cboEmpTypes
+            // 
+            this.cboEmpTypes.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboEmpTypes.FormattingEnabled = true;
+            this.cboEmpTypes.Location = new System.Drawing.Point(686, 68);
+            this.cboEmpTypes.Name = "cboEmpTypes";
+            this.cboEmpTypes.Size = new System.Drawing.Size(141, 27);
+            this.cboEmpTypes.TabIndex = 22;
+            // 
+            // rbtnFemale
+            // 
+            this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.ForeColor = System.Drawing.Color.Gray;
+            this.rbtnFemale.Location = new System.Drawing.Point(754, 28);
+            this.rbtnFemale.Name = "rbtnFemale";
+            this.rbtnFemale.Size = new System.Drawing.Size(44, 26);
+            this.rbtnFemale.TabIndex = 21;
+            this.rbtnFemale.Text = "女";
+            this.rbtnFemale.UseVisualStyleBackColor = true;
+            // 
+            // tbtnMale
+            // 
+            this.tbtnMale.AutoSize = true;
+            this.tbtnMale.Checked = true;
+            this.tbtnMale.ForeColor = System.Drawing.Color.Gray;
+            this.tbtnMale.Location = new System.Drawing.Point(690, 27);
+            this.tbtnMale.Name = "tbtnMale";
+            this.tbtnMale.Size = new System.Drawing.Size(44, 26);
+            this.tbtnMale.TabIndex = 20;
+            this.tbtnMale.TabStop = true;
+            this.tbtnMale.Text = "男";
+            this.tbtnMale.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(638, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 22);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "性别";
             // 
             // btnReset
             // 
@@ -140,6 +223,7 @@
             this.btnReset.TabIndex = 18;
             this.btnReset.Text = "重置";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnOk
             // 
@@ -155,6 +239,7 @@
             this.btnOk.TabIndex = 17;
             this.btnOk.Text = "添加";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // chkIsOn
             // 
@@ -174,6 +259,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(189, 29);
             this.txtPhone.TabIndex = 12;
+            this.txtPhone.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtPYNo
             // 
@@ -189,6 +275,7 @@
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(111, 29);
             this.txtAge.TabIndex = 10;
+            this.txtAge.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtEmpName
             // 
@@ -196,6 +283,8 @@
             this.txtEmpName.Name = "txtEmpName";
             this.txtEmpName.Size = new System.Drawing.Size(189, 29);
             this.txtEmpName.TabIndex = 9;
+            this.txtEmpName.TextChanged += new System.EventHandler(this.txtEmpName_TextChanged);
+            this.txtEmpName.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // txtEmpNo
             // 
@@ -203,6 +292,7 @@
             this.txtEmpNo.Name = "txtEmpNo";
             this.txtEmpNo.Size = new System.Drawing.Size(182, 29);
             this.txtEmpNo.TabIndex = 1;
+            this.txtEmpNo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox_MouseDown);
             // 
             // lblErrMsg
             // 
@@ -304,88 +394,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "员工号";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(638, 29);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 22);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "性别";
-            // 
-            // tbtnMale
-            // 
-            this.tbtnMale.AutoSize = true;
-            this.tbtnMale.Checked = true;
-            this.tbtnMale.ForeColor = System.Drawing.Color.Gray;
-            this.tbtnMale.Location = new System.Drawing.Point(690, 27);
-            this.tbtnMale.Name = "tbtnMale";
-            this.tbtnMale.Size = new System.Drawing.Size(44, 26);
-            this.tbtnMale.TabIndex = 20;
-            this.tbtnMale.TabStop = true;
-            this.tbtnMale.Text = "男";
-            this.tbtnMale.UseVisualStyleBackColor = true;
-            // 
-            // rbtnFemale
-            // 
-            this.rbtnFemale.AutoSize = true;
-            this.rbtnFemale.ForeColor = System.Drawing.Color.Gray;
-            this.rbtnFemale.Location = new System.Drawing.Point(754, 28);
-            this.rbtnFemale.Name = "rbtnFemale";
-            this.rbtnFemale.Size = new System.Drawing.Size(44, 26);
-            this.rbtnFemale.TabIndex = 21;
-            this.rbtnFemale.Text = "女";
-            this.rbtnFemale.UseVisualStyleBackColor = true;
-            // 
-            // cboEmpTypes
-            // 
-            this.cboEmpTypes.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboEmpTypes.FormattingEnabled = true;
-            this.cboEmpTypes.Location = new System.Drawing.Point(686, 68);
-            this.cboEmpTypes.Name = "cboEmpTypes";
-            this.cboEmpTypes.Size = new System.Drawing.Size(141, 27);
-            this.cboEmpTypes.TabIndex = 22;
-            // 
-            // linkTypes
-            // 
-            this.linkTypes.AutoSize = true;
-            this.linkTypes.Font = new System.Drawing.Font("微软雅黑", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.linkTypes.Location = new System.Drawing.Point(833, 71);
-            this.linkTypes.Name = "linkTypes";
-            this.linkTypes.Size = new System.Drawing.Size(42, 22);
-            this.linkTypes.TabIndex = 23;
-            this.linkTypes.TabStop = true;
-            this.linkTypes.Text = "类别";
-            // 
-            // cboStations
-            // 
-            this.cboStations.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboStations.FormattingEnabled = true;
-            this.cboStations.Location = new System.Drawing.Point(966, 67);
-            this.cboStations.Name = "cboStations";
-            this.cboStations.Size = new System.Drawing.Size(162, 27);
-            this.cboStations.TabIndex = 24;
-            // 
-            // txtRemark
-            // 
-            this.txtRemark.Location = new System.Drawing.Point(101, 110);
-            this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(767, 29);
-            this.txtRemark.TabIndex = 25;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(918, 113);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 22);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "在职";
-            // 
             // chkShowDel
             // 
             this.chkShowDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -398,6 +406,7 @@
             this.chkShowDel.TabIndex = 34;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // btnRemove
             // 
@@ -413,6 +422,7 @@
             this.btnRemove.TabIndex = 33;
             this.btnRemove.Text = "移除";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnRecover
             // 
@@ -428,6 +438,7 @@
             this.btnRecover.TabIndex = 32;
             this.btnRecover.Text = "恢复";
             this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // btnDelete
             // 
@@ -443,6 +454,7 @@
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnQuery
             // 
@@ -458,6 +470,7 @@
             this.btnQuery.TabIndex = 30;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // label11
             // 
@@ -497,6 +510,7 @@
             this.cboEmpTypeSearch.Name = "cboEmpTypeSearch";
             this.cboEmpTypeSearch.Size = new System.Drawing.Size(121, 27);
             this.cboEmpTypeSearch.TabIndex = 46;
+            this.cboEmpTypeSearch.SelectedIndexChanged += new System.EventHandler(this.cboEmpTypeSearch_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -517,6 +531,7 @@
             this.cboStationSearch.Name = "cboStationSearch";
             this.cboStationSearch.Size = new System.Drawing.Size(151, 27);
             this.cboStationSearch.TabIndex = 48;
+            this.cboStationSearch.SelectedIndexChanged += new System.EventHandler(this.cboStationSearch_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -528,20 +543,6 @@
             this.label14.Size = new System.Drawing.Size(42, 22);
             this.label14.TabIndex = 47;
             this.label14.Text = "站点";
-            // 
-            // uPager1
-            // 
-            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uPager1.BackColor = System.Drawing.Color.White;
-            this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(17, 749);
-            this.uPager1.Name = "uPager1";
-            this.uPager1.PageSize = 10;
-            this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1364, 50);
-            this.uPager1.StartIndex = 1;
-            this.uPager1.TabIndex = 49;
             // 
             // dgvEmployeeList
             // 
@@ -592,6 +593,7 @@
             this.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployeeList.Size = new System.Drawing.Size(1364, 537);
             this.dgvEmployeeList.TabIndex = 50;
+            this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             // 
             // colChk
             // 
@@ -601,6 +603,7 @@
             // 
             // colEmpId
             // 
+            this.colEmpId.DataPropertyName = "EmpId";
             this.colEmpId.FillWeight = 80F;
             this.colEmpId.HeaderText = "员工编号";
             this.colEmpId.Name = "colEmpId";
@@ -608,24 +611,28 @@
             // 
             // colEmpNo
             // 
+            this.colEmpNo.DataPropertyName = "EmpNo";
             this.colEmpNo.HeaderText = "员工号";
             this.colEmpNo.Name = "colEmpNo";
             this.colEmpNo.ReadOnly = true;
             // 
             // colEmpName
             // 
+            this.colEmpName.DataPropertyName = "EmpName";
             this.colEmpName.HeaderText = "姓名";
             this.colEmpName.Name = "colEmpName";
             this.colEmpName.ReadOnly = true;
             // 
             // colEmpPYNo
             // 
+            this.colEmpPYNo.DataPropertyName = "EmpPYNo";
             this.colEmpPYNo.HeaderText = "拼音码";
             this.colEmpPYNo.Name = "colEmpPYNo";
             this.colEmpPYNo.ReadOnly = true;
             // 
             // colSex
             // 
+            this.colSex.DataPropertyName = "Sex";
             this.colSex.FillWeight = 60F;
             this.colSex.HeaderText = "性别";
             this.colSex.Name = "colSex";
@@ -633,6 +640,7 @@
             // 
             // colAge
             // 
+            this.colAge.DataPropertyName = "Age";
             this.colAge.FillWeight = 60F;
             this.colAge.HeaderText = "年龄";
             this.colAge.Name = "colAge";
@@ -640,12 +648,14 @@
             // 
             // colPhone
             // 
+            this.colPhone.DataPropertyName = "Phone";
             this.colPhone.HeaderText = "电话";
             this.colPhone.Name = "colPhone";
             this.colPhone.ReadOnly = true;
             // 
             // colStationName
             // 
+            this.colStationName.DataPropertyName = "StationName";
             this.colStationName.FillWeight = 150F;
             this.colStationName.HeaderText = "站点";
             this.colStationName.Name = "colStationName";
@@ -653,6 +663,7 @@
             // 
             // colEmpTypeName
             // 
+            this.colEmpTypeName.DataPropertyName = "EmpTypeName";
             this.colEmpTypeName.FillWeight = 80F;
             this.colEmpTypeName.HeaderText = "员工类别";
             this.colEmpTypeName.Name = "colEmpTypeName";
@@ -660,6 +671,7 @@
             // 
             // colIsOn
             // 
+            this.colIsOn.DataPropertyName = "IsOn";
             this.colIsOn.FillWeight = 60F;
             this.colIsOn.HeaderText = "在职";
             this.colIsOn.Name = "colIsOn";
@@ -686,6 +698,21 @@
             this.colLeave.TrackVisitedState = false;
             this.colLeave.UseColumnTextForLinkValue = true;
             // 
+            // uPager1
+            // 
+            this.uPager1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.uPager1.BackColor = System.Drawing.Color.White;
+            this.uPager1.CurrentPage = 1;
+            this.uPager1.Location = new System.Drawing.Point(17, 749);
+            this.uPager1.Name = "uPager1";
+            this.uPager1.PageSize = 10;
+            this.uPager1.Record = 0;
+            this.uPager1.Size = new System.Drawing.Size(1364, 50);
+            this.uPager1.StartIndex = 1;
+            this.uPager1.TabIndex = 49;
+            this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChanged);
+            // 
             // FrmEmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -706,12 +733,13 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbEmpInfo);
             this.Name = "FrmEmployeeList";
             this.ShowIcon = false;
             this.Text = "员工信息管理";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmEmployeeList_Load);
+            this.gbEmpInfo.ResumeLayout(false);
+            this.gbEmpInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -720,7 +748,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbEmpInfo;
         private System.Windows.Forms.RadioButton tbtnMale;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnReset;
