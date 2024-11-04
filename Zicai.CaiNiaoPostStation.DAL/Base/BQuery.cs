@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Helper;
-using Zhaoxi.CainiaoPostStation.Models.UIModels;
+using ZiCai.CainiaoPostStation.Models.UIModels;
 
 namespace ZiCai.CainiaoPostStation.DAL.Base
 {

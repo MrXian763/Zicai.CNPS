@@ -49,6 +49,7 @@
     <Compile Include="Base\SqlModel.cs" />
     <Compile Include="EmployeeDAL.cs" />
     <Compile Include="EmpTypeDAL.cs" />
+    <Compile Include="ExpDistributeDAL.cs" />
     <Compile Include="ExpressDAL.cs" />
     <Compile Include="ExpressTypeDAL.cs" />
     <Compile Include="Helper\CommandInfo.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ShelfDAL.cs" />
     <Compile Include="StationDAL.cs" />
     <Compile Include="UserDAL.cs" />
+    <Compile Include="ViewEmployeeDAL.cs" />
     <Compile Include="ViewExpressTypeDAL.cs" />
   </ItemGroup>
   <ItemGroup>

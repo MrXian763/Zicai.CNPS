@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zhaoxi.CainiaoPostStation.Models.UIModels;
+using ZiCai.CainiaoPostStation.Models.UIModels;
 using Zicai.CaiNiaoPostStation.DAL;
 using Zicai.CaiNiaoPostStation.Models;
 

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Zhaoxi.CainiaoPostStation.Models.UIModels;
+using ZiCai.CainiaoPostStation.Models.UIModels;
 using Zicai.CaiNiaoPostStation.BLL;
 using Zicai.CaiNiaoPostStation.Models;
 using Zicai.CaiNiaoPostStation.Utility;

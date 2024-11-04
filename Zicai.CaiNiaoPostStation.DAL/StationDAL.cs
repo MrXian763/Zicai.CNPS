@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zhaoxi.CainiaoPostStation.Models.UIModels;
+using ZiCai.CainiaoPostStation.Models.UIModels;
 using Zicai.CaiNiaoPostStation.Models;
 using ZiCai.CainiaoPostStation.DAL.Base;
 

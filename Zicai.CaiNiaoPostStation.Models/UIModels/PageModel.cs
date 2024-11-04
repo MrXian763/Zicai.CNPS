@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zhaoxi.CainiaoPostStation.Models.UIModels
+namespace ZiCai.CainiaoPostStation.Models.UIModels
 {
     /// <summary>
     /// 分页模型
