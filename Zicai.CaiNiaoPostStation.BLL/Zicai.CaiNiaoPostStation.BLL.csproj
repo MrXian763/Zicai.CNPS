@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DistributeExpressBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="EmpTypeBLL.cs" />
     <Compile Include="ExpressBLL.cs" />
