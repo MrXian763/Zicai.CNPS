@@ -118,9 +118,9 @@ namespace Zicai.CaiNiaoPostStation.BLL
         /// <summary>
         /// 自提签收
         /// </summary>
-        /// <param name="expId"></param>
-        /// <param name="pickingCode"></param>
-        /// <param name="signTime"></param>
+        /// <param name="expId">快递ID</param>
+        /// <param name="pickingCode">自提码</param>
+        /// <param name="signTime">签收时间</param>
         /// <returns></returns>
         public bool SignExpress(int expId, string pickingCode, DateTime signTime)
         {

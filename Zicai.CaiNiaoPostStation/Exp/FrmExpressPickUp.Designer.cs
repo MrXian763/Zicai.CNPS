@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtReceiver = new System.Windows.Forms.TextBox();
+            this.panelCode = new System.Windows.Forms.Panel();
+            this.txtPickingCode = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblErrMsg = new System.Windows.Forms.Label();
             this.txtReceiverPhone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelCode = new System.Windows.Forms.Panel();
-            this.txtPickingCode = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtReceiver = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panelCode.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "快递签收";
             // 
+            // txtReceiver
+            // 
+            this.txtReceiver.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtReceiver.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtReceiver.Location = new System.Drawing.Point(158, 73);
+            this.txtReceiver.Name = "txtReceiver";
+            this.txtReceiver.Size = new System.Drawing.Size(206, 26);
+            this.txtReceiver.TabIndex = 68;
+            // 
+            // panelCode
+            // 
+            this.panelCode.Controls.Add(this.txtPickingCode);
+            this.panelCode.Controls.Add(this.label3);
+            this.panelCode.Location = new System.Drawing.Point(66, 184);
+            this.panelCode.Name = "panelCode";
+            this.panelCode.Size = new System.Drawing.Size(294, 37);
+            this.panelCode.TabIndex = 67;
+            // 
+            // txtPickingCode
+            // 
+            this.txtPickingCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPickingCode.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPickingCode.Location = new System.Drawing.Point(92, 5);
+            this.txtPickingCode.Name = "txtPickingCode";
+            this.txtPickingCode.Size = new System.Drawing.Size(206, 26);
+            this.txtPickingCode.TabIndex = 47;
+            this.txtPickingCode.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtPickingCode_MouseDown);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(28, 7);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 22);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "取件码";
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -80,6 +126,7 @@
             this.btnClose.TabIndex = 65;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOk
             // 
@@ -95,6 +142,7 @@
             this.btnOk.TabIndex = 64;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // lblErrMsg
             // 
@@ -151,51 +199,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "收件人";
             // 
-            // panelCode
-            // 
-            this.panelCode.Controls.Add(this.txtPickingCode);
-            this.panelCode.Controls.Add(this.label3);
-            this.panelCode.Location = new System.Drawing.Point(66, 184);
-            this.panelCode.Name = "panelCode";
-            this.panelCode.Size = new System.Drawing.Size(294, 37);
-            this.panelCode.TabIndex = 67;
-            // 
-            // txtPickingCode
-            // 
-            this.txtPickingCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPickingCode.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPickingCode.Location = new System.Drawing.Point(92, 5);
-            this.txtPickingCode.Name = "txtPickingCode";
-            this.txtPickingCode.Size = new System.Drawing.Size(206, 26);
-            this.txtPickingCode.TabIndex = 47;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(28, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 22);
-            this.label3.TabIndex = 46;
-            this.label3.Text = "取件码";
-            // 
-            // txtReceiver
-            // 
-            this.txtReceiver.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReceiver.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtReceiver.Location = new System.Drawing.Point(158, 73);
-            this.txtReceiver.Name = "txtReceiver";
-            this.txtReceiver.Size = new System.Drawing.Size(206, 26);
-            this.txtReceiver.TabIndex = 68;
-            // 
             // FrmExpressPickUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -207,6 +210,7 @@
             this.Name = "FrmExpressPickUp";
             this.ShowIcon = false;
             this.Text = "快递签收";
+            this.Load += new System.EventHandler(this.FrmExpressPickUp_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelCode.ResumeLayout(false);

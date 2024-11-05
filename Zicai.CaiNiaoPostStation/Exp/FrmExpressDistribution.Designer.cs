@@ -40,17 +40,19 @@
             this.txtRecPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDisExpressList = new System.Windows.Forms.DataGridView();
+            this.cboStations = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colStationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExpNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExpNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReceiver = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReceiverPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRecAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colReceiveAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpState = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDisPerson = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDisPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDisTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmpName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDistributeTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSignTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisExpressList)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +70,7 @@
             this.btnAssign.TabIndex = 31;
             this.btnAssign.Text = "派送安排";
             this.btnAssign.UseVisualStyleBackColor = false;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
             // 
             // btnPickup
             // 
@@ -82,6 +85,7 @@
             this.btnPickup.TabIndex = 32;
             this.btnPickup.Text = "签收";
             this.btnPickup.UseVisualStyleBackColor = false;
+            this.btnPickup.Click += new System.EventHandler(this.btnPickup_Click);
             // 
             // btnQuery
             // 
@@ -91,12 +95,13 @@
             this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(1254, 33);
+            this.btnQuery.Location = new System.Drawing.Point(1336, 33);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(85, 31);
             this.btnQuery.TabIndex = 33;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // cboStates
             // 
@@ -104,13 +109,15 @@
             this.cboStates.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cboStates.FormattingEnabled = true;
             this.cboStates.Items.AddRange(new object[] {
+            "全部",
             "已入库",
             "派送中",
             "已签收"});
-            this.cboStates.Location = new System.Drawing.Point(1070, 37);
+            this.cboStates.Location = new System.Drawing.Point(1152, 37);
             this.cboStates.Name = "cboStates";
             this.cboStates.Size = new System.Drawing.Size(130, 27);
             this.cboStates.TabIndex = 39;
+            this.cboStates.SelectedIndexChanged += new System.EventHandler(this.cboStates_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -118,7 +125,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Location = new System.Drawing.Point(990, 39);
+            this.label4.Location = new System.Drawing.Point(1072, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 22);
             this.label4.TabIndex = 38;
@@ -128,9 +135,9 @@
             // 
             this.txtKeyWords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtKeyWords.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtKeyWords.Location = new System.Drawing.Point(384, 37);
+            this.txtKeyWords.Location = new System.Drawing.Point(353, 37);
             this.txtKeyWords.Name = "txtKeyWords";
-            this.txtKeyWords.Size = new System.Drawing.Size(223, 26);
+            this.txtKeyWords.Size = new System.Drawing.Size(175, 26);
             this.txtKeyWords.TabIndex = 35;
             // 
             // label10
@@ -139,7 +146,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label10.Location = new System.Drawing.Point(288, 38);
+            this.label10.Location = new System.Drawing.Point(257, 40);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(90, 22);
             this.label10.TabIndex = 34;
@@ -149,9 +156,9 @@
             // 
             this.txtRecPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRecPhone.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRecPhone.Location = new System.Drawing.Point(744, 38);
+            this.txtRecPhone.Location = new System.Drawing.Point(659, 38);
             this.txtRecPhone.Name = "txtRecPhone";
-            this.txtRecPhone.Size = new System.Drawing.Size(202, 26);
+            this.txtRecPhone.Size = new System.Drawing.Size(176, 26);
             this.txtRecPhone.TabIndex = 41;
             // 
             // label1
@@ -160,7 +167,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(648, 39);
+            this.label1.Location = new System.Drawing.Point(563, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 22);
             this.label1.TabIndex = 40;
@@ -190,14 +197,14 @@
             this.dgvDisExpressList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
             this.colStationName,
-            this.colExpNo,
+            this.colExpNumber,
             this.colReceiver,
             this.colReceiverPhone,
-            this.colRecAddress,
+            this.colReceiveAddress,
             this.colExpState,
-            this.colDisPerson,
-            this.colDisPhone,
-            this.colDisTime,
+            this.colEmpName,
+            this.colPhone,
+            this.colDistributeTime,
             this.colSignTime});
             this.dgvDisExpressList.EnableHeadersVisualStyles = false;
             this.dgvDisExpressList.GridColor = System.Drawing.Color.LightSteelBlue;
@@ -211,8 +218,32 @@
             this.dgvDisExpressList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDisExpressList.RowTemplate.Height = 23;
             this.dgvDisExpressList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDisExpressList.Size = new System.Drawing.Size(1327, 607);
+            this.dgvDisExpressList.Size = new System.Drawing.Size(1409, 665);
             this.dgvDisExpressList.TabIndex = 56;
+            this.dgvDisExpressList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisExpressList_CellContentClick);
+            // 
+            // cboStations
+            // 
+            this.cboStations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboStations.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboStations.FormattingEnabled = true;
+            this.cboStations.Location = new System.Drawing.Point(926, 36);
+            this.cboStations.Name = "cboStations";
+            this.cboStations.Size = new System.Drawing.Size(130, 27);
+            this.cboStations.TabIndex = 59;
+            this.cboStations.SelectedIndexChanged += new System.EventHandler(this.cboStations_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(878, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 22);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "站点";
             // 
             // uPager1
             // 
@@ -220,13 +251,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.uPager1.BackColor = System.Drawing.Color.White;
             this.uPager1.CurrentPage = 1;
-            this.uPager1.Location = new System.Drawing.Point(12, 692);
+            this.uPager1.Location = new System.Drawing.Point(12, 750);
             this.uPager1.Name = "uPager1";
             this.uPager1.PageSize = 10;
             this.uPager1.Record = 0;
-            this.uPager1.Size = new System.Drawing.Size(1327, 50);
+            this.uPager1.Size = new System.Drawing.Size(1409, 50);
             this.uPager1.StartIndex = 1;
             this.uPager1.TabIndex = 57;
+            this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChanged);
             // 
             // colChk
             // 
@@ -236,20 +268,23 @@
             // 
             // colStationName
             // 
+            this.colStationName.DataPropertyName = "StationName";
             this.colStationName.FillWeight = 150F;
             this.colStationName.HeaderText = "所在站点";
             this.colStationName.Name = "colStationName";
             this.colStationName.ReadOnly = true;
             // 
-            // colExpNo
+            // colExpNumber
             // 
-            this.colExpNo.FillWeight = 120F;
-            this.colExpNo.HeaderText = "快递单号";
-            this.colExpNo.Name = "colExpNo";
-            this.colExpNo.ReadOnly = true;
+            this.colExpNumber.DataPropertyName = "ExpNumber";
+            this.colExpNumber.FillWeight = 120F;
+            this.colExpNumber.HeaderText = "快递单号";
+            this.colExpNumber.Name = "colExpNumber";
+            this.colExpNumber.ReadOnly = true;
             // 
             // colReceiver
             // 
+            this.colReceiver.DataPropertyName = "Receiver";
             this.colReceiver.FillWeight = 80F;
             this.colReceiver.HeaderText = "收件人";
             this.colReceiver.Name = "colReceiver";
@@ -257,45 +292,53 @@
             // 
             // colReceiverPhone
             // 
+            this.colReceiverPhone.DataPropertyName = "ReceiverPhone";
             this.colReceiverPhone.HeaderText = "收件人电话";
             this.colReceiverPhone.Name = "colReceiverPhone";
             this.colReceiverPhone.ReadOnly = true;
             // 
-            // colRecAddress
+            // colReceiveAddress
             // 
-            this.colRecAddress.FillWeight = 200F;
-            this.colRecAddress.HeaderText = "收件地址";
-            this.colRecAddress.Name = "colRecAddress";
-            this.colRecAddress.ReadOnly = true;
+            this.colReceiveAddress.DataPropertyName = "ReceiveAddress";
+            this.colReceiveAddress.FillWeight = 200F;
+            this.colReceiveAddress.HeaderText = "收件地址";
+            this.colReceiveAddress.Name = "colReceiveAddress";
+            this.colReceiveAddress.ReadOnly = true;
             // 
             // colExpState
             // 
+            this.colExpState.DataPropertyName = "ExpState";
             this.colExpState.FillWeight = 80F;
             this.colExpState.HeaderText = "快递状态";
             this.colExpState.Name = "colExpState";
             this.colExpState.ReadOnly = true;
             // 
-            // colDisPerson
+            // colEmpName
             // 
-            this.colDisPerson.FillWeight = 80F;
-            this.colDisPerson.HeaderText = "派送人";
-            this.colDisPerson.Name = "colDisPerson";
-            this.colDisPerson.ReadOnly = true;
+            this.colEmpName.DataPropertyName = "EmpName";
+            this.colEmpName.FillWeight = 80F;
+            this.colEmpName.HeaderText = "派送人";
+            this.colEmpName.Name = "colEmpName";
+            this.colEmpName.ReadOnly = true;
             // 
-            // colDisPhone
+            // colPhone
             // 
-            this.colDisPhone.HeaderText = "派送员电话";
-            this.colDisPhone.Name = "colDisPhone";
-            this.colDisPhone.ReadOnly = true;
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.HeaderText = "派送员电话";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
             // 
-            // colDisTime
+            // colDistributeTime
             // 
-            this.colDisTime.FillWeight = 120F;
-            this.colDisTime.HeaderText = "派送时间";
-            this.colDisTime.Name = "colDisTime";
+            this.colDistributeTime.DataPropertyName = "DistributeTime";
+            this.colDistributeTime.FillWeight = 120F;
+            this.colDistributeTime.HeaderText = "派送时间";
+            this.colDistributeTime.Name = "colDistributeTime";
+            this.colDistributeTime.ReadOnly = true;
             // 
             // colSignTime
             // 
+            this.colSignTime.DataPropertyName = "SignTime";
             this.colSignTime.FillWeight = 120F;
             this.colSignTime.HeaderText = "签收时间";
             this.colSignTime.Name = "colSignTime";
@@ -308,7 +351,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(182)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1351, 754);
+            this.ClientSize = new System.Drawing.Size(1433, 812);
+            this.Controls.Add(this.cboStations);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.uPager1);
             this.Controls.Add(this.dgvDisExpressList);
             this.Controls.Add(this.txtRecPhone);
@@ -323,6 +368,7 @@
             this.Name = "FrmExpressDistribution";
             this.ShowIcon = false;
             this.Text = "快递派送管理";
+            this.Load += new System.EventHandler(this.FrmExpressDistribution_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisExpressList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,16 +388,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDisExpressList;
         private UControls.UPager uPager1;
+        private System.Windows.Forms.ComboBox cboStations;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStationName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceiver;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceiverPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRecAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colReceiveAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpState;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDisPerson;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDisPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDisTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmpName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDistributeTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSignTime;
     }
 }

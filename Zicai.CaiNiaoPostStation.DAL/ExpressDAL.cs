@@ -217,7 +217,7 @@ namespace Zicai.CaiNiaoPostStation.DAL
         /// 快递签收
         /// </summary>
         /// <param name="expIds">快递ID集合</param>
-        /// <param name="isSelf">是否自提</param>
+        /// <param name="isSelf">是否自提签收</param>
         /// <param name="signTime">签收时间</param>
         /// <param name="pickCode">取件码</param>
         /// <returns></returns>

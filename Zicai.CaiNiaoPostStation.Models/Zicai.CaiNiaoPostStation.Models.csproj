@@ -57,6 +57,7 @@
     <Compile Include="VModels\ViewEmployeeInfo.cs" />
     <Compile Include="VModels\ViewExpressInfo.cs" />
     <Compile Include="VModels\ViewExpressTypeInfo.cs" />
+    <Compile Include="VModels\ViewSelfPickUpExpressInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
