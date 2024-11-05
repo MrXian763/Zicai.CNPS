@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtKeyWords = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtExpNo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtReveiverName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtReceiverPhone = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboStations = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboStates = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.gbExpCondition = new System.Windows.Forms.GroupBox();
+            this.btnQuery = new System.Windows.Forms.Button();
             this.cboPickWays = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnQuery = new System.Windows.Forms.Button();
+            this.cboStates = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboStations = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtReceiverPhone = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtReveiverName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtExpNo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtKeyWords = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tvExpTypes = new System.Windows.Forms.TreeView();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.uPager1 = new Zicai.CaiNiaoPostStation.UControls.UPager();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colExpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExpNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExpNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReceiver = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colReceiverPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,109 +68,103 @@
             this.colExpState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEnterTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPickWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
+            this.gbExpCondition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpressList)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbExpCondition
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbExpCondition.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnQuery);
-            this.groupBox1.Controls.Add(this.cboPickWays);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cboStates);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cboStations);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtReceiverPhone);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtReveiverName);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtExpNo);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtKeyWords);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1452, 112);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "查询条件";
+            this.gbExpCondition.Controls.Add(this.btnQuery);
+            this.gbExpCondition.Controls.Add(this.cboPickWays);
+            this.gbExpCondition.Controls.Add(this.label5);
+            this.gbExpCondition.Controls.Add(this.cboStates);
+            this.gbExpCondition.Controls.Add(this.label4);
+            this.gbExpCondition.Controls.Add(this.cboStations);
+            this.gbExpCondition.Controls.Add(this.label7);
+            this.gbExpCondition.Controls.Add(this.txtReceiverPhone);
+            this.gbExpCondition.Controls.Add(this.label3);
+            this.gbExpCondition.Controls.Add(this.txtReveiverName);
+            this.gbExpCondition.Controls.Add(this.label2);
+            this.gbExpCondition.Controls.Add(this.txtExpNo);
+            this.gbExpCondition.Controls.Add(this.label1);
+            this.gbExpCondition.Controls.Add(this.txtKeyWords);
+            this.gbExpCondition.Controls.Add(this.label10);
+            this.gbExpCondition.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.gbExpCondition.ForeColor = System.Drawing.Color.Blue;
+            this.gbExpCondition.Location = new System.Drawing.Point(12, 12);
+            this.gbExpCondition.Name = "gbExpCondition";
+            this.gbExpCondition.Size = new System.Drawing.Size(1452, 112);
+            this.gbExpCondition.TabIndex = 0;
+            this.gbExpCondition.TabStop = false;
+            this.gbExpCondition.Text = "查询条件";
             // 
-            // txtKeyWords
+            // btnQuery
             // 
-            this.txtKeyWords.Location = new System.Drawing.Point(129, 23);
-            this.txtKeyWords.Name = "txtKeyWords";
-            this.txtKeyWords.Size = new System.Drawing.Size(223, 26);
-            this.txtKeyWords.TabIndex = 22;
+            this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnQuery.FlatAppearance.BorderSize = 0;
+            this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnQuery.ForeColor = System.Drawing.Color.White;
+            this.btnQuery.Location = new System.Drawing.Point(1339, 45);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(85, 31);
+            this.btnQuery.TabIndex = 35;
+            this.btnQuery.Text = "查询";
+            this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // label10
+            // cboPickWays
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label10.Location = new System.Drawing.Point(33, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 22);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "查询关键词";
+            this.cboPickWays.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboPickWays.FormattingEnabled = true;
+            this.cboPickWays.Items.AddRange(new object[] {
+            "全部",
+            "派送",
+            "自提"});
+            this.cboPickWays.Location = new System.Drawing.Point(1109, 22);
+            this.cboPickWays.Name = "cboPickWays";
+            this.cboPickWays.Size = new System.Drawing.Size(166, 27);
+            this.cboPickWays.TabIndex = 34;
             // 
-            // txtExpNo
+            // label5
             // 
-            this.txtExpNo.Location = new System.Drawing.Point(129, 66);
-            this.txtExpNo.Name = "txtExpNo";
-            this.txtExpNo.Size = new System.Drawing.Size(223, 26);
-            this.txtExpNo.TabIndex = 24;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label5.Location = new System.Drawing.Point(1029, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 22);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "取件方式";
             // 
-            // label1
+            // cboStates
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(49, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 22);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "快递单号";
+            this.cboStates.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cboStates.FormattingEnabled = true;
+            this.cboStates.Items.AddRange(new object[] {
+            "全部",
+            "已入库",
+            "派送中",
+            "未取件",
+            "已签收"});
+            this.cboStates.Location = new System.Drawing.Point(805, 22);
+            this.cboStates.Name = "cboStates";
+            this.cboStates.Size = new System.Drawing.Size(166, 27);
+            this.cboStates.TabIndex = 32;
             // 
-            // txtReveiverName
+            // label4
             // 
-            this.txtReveiverName.Location = new System.Drawing.Point(472, 66);
-            this.txtReveiverName.Name = "txtReveiverName";
-            this.txtReveiverName.Size = new System.Drawing.Size(166, 26);
-            this.txtReveiverName.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(408, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 22);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "收件人";
-            // 
-            // txtReceiverPhone
-            // 
-            this.txtReceiverPhone.Location = new System.Drawing.Point(805, 66);
-            this.txtReceiverPhone.Name = "txtReceiverPhone";
-            this.txtReceiverPhone.Size = new System.Drawing.Size(166, 26);
-            this.txtReceiverPhone.TabIndex = 28;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label3.Location = new System.Drawing.Point(709, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 22);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "收件人电话";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.Location = new System.Drawing.Point(725, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 22);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "快递状态";
             // 
             // cboStations
             // 
@@ -192,68 +186,77 @@
             this.label7.TabIndex = 29;
             this.label7.Text = "站点";
             // 
-            // cboStates
+            // txtReceiverPhone
             // 
-            this.cboStates.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboStates.FormattingEnabled = true;
-            this.cboStates.Items.AddRange(new object[] {
-            "已入库",
-            "派送中",
-            "未取件",
-            "已签收"});
-            this.cboStates.Location = new System.Drawing.Point(805, 22);
-            this.cboStates.Name = "cboStates";
-            this.cboStates.Size = new System.Drawing.Size(166, 27);
-            this.cboStates.TabIndex = 32;
+            this.txtReceiverPhone.Location = new System.Drawing.Point(805, 66);
+            this.txtReceiverPhone.Name = "txtReceiverPhone";
+            this.txtReceiverPhone.Size = new System.Drawing.Size(166, 26);
+            this.txtReceiverPhone.TabIndex = 28;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Location = new System.Drawing.Point(725, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 22);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "快递状态";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(709, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 22);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "收件人电话";
             // 
-            // cboPickWays
+            // txtReveiverName
             // 
-            this.cboPickWays.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.cboPickWays.FormattingEnabled = true;
-            this.cboPickWays.Items.AddRange(new object[] {
-            "派送",
-            "自提"});
-            this.cboPickWays.Location = new System.Drawing.Point(1109, 22);
-            this.cboPickWays.Name = "cboPickWays";
-            this.cboPickWays.Size = new System.Drawing.Size(166, 27);
-            this.cboPickWays.TabIndex = 34;
+            this.txtReveiverName.Location = new System.Drawing.Point(472, 66);
+            this.txtReveiverName.Name = "txtReveiverName";
+            this.txtReveiverName.Size = new System.Drawing.Size(166, 26);
+            this.txtReveiverName.TabIndex = 26;
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label5.Location = new System.Drawing.Point(1029, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 22);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "取件方式";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(408, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 22);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "收件人";
             // 
-            // btnQuery
+            // txtExpNo
             // 
-            this.btnQuery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnQuery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnQuery.FlatAppearance.BorderSize = 0;
-            this.btnQuery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuery.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnQuery.ForeColor = System.Drawing.Color.White;
-            this.btnQuery.Location = new System.Drawing.Point(1339, 45);
-            this.btnQuery.Name = "btnQuery";
-            this.btnQuery.Size = new System.Drawing.Size(85, 31);
-            this.btnQuery.TabIndex = 35;
-            this.btnQuery.Text = "查询";
-            this.btnQuery.UseVisualStyleBackColor = false;
+            this.txtExpNo.Location = new System.Drawing.Point(129, 66);
+            this.txtExpNo.Name = "txtExpNo";
+            this.txtExpNo.Size = new System.Drawing.Size(223, 26);
+            this.txtExpNo.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(49, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "快递单号";
+            // 
+            // txtKeyWords
+            // 
+            this.txtKeyWords.Location = new System.Drawing.Point(129, 23);
+            this.txtKeyWords.Name = "txtKeyWords";
+            this.txtKeyWords.Size = new System.Drawing.Size(223, 26);
+            this.txtKeyWords.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label10.Location = new System.Drawing.Point(33, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 22);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "查询关键词";
             // 
             // label11
             // 
@@ -270,10 +273,12 @@
             // 
             this.tvExpTypes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.tvExpTypes.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tvExpTypes.Location = new System.Drawing.Point(8, 173);
             this.tvExpTypes.Name = "tvExpTypes";
             this.tvExpTypes.Size = new System.Drawing.Size(197, 628);
             this.tvExpTypes.TabIndex = 23;
+            this.tvExpTypes.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvExpTypes_AfterSelect);
             // 
             // btnEdit
             // 
@@ -289,6 +294,7 @@
             this.btnEdit.TabIndex = 53;
             this.btnEdit.Text = "修改";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // chkShowDel
             // 
@@ -302,6 +308,7 @@
             this.chkShowDel.TabIndex = 52;
             this.chkShowDel.Text = "已删除";
             this.chkShowDel.UseVisualStyleBackColor = true;
+            this.chkShowDel.CheckedChanged += new System.EventHandler(this.chkShowDel_CheckedChanged);
             // 
             // btnRemove
             // 
@@ -317,6 +324,7 @@
             this.btnRemove.TabIndex = 51;
             this.btnRemove.Text = "移除";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnRecover
             // 
@@ -332,6 +340,7 @@
             this.btnRecover.TabIndex = 50;
             this.btnRecover.Text = "恢复";
             this.btnRecover.UseVisualStyleBackColor = false;
+            this.btnRecover.Click += new System.EventHandler(this.btnRecover_Click);
             // 
             // btnDelete
             // 
@@ -347,6 +356,7 @@
             this.btnDelete.TabIndex = 49;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -361,6 +371,7 @@
             this.btnAdd.TabIndex = 54;
             this.btnAdd.Text = "快递录入";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvExpressList
             // 
@@ -373,20 +384,20 @@
             this.dgvExpressList.BackgroundColor = System.Drawing.Color.White;
             this.dgvExpressList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpressList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpressList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpressList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpressList.ColumnHeadersHeight = 33;
             this.dgvExpressList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExpressList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
             this.colExpId,
-            this.colExpNo,
+            this.colExpNumber,
             this.colExpType,
             this.colReceiver,
             this.colReceiverPhone,
@@ -403,13 +414,14 @@
             this.dgvExpressList.Name = "dgvExpressList";
             this.dgvExpressList.RowHeadersWidth = 28;
             this.dgvExpressList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.dgvExpressList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvExpressList.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExpressList.RowTemplate.Height = 23;
             this.dgvExpressList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExpressList.Size = new System.Drawing.Size(1253, 580);
             this.dgvExpressList.TabIndex = 55;
+            this.dgvExpressList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpressList_CellContentClick);
             // 
             // uPager1
             // 
@@ -424,6 +436,7 @@
             this.uPager1.Size = new System.Drawing.Size(1253, 50);
             this.uPager1.StartIndex = 1;
             this.uPager1.TabIndex = 56;
+            this.uPager1.PageChanged += new Zicai.CaiNiaoPostStation.UControls.UPager.PageHandler(this.uPager1_PageChanged);
             // 
             // colChk
             // 
@@ -433,20 +446,23 @@
             // 
             // colExpId
             // 
+            this.colExpId.DataPropertyName = "ExpId";
             this.colExpId.FillWeight = 80F;
             this.colExpId.HeaderText = "快递编号";
             this.colExpId.Name = "colExpId";
             this.colExpId.ReadOnly = true;
             // 
-            // colExpNo
+            // colExpNumber
             // 
-            this.colExpNo.FillWeight = 120F;
-            this.colExpNo.HeaderText = "快递单号";
-            this.colExpNo.Name = "colExpNo";
-            this.colExpNo.ReadOnly = true;
+            this.colExpNumber.DataPropertyName = "ExpNumber";
+            this.colExpNumber.FillWeight = 120F;
+            this.colExpNumber.HeaderText = "快递单号";
+            this.colExpNumber.Name = "colExpNumber";
+            this.colExpNumber.ReadOnly = true;
             // 
             // colExpType
             // 
+            this.colExpType.DataPropertyName = "ExpType";
             this.colExpType.FillWeight = 150F;
             this.colExpType.HeaderText = "快递类别";
             this.colExpType.Name = "colExpType";
@@ -454,6 +470,7 @@
             // 
             // colReceiver
             // 
+            this.colReceiver.DataPropertyName = "Receiver";
             this.colReceiver.FillWeight = 80F;
             this.colReceiver.HeaderText = "收件人";
             this.colReceiver.Name = "colReceiver";
@@ -461,12 +478,14 @@
             // 
             // colReceiverPhone
             // 
+            this.colReceiverPhone.DataPropertyName = "ReceiverPhone";
             this.colReceiverPhone.HeaderText = "收件电话";
             this.colReceiverPhone.Name = "colReceiverPhone";
             this.colReceiverPhone.ReadOnly = true;
             // 
             // colStationName
             // 
+            this.colStationName.DataPropertyName = "StationName";
             this.colStationName.FillWeight = 150F;
             this.colStationName.HeaderText = "站点";
             this.colStationName.Name = "colStationName";
@@ -474,6 +493,7 @@
             // 
             // colSender
             // 
+            this.colSender.DataPropertyName = "Sender";
             this.colSender.FillWeight = 80F;
             this.colSender.HeaderText = "寄件人";
             this.colSender.Name = "colSender";
@@ -481,12 +501,14 @@
             // 
             // colSenderPhone
             // 
+            this.colSenderPhone.DataPropertyName = "SenderPhone";
             this.colSenderPhone.HeaderText = "寄件电话";
             this.colSenderPhone.Name = "colSenderPhone";
             this.colSenderPhone.ReadOnly = true;
             // 
             // colExpState
             // 
+            this.colExpState.DataPropertyName = "ExpState";
             this.colExpState.FillWeight = 80F;
             this.colExpState.HeaderText = "快递状态";
             this.colExpState.Name = "colExpState";
@@ -494,6 +516,7 @@
             // 
             // colEnterTime
             // 
+            this.colEnterTime.DataPropertyName = "EnterTime";
             this.colEnterTime.FillWeight = 150F;
             this.colEnterTime.HeaderText = "录入时间";
             this.colEnterTime.Name = "colEnterTime";
@@ -503,6 +526,7 @@
             // 
             // colPickWay
             // 
+            this.colPickWay.DataPropertyName = "PickWay";
             this.colPickWay.FillWeight = 80F;
             this.colPickWay.HeaderText = "取件方式";
             this.colPickWay.Name = "colPickWay";
@@ -523,12 +547,13 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.tvExpTypes);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbExpCondition);
             this.Name = "FrmExpressList";
             this.ShowIcon = false;
             this.Text = "快递信息管理";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmExpressList_Load);
+            this.gbExpCondition.ResumeLayout(false);
+            this.gbExpCondition.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpressList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -537,7 +562,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbExpCondition;
         private System.Windows.Forms.TextBox txtReceiverPhone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtReveiverName;
@@ -565,7 +590,7 @@
         private UControls.UPager uPager1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpType;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceiver;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceiverPhone;

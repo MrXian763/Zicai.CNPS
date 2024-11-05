@@ -29,7 +29,7 @@ namespace Zicai.CaiNiaoPostStation.Models.VModels
             StationId = exp.StationId;
             ShelfId = exp.ShelfId;
             Sender = exp.Sender;
-            SendAddress = exp.SendAddress;
+            SenderAddress = exp.SenderAddress;
             SenderPhone = exp.SenderPhone;
             ReceiverPhone = exp.ReceiverPhone;
             Receiver = exp.Receiver;

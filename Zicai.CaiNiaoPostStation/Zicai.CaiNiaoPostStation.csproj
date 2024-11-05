@@ -169,6 +169,8 @@
     <Compile Include="UControls\UPager.Designer.cs">
       <DependentUpon>UPager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\ChooseExpTypeArgs.cs" />
+    <Compile Include="Utility\ExpressArgs.cs" />
     <Compile Include="Utility\FormUtility.cs" />
     <Compile Include="Utility\MessageHelper.cs" />
     <EmbeddedResource Include="BM\FrmExpTypeList.resx">

@@ -67,6 +67,7 @@
             this.chkExpTypes.Name = "chkExpTypes";
             this.chkExpTypes.Size = new System.Drawing.Size(530, 319);
             this.chkExpTypes.TabIndex = 47;
+            this.chkExpTypes.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkExpTypes_ItemCheck);
             // 
             // btnOk
             // 
@@ -82,6 +83,7 @@
             this.btnOk.TabIndex = 61;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lblErrMsg
             // 
@@ -113,6 +115,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "快递类别选择";
+            this.Load += new System.EventHandler(this.FrmExpTypeChoose_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

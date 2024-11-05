@@ -37,7 +37,7 @@ namespace ZiCai.CainiaoPostStation.Models
         /// <summary>
         /// 寄件地址
         /// </summary>
-        public string SendAddress { get; set; }
+        public string SenderAddress { get; set; }
         /// <summary>
         /// 寄件人电话
         /// </summary>

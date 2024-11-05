@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zicai.CaiNiaoPostStation.BLL;
 using Zicai.CaiNiaoPostStation.Models;
+using ZiCai.CainiaoPostStation.Models;
 
 namespace Zicai.CaiNiaoPostStation.Utility
 {
@@ -252,6 +253,19 @@ namespace Zicai.CaiNiaoPostStation.Utility
             if (obj != null)
                 frm.Tag = obj;
             tab.AddTabFormPage(frm); // 将新建的窗体添加到Tab页面
+        }
+
+        /// <summary>
+        /// 加载员工列表
+        /// </summary>
+        /// <param name="stationId">站点ID</param>
+        public static void LoadCboEmployees(int stationId, ComboBox cboEmployees, EmployeeBLL empBLL)
+        {
+            List<EmployeeInfo> employees = empBLL.GetCboEmployeeList(stationId); // 获取站点下的员工
+            cboEmployees.DisplayMember = "EmpName";
+            cboEmployees.ValueMember = "EmpId";
+            cboEmployees.DataSource = employees;
+            cboEmployees.SelectedIndex = 0;
         }
     }
 }
