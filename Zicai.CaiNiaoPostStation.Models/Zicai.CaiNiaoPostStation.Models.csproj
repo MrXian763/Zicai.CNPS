@@ -53,6 +53,7 @@
     <Compile Include="StationInfo.cs" />
     <Compile Include="UIModels\PageModel.cs" />
     <Compile Include="UserInfo.cs" />
+    <Compile Include="VModels\ViewDistributeExpressInfo.cs" />
     <Compile Include="VModels\ViewEmployeeInfo.cs" />
     <Compile Include="VModels\ViewExpressInfo.cs" />
     <Compile Include="VModels\ViewExpressTypeInfo.cs" />

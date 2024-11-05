@@ -60,6 +60,7 @@
     <Compile Include="ShelfDAL.cs" />
     <Compile Include="StationDAL.cs" />
     <Compile Include="UserDAL.cs" />
+    <Compile Include="ViewDistributeExpressDAL.cs" />
     <Compile Include="ViewEmployeeDAL.cs" />
     <Compile Include="ViewExpressDAL.cs" />
     <Compile Include="ViewExpressTypeDAL.cs" />
