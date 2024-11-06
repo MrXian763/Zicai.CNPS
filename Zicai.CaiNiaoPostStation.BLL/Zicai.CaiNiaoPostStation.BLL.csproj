@@ -46,6 +46,7 @@
     <Compile Include="EmpTypeBLL.cs" />
     <Compile Include="ExpressBLL.cs" />
     <Compile Include="ExpressTypeBLL.cs" />
+    <Compile Include="ExpSelfPickUpBLL.cs" />
     <Compile Include="MenuBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShelfBLL.cs" />
