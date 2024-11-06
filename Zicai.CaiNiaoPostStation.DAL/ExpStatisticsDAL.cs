@@ -47,5 +47,55 @@ namespace Zicai.CaiNiaoPostStation.DAL
             DataTable dt = SqlHelper.GetDataTable(sql, 2, paras);
             return DbConvert.DataTableToList<ExpressComInfo>(dt, "");
         }
+
+        /// <summary>
+        /// 按日统计快递数目
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <param name="month">月份</param>
+        /// <returns>该月每日的快递统计数据</returns>
+        public List<ExpDayCountInfo> StatExpressCountByDay(int year, int month)
+        {
+            string sql = "StatisticsExpCountByDay";
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@year",year),
+                new SqlParameter("@month",month)
+            };
+            DataTable dt = SqlHelper.GetDataTable(sql, 2, paras);
+            return DbConvert.DataTableToList<ExpDayCountInfo>(dt, "InsertDate,ExpCount,ExpState");
+        }
+
+        /// <summary>
+        /// 按周统计快递数目
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns>这一年每周的快递数据统计</returns>
+        public List<ExpWeekCountInfo> StatExpressCountByWeek(int year)
+        {
+            string sql = "StatisticsExpCountByWeek";
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@year",year)
+            };
+            DataTable dt = SqlHelper.GetDataTable(sql, 2, paras);
+            return DbConvert.DataTableToList<ExpWeekCountInfo>(dt, "WeekNumber,ExpCount,ExpState");
+        }
+
+        /// <summary>
+        /// 按月统计快递数目
+        /// </summary>
+        /// <param name="year">年份</param>
+        /// <returns>这一年每一个月的快递数据统计</returns>
+        public List<ExpMonthCountInfo> StatExpressCountByMonth(int year)
+        {
+            string sql = "StatisticsExpCountByMonth";
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@year",year)
+            };
+            DataTable dt = SqlHelper.GetDataTable(sql, 2, paras);
+            return DbConvert.DataTableToList<ExpMonthCountInfo>(dt, "MonthNumber,ExpCount,ExpState");
+        }
     }
 }
