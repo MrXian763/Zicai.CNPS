@@ -53,6 +53,7 @@
     <Compile Include="ExpressDAL.cs" />
     <Compile Include="ExpressTypeDAL.cs" />
     <Compile Include="ExpSelfPickDAL.cs" />
+    <Compile Include="ExpStatisticsDAL.cs" />
     <Compile Include="Helper\CommandInfo.cs" />
     <Compile Include="Helper\SqlHelper.cs" />
     <Compile Include="MenuDAL.cs" />
