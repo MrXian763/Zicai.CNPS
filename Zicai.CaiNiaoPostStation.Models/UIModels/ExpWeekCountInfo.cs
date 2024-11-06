@@ -15,9 +15,25 @@ namespace Zicai.CaiNiaoPostStation.Models.UIModels
         /// 周数
         /// </summary>
         public int WeekNumber { get; set; }
+
+        /// <summary>
+        /// 本周快递总数
+        /// </summary>
         public int ExpCount { get; set; }
+
+        /// <summary>
+        /// 本周已完成快递总数
+        /// </summary>
         public int HasCount { get; set; }
-        public string ExpState { get; set; }
+
+        /// <summary>
+        /// 本周未完成快递总数
+        /// </summary>
         public int UnCount { get; set; }
+
+        /// <summary>
+        /// 快递状态
+        /// </summary>
+        public string ExpState { get; set; }
     }
 }
