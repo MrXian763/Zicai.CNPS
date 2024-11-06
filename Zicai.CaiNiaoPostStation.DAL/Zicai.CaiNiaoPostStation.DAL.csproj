@@ -64,6 +64,7 @@
     <Compile Include="ViewEmployeeDAL.cs" />
     <Compile Include="ViewExpressDAL.cs" />
     <Compile Include="ViewExpressTypeDAL.cs" />
+    <Compile Include="ViewSelfPickUpExpressDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
