@@ -34,6 +34,7 @@ namespace Zicai.CaiNiaoPostStation.DAL
         /// 根据是否完成获取指定的快递列表
         /// </summary>
         /// <param name="isComplete">1-已完成</param>
+        /// <param name="stationId">站点ID</param>
         /// <returns>快递数据列表</returns>
         public List<ExpressComInfo> GetExpressListByCount(int isComplete, int stationId)
         {
