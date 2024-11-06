@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace Zicai.CaiNiaoPostStation.Utility
 {
+    /// <summary>
+    /// 快递签收事件参数类
+    /// </summary>
     public class ExpressPickUpArgs : EventArgs
     {
         /// <summary>
-        /// 快递签收事件参数类
+        /// 要签收的快递ID集合
         /// </summary>
         public List<int> ExpIds { get; set; }
+
+        /// <summary>
+        /// 快递签收时间
+        /// </summary>
         public DateTime PickingTime { get; set; }
         public ExpressPickUpArgs(List<int> expIds, DateTime pickingTime)
         {

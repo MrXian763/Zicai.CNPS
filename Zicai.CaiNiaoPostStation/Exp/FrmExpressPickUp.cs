@@ -113,9 +113,10 @@ namespace Zicai.CaiNiaoPostStation.Exp
 
             if (blSign)
             {
+                // 签收成功，刷新列表页
                 MessageHelper.Info("快递签收", "快递签收成功！");
-                ExpressPickedUp?.Invoke(this, new ExpressPickUpArgs(expIds, pickingTime)); // 刷新列表页
-                this.Close();
+                ExpressPickedUp?.Invoke(this, new ExpressPickUpArgs(expIds, pickingTime));
+                this.Close(); // 关闭当前页面
             }
             else
             {
