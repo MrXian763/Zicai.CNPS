@@ -211,5 +211,51 @@ namespace Zicai.CaiNiaoPostStation.BLL
             }
             return newList;
         }
+
+        /// <summary>
+        /// 统计员工快递数据
+        /// </summary>
+        /// <param name="year">当年的快递数据</param>
+        /// <returns>员工快递统计总数据</returns>
+        public EmpExpressStatInfo StatEmpExpressData(int year)
+        {
+            EmpExpressStatInfo empStat = statisticsDAL.StatEmpExpressData(year);
+            var expList = empStat.EmpDisExpInfos; // 获取员工派送列表
+            List<EmpStatInfo> empList = new List<EmpStatInfo>(); // 员工派送数据
+            if (expList.Count > 0)
+            {
+                List<int> empIds = expList.Select(e => e.EmpId).Distinct().ToList(); // 获取员工派送列表中的员工ID集合
+                // 统计每名员工的派送数据
+                foreach (int empId in empIds)
+                {
+                    EmpStatInfo emp = new EmpStatInfo();
+                    var subList = expList.Where(e => e.EmpId == empId).ToList(); // 获取某一员工的派送列表
+                    if (subList.Count > 0)
+                    {
+                        // 该员工有派送数据
+                        emp.EmpId = empId; // 员工ID
+                        emp.EmpName = subList[0].EmpName; // 员工名称
+                        emp.TotalCount = subList.Count; // 派送总量
+                        emp.SignedCount = subList.Where(e => e.IsSignFor == true).Count(); // 已完成量
+                        emp.UnSignCount = emp.TotalCount - emp.SignedCount; // 未完成量
+                        empList.Add(emp);
+                    }
+                }
+                int maxCount = empList.Max(e => e.SignedCount); // 最大已完成派送量
+                if (maxCount > 0)
+                {
+                    int index = empList.FindIndex(e => e.SignedCount == maxCount); // 获取派送冠军的集合索引
+                    empStat.SuperDisCount = maxCount;
+                    empStat.SuperEmpName = empList[index].EmpName; // 冠军
+                }
+                else
+                {
+                    empStat.SuperDisCount = 0;
+                    empStat.SuperEmpName = "";
+                }
+            }
+            empStat.EmpStatInfos = empList;
+            return empStat;
+        }
     }
 }
