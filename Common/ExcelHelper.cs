@@ -340,7 +340,6 @@ namespace Common
                 Console.WriteLine("Exception: " + ex.Message);
                 return -1;
             }
-
         }
 
         /// <summary>

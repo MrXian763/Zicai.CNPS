@@ -34,16 +34,16 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnstatistics = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblHasCompleteCount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblTotalCount = new System.Windows.Forms.Label();
-            this.lblUnCompleteCount = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblMaxDisCount = new System.Windows.Forms.Label();
             this.lblSuperName = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblMaxDisCount = new System.Windows.Forms.Label();
+            this.lblUnCompleteCount = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalCount = new System.Windows.Forms.Label();
+            this.lblHasCompleteCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnstatistics = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.chartEmpExpStat = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
@@ -70,86 +70,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // btnstatistics
+            // lblMaxDisCount
             // 
-            this.btnstatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnstatistics.BackColor = System.Drawing.Color.Blue;
-            this.btnstatistics.FlatAppearance.BorderSize = 0;
-            this.btnstatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnstatistics.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnstatistics.ForeColor = System.Drawing.Color.White;
-            this.btnstatistics.Location = new System.Drawing.Point(1063, 44);
-            this.btnstatistics.Name = "btnstatistics";
-            this.btnstatistics.Size = new System.Drawing.Size(92, 37);
-            this.btnstatistics.TabIndex = 51;
-            this.btnstatistics.Text = "统计";
-            this.btnstatistics.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(35, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "总派送量：";
-            // 
-            // lblHasCompleteCount
-            // 
-            this.lblHasCompleteCount.AutoSize = true;
-            this.lblHasCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblHasCompleteCount.ForeColor = System.Drawing.Color.Green;
-            this.lblHasCompleteCount.Location = new System.Drawing.Point(389, 36);
-            this.lblHasCompleteCount.Name = "lblHasCompleteCount";
-            this.lblHasCompleteCount.Size = new System.Drawing.Size(60, 26);
-            this.lblHasCompleteCount.TabIndex = 53;
-            this.lblHasCompleteCount.Text = "2000";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.label2.Location = new System.Drawing.Point(257, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 26);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "已完成派送：";
-            // 
-            // lblTotalCount
-            // 
-            this.lblTotalCount.AutoSize = true;
-            this.lblTotalCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTotalCount.ForeColor = System.Drawing.Color.DarkMagenta;
-            this.lblTotalCount.Location = new System.Drawing.Point(148, 36);
-            this.lblTotalCount.Name = "lblTotalCount";
-            this.lblTotalCount.Size = new System.Drawing.Size(60, 26);
-            this.lblTotalCount.TabIndex = 54;
-            this.lblTotalCount.Text = "2000";
-            // 
-            // lblUnCompleteCount
-            // 
-            this.lblUnCompleteCount.AutoSize = true;
-            this.lblUnCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblUnCompleteCount.ForeColor = System.Drawing.Color.Silver;
-            this.lblUnCompleteCount.Location = new System.Drawing.Point(639, 36);
-            this.lblUnCompleteCount.Name = "lblUnCompleteCount";
-            this.lblUnCompleteCount.Size = new System.Drawing.Size(60, 26);
-            this.lblUnCompleteCount.TabIndex = 56;
-            this.lblUnCompleteCount.Text = "2000";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(507, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 26);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "未完成派送：";
+            this.lblMaxDisCount.AutoSize = true;
+            this.lblMaxDisCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblMaxDisCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblMaxDisCount.Location = new System.Drawing.Point(947, 36);
+            this.lblMaxDisCount.Name = "lblMaxDisCount";
+            this.lblMaxDisCount.Size = new System.Drawing.Size(48, 26);
+            this.lblMaxDisCount.TabIndex = 59;
+            this.lblMaxDisCount.Text = "800";
             // 
             // lblSuperName
             // 
@@ -173,16 +103,87 @@
             this.label7.TabIndex = 57;
             this.label7.Text = "派送冠军：";
             // 
-            // lblMaxDisCount
+            // lblUnCompleteCount
             // 
-            this.lblMaxDisCount.AutoSize = true;
-            this.lblMaxDisCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblMaxDisCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblMaxDisCount.Location = new System.Drawing.Point(947, 36);
-            this.lblMaxDisCount.Name = "lblMaxDisCount";
-            this.lblMaxDisCount.Size = new System.Drawing.Size(48, 26);
-            this.lblMaxDisCount.TabIndex = 59;
-            this.lblMaxDisCount.Text = "800";
+            this.lblUnCompleteCount.AutoSize = true;
+            this.lblUnCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblUnCompleteCount.ForeColor = System.Drawing.Color.Silver;
+            this.lblUnCompleteCount.Location = new System.Drawing.Point(639, 36);
+            this.lblUnCompleteCount.Name = "lblUnCompleteCount";
+            this.lblUnCompleteCount.Size = new System.Drawing.Size(60, 26);
+            this.lblUnCompleteCount.TabIndex = 56;
+            this.lblUnCompleteCount.Text = "2000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(507, 36);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 26);
+            this.label5.TabIndex = 55;
+            this.label5.Text = "未完成派送：";
+            // 
+            // lblTotalCount
+            // 
+            this.lblTotalCount.AutoSize = true;
+            this.lblTotalCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTotalCount.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.lblTotalCount.Location = new System.Drawing.Point(148, 36);
+            this.lblTotalCount.Name = "lblTotalCount";
+            this.lblTotalCount.Size = new System.Drawing.Size(60, 26);
+            this.lblTotalCount.TabIndex = 54;
+            this.lblTotalCount.Text = "2000";
+            // 
+            // lblHasCompleteCount
+            // 
+            this.lblHasCompleteCount.AutoSize = true;
+            this.lblHasCompleteCount.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblHasCompleteCount.ForeColor = System.Drawing.Color.Green;
+            this.lblHasCompleteCount.Location = new System.Drawing.Point(389, 36);
+            this.lblHasCompleteCount.Name = "lblHasCompleteCount";
+            this.lblHasCompleteCount.Size = new System.Drawing.Size(60, 26);
+            this.lblHasCompleteCount.TabIndex = 53;
+            this.lblHasCompleteCount.Text = "2000";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label2.Location = new System.Drawing.Point(257, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(126, 26);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "已完成派送：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.Location = new System.Drawing.Point(35, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "总派送量：";
+            // 
+            // btnstatistics
+            // 
+            this.btnstatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnstatistics.BackColor = System.Drawing.Color.Blue;
+            this.btnstatistics.FlatAppearance.BorderSize = 0;
+            this.btnstatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnstatistics.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnstatistics.ForeColor = System.Drawing.Color.White;
+            this.btnstatistics.Location = new System.Drawing.Point(1063, 44);
+            this.btnstatistics.Name = "btnstatistics";
+            this.btnstatistics.Size = new System.Drawing.Size(92, 37);
+            this.btnstatistics.TabIndex = 51;
+            this.btnstatistics.Text = "统计";
+            this.btnstatistics.UseVisualStyleBackColor = false;
+            this.btnstatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnExport
             // 
@@ -198,6 +199,7 @@
             this.btnExport.TabIndex = 52;
             this.btnExport.Text = "导出数据";
             this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // chartEmpExpStat
             // 
@@ -302,6 +304,7 @@
             this.Name = "FrmEmpExpStatistics";
             this.ShowIcon = false;
             this.Text = "快递员数据统计";
+            this.Load += new System.EventHandler(this.FrmEmpExpStatistics_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartEmpExpStat)).EndInit();

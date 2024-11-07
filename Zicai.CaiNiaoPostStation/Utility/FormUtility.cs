@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Zicai.CaiNiaoPostStation.BLL;
 using Zicai.CaiNiaoPostStation.Models;
 using ZiCai.CainiaoPostStation.Models;
+using ZiCai.CaiNiaoPostStation.Utility;
 
 namespace Zicai.CaiNiaoPostStation.Utility
 {
@@ -266,6 +267,43 @@ namespace Zicai.CaiNiaoPostStation.Utility
             cboEmployees.ValueMember = "EmpId";
             cboEmployees.DataSource = employees;
             cboEmployees.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// 导出数据到Excel
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list">数据集合</param>
+        /// <param name="colNames">列名</param>
+        /// <param name="fileName">文件名</param>
+        /// <param name="sheetName"></param>
+        /// <param name="title">表格标题</param>
+        public static void DataToExcel<T>(List<T> list, Dictionary<string, string> colNames, string fileName, string sheetName, string title)
+        {
+            if (list != null && list.Count > 0)
+            {
+                string filePath = ""; // 文件存储路径
+                FolderBrowserDialog fbdChoose = new FolderBrowserDialog(); // 用于弹出文件夹选择对话框
+                if (fbdChoose.ShowDialog() == DialogResult.OK)
+                    filePath = fbdChoose.SelectedPath; // 保存用户选择的文件路径
+                if (string.IsNullOrEmpty(filePath))
+                {
+                    MessageHelper.Error(title, "请选择导出的位置！");
+                    return;
+                }
+                if (filePath.LastIndexOf('/') != filePath.Length - 1)
+                    filePath += "/"; // 如果文件存储路径结尾不是路径分隔符，则在末尾添加一个
+                int count = ExcelHelper.ListToExcel<T>(list, filePath + fileName, sheetName, colNames);
+                if (count > 0)
+                    MessageHelper.Info(title, sheetName + "数据导出成功！");
+                else
+                    MessageHelper.Error(title, sheetName + "数据导出失败！");
+            }
+            else
+            {
+                MessageHelper.Error(title, "没有数据可导出！");
+                return;
+            }
         }
     }
 }
