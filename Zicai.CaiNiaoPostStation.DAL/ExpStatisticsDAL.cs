@@ -97,5 +97,29 @@ namespace Zicai.CaiNiaoPostStation.DAL
             DataTable dt = SqlHelper.GetDataTable(sql, 2, paras);
             return DbConvert.DataTableToList<ExpMonthCountInfo>(dt, "MonthNumber,ExpCount,ExpState");
         }
+
+        /// <summary>
+        /// 员工快递数据统计
+        /// </summary>
+        /// <param name="year">当年的快递数据</param>
+        /// <returns>员工快递统计总数据</returns>
+        public EmpExpressStatInfo StatEmpExpressData(int year)
+        {
+            EmpExpressStatInfo statInfo = new EmpExpressStatInfo();
+            string sql = "StatisticsEmpExpressData"; // 存储过程名称
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@year",year)
+            }; // SQL 参数 年份
+            DataSet ds = SqlHelper.GetDataSet(sql, 2, paras);
+            statInfo.TotalDisCount = (int)ds.Tables[0].Rows[0][0]; // 快递总数
+            statInfo.HasDisCount = (int)ds.Tables[1].Rows[0][0]; // 已完成派送快递数
+            statInfo.UnDisCount = (int)ds.Tables[2].Rows[0][0]; // 未完成派送快递数
+            List<EmpDisExpInfo> empExpList = new List<EmpDisExpInfo>();
+            if (ds.Tables[3].Rows.Count > 0) // 存在员工派送列表数据
+                empExpList = DbConvert.DataTableToList<EmpDisExpInfo>(ds.Tables[3], "");
+            statInfo.EmpDisExpInfos = empExpList;
+            return statInfo;
+        }
     }
 }

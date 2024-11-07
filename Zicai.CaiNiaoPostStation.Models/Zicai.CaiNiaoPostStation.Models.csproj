@@ -51,6 +51,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShelfInfo.cs" />
     <Compile Include="StationInfo.cs" />
+    <Compile Include="UIModels\EmpDisExpInfo.cs" />
+    <Compile Include="UIModels\EmpExpressStatInfo.cs" />
+    <Compile Include="UIModels\EmpStatInfo.cs" />
+    <Compile Include="UIModels\ExpDayCountInfo.cs" />
+    <Compile Include="UIModels\ExpMonthCountInfo.cs" />
+    <Compile Include="UIModels\ExpressComInfo.cs" />
+    <Compile Include="UIModels\ExpressCountInfo.cs" />
+    <Compile Include="UIModels\ExpWeekCountInfo.cs" />
     <Compile Include="UIModels\PageModel.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="VModels\ViewDistributeExpressInfo.cs" />
